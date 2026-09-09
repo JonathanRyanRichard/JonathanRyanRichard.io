@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: #F2F0EC; color: #14130F; font-family: Archivo, Helvetica, Arial, sans-serif; }
+  * { box-sizing: border-box; }
+  a { color: #14130F; text-decoration: none; }
+  a:hover { color: #9A4522; }
+  ::selection { background: #B4552A; color: #F2F0EC; }
+  @keyframes jrCurtain { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  @keyframes jrCurtainOut { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+  @keyframes jrLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-fx] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  }
+  @media (max-width: 759px) {
+    [data-desktop-only] { display: none !important; }
+    [data-hero] { height: 220vh !important; }
+    [data-pin] { height: auto !important; }
+    [data-pin-shell] { position: static !important; height: auto !important; padding: 64px 0 !important; }
+    [data-pin-track] { transform: none !important; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 10px !important; }
+    [data-pin-track] > * { scroll-snap-align: center; width: 80vw !important; }
+    [data-pin-track] > * > div:first-child { height: 42vh !important; }
+    [data-sticky] { position: static !important; }
+  }
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;overflow-x:clip">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(242,240,236,0.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,19,15,0.13)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px;padding:14px clamp(20px,4vw,56px)">
+      <a href="#home" onClick="{{ goHome }}" data-cursor="HOME" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px">
+        <span style="font-size:15px;font-weight:600;letter-spacing:0.12em">JONATHAN RYAN</span>
+        <span data-desktop-only="1" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#66615A">PMO · PHOTO · WORDS</span>
+      </a>
+      <div style="display:flex;align-items:baseline;gap:clamp(11px,2.4vw,34px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em">
+        <a href="#work" onClick="{{ goWork }}" data-cursor="EXPLORE" style="color:{{ workColor }}">WORK</a>
+        <a href="#photo" onClick="{{ goPhoto }}" data-cursor="LOOK" style="color:{{ photoColor }}">PHOTOS</a>
+        <a href="#about" onClick="{{ goAbout }}" data-cursor="READ" style="color:{{ aboutColor }}">ABOUT</a>
+        <a href="#contact" onClick="{{ goContact }}" data-cursor="SAY HI" style="color:{{ contactColor }}">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════ HOME ══════════════════ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main style="padding-top:0">
+
+    <section data-hero="1" style="height:340vh;position:relative">
+      <div style="position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden">
+        <div style="position:absolute;top:clamp(82px,11vh,104px);left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(16px,4vw,60px);padding:0 clamp(20px,4vw,56px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A;line-height:2">
+          <div style="min-width:0">
+            <div>PORTFOLIO / 2026</div>
+            <div data-desktop-only="1">STRUCTURE · PERSPECTIVE · STORY</div>
+          </div>
+          <div data-desktop-only="1" style="text-align:right;flex:0 0 auto">
+            <div>PMO EXECUTIVE</div>
+            <div>PHOTOGRAPHER</div>
+            <div>WRITER</div>
+          </div>
+        </div>
+
+        <div style="position:relative;width:100%;height:34vh;display:flex;align-items:center;justify-content:center">
+          <span data-hero-word="0" style="position:absolute;font-size:clamp(56px,14vw,220px);line-height:0.86;font-weight:700;letter-spacing:-0.045em;white-space:nowrap">SYSTEMS</span>
+          <span data-hero-word="1" style="position:absolute;font-size:clamp(56px,14vw,220px);line-height:0.86;font-weight:700;letter-spacing:-0.045em;white-space:nowrap;opacity:0">STORIES</span>
+          <span data-hero-word="2" style="position:absolute;font-size:clamp(56px,14vw,220px);line-height:0.86;font-weight:700;letter-spacing:-0.045em;white-space:nowrap;opacity:0">IMAGES</span>
+          <span data-hero-word="3" style="position:absolute;text-align:center;font-size:clamp(44px,10.5vw,166px);line-height:0.9;font-weight:700;letter-spacing:-0.05em;opacity:0">JONATHAN<br />RYAN</span>
+        </div>
+
+        <div data-hero-sub="1" style="position:absolute;bottom:52px;left:0;right:0;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-end;padding:0 clamp(20px,4vw,56px);opacity:0">
+          <p style="max-width:34ch;margin:0;font-size:15px;line-height:1.55;color:#24231F">I build the systems that make complex programmes legible — and I photograph and write about everything they leave out.</p>
+          <a href="#work" onClick="{{ goWork }}" data-cursor="EXPLORE" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px">ENTER THE WORK →</a>
+        </div>
+        <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.3em;color:#66615A">SCROLL</div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(80px,10vh,150px) clamp(20px,4vw,56px) clamp(60px,8vh,120px);border-top:1px solid rgba(20,19,15,0.13)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:clamp(30px,5vh,70px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">
+        <span>01 — WHAT I DO</span><span>THREE WAYS OF WORKING</span>
+      </div>
+
+      <div style="display:flex;flex-direction:column">
+        <a href="#work" onClick="{{ goWork }}" data-cursor="EXPLORE" data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(8px,4vw,60px);align-items:flex-end;padding:clamp(18px,3vh,34px) 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(28px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)" style-hover="background:transparent;color:#9A4522">
+          <span style="flex:1 1 240px;font-size:clamp(46px,11vw,160px);line-height:0.85;font-weight:700;letter-spacing:-0.045em">BUILD</span>
+          <span style="flex:1 1 240px;display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(6px,1.5vh,18px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">PMO</span>
+            <span style="font-size:clamp(15px,1.3vw,19px);line-height:1.5;color:#24231F;max-width:36ch">Turning complexity into systems, processes and insight.</span>
+          </span>
+        </a>
+        <a href="#photo" onClick="{{ goPhoto }}" data-cursor="LOOK" data-fx="reveal" data-delay="90" style="display:flex;flex-wrap:wrap;gap:clamp(8px,4vw,60px);align-items:flex-end;padding:clamp(18px,3vh,34px) 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(28px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:1 1 240px;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(52px,12.5vw,182px);line-height:0.85;letter-spacing:-0.03em">CAPTURE</span>
+          <span style="flex:1 1 240px;display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(6px,1.5vh,18px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">PHOTOGRAPHY</span>
+            <span style="font-size:clamp(15px,1.3vw,19px);line-height:1.5;color:#24231F;max-width:36ch">Finding stories in people, places and moments.</span>
+          </span>
+        </a>
+        <div data-fx="reveal" data-delay="180" style="display:flex;flex-wrap:wrap;gap:clamp(8px,4vw,60px);align-items:flex-end;padding:clamp(18px,3vh,34px) 0;border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(28px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:1 1 240px;font-size:clamp(46px,11vw,160px);line-height:0.85;font-weight:700;letter-spacing:-0.045em">WRITE</span>
+          <span style="flex:1 1 240px;display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(6px,1.5vh,18px)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">ESSAYS</span>
+            <span style="font-size:clamp(15px,1.3vw,19px);line-height:1.5;color:#24231F;max-width:36ch">Exploring ideas through words until they hold their shape.</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section data-pin="1" style="height:300vh;position:relative">
+      <div data-pin-shell="1" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#14130F;color:#F2F0EC">
+        <div style="display:flex;justify-content:space-between;padding:0 clamp(20px,4vw,56px) 26px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A">
+          <span>02 — THREE WORLDS</span><span>DRAG-FREE HORIZONTAL SCROLL</span>
+        </div>
+        <div data-pin-track="1" style="display:flex;gap:clamp(18px,3vw,44px);padding:0 clamp(20px,4vw,56px);will-change:transform">
+          <a href="#work" onClick="{{ goWork }}" data-cursor="EXPLORE" style="flex:0 0 auto;width:clamp(300px,62vw,760px);display:flex;flex-direction:column;gap:18px;color:#F2F0EC">
+            <div style="height:52vh;border:1px solid rgba(242,240,236,0.16);overflow:hidden;background:#1B1915">
+              <img src="photos/abs-net2.jpg" alt="Abstract dependency network" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(242,240,236,0.2);padding-top:14px">
+              <span style="font-size:clamp(28px,4vw,62px);font-weight:700;letter-spacing:-0.03em">PMO</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">GOVERNANCE · DATA · DELIVERY</span>
+            </div>
+          </a>
+          <a href="#photo" onClick="{{ goPhoto }}" data-cursor="LOOK" style="flex:0 0 auto;width:clamp(300px,62vw,760px);display:flex;flex-direction:column;gap:18px;color:#F2F0EC">
+            <div style="height:52vh;border:1px solid rgba(242,240,236,0.16);overflow:hidden">
+              <img src="photos/IMG_2733.jpg" alt="Full room, hands raised" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(242,240,236,0.2);padding-top:14px">
+              <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,4.6vw,72px);letter-spacing:-0.02em">PHOTOGRAPHY</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">SEE THE GALLERY →</span>
+            </div>
+          </a>
+          <div style="flex:0 0 auto;width:clamp(300px,62vw,760px);display:flex;flex-direction:column;gap:18px">
+            <div style="height:52vh;background:#1B1915;border:1px solid rgba(242,240,236,0.16);display:flex;align-items:center;justify-content:center;padding:clamp(20px,4vw,60px)">
+              <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(20px,2.4vw,38px);line-height:1.35;color:#F2F0EC;max-width:30ch">“Some things are better photographed. Others need words.”</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(242,240,236,0.2);padding-top:14px">
+              <span style="font-size:clamp(28px,4vw,62px);font-weight:700;letter-spacing:-0.03em">WRITING</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">ESSAYS IN PROGRESS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(80px,11vh,160px) clamp(20px,4vw,56px)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:clamp(28px,5vh,64px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">
+        <span>03 — FEATURED</span><span>THREE DISCIPLINES</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.4vw,40px)">
+        <a href="#work" onClick="{{ goCase }}" data-cursor="EXPLORE" data-fx="reveal" style="display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <div style="aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(20,19,15,0.13);background:#E4E1DA">
+            <img data-parallax="0.05" src="photos/abs-phase2.jpg" alt="Abstract phase-space plot" loading="lazy" style="width:100%;height:118%;margin-top:-9%;object-fit:cover;display:block" />
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:8px">01 — PMO</div>
+            <div style="font-size:clamp(20px,1.9vw,28px);font-weight:600;letter-spacing:-0.02em">Portfolio Performance Dashboard</div>
+            <div style="font-size:14px;color:#66615A;margin-top:6px">One weekly source of truth for 40+ live projects.</div>
+          </div>
+        </a>
+        <a href="#photo" onClick="{{ goPhoto }}" data-cursor="LOOK" data-fx="reveal" data-delay="110" style="display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <div style="aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(20,19,15,0.13)">
+            <img data-parallax="0.12" src="photos/IMG_2700.jpg" alt="Singer, hand raised" loading="lazy" style="width:100%;height:130%;margin-top:-15%;object-fit:cover;display:block" />
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:8px">02 — PHOTOGRAPHY</div>
+            <div style="font-size:clamp(20px,1.9vw,28px);font-weight:600;letter-spacing:-0.02em">People / Events</div>
+            <div style="font-size:14px;color:#66615A;margin-top:6px">Available light, unposed rooms, long nights.</div>
+          </div>
+        </a>
+        <div data-fx="reveal" data-delay="220" style="display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <div style="aspect-ratio:4/5;overflow:hidden;background:#14130F;border:1px solid rgba(20,19,15,0.13);display:flex;align-items:flex-end;padding:clamp(18px,2vw,32px)">
+            <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(18px,1.9vw,28px);line-height:1.35;color:#F2F0EC">A system is just an opinion about what matters, written down.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:8px">03 — WRITING</div>
+            <div style="font-size:clamp(20px,1.9vw,28px);font-weight:600;letter-spacing:-0.02em">The Cost of Certainty</div>
+            <div style="font-size:14px;color:#66615A;margin-top:6px">Essay · 9 min read</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(80px,11vh,160px) clamp(20px,4vw,56px);border-top:1px solid rgba(20,19,15,0.13)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:clamp(26px,4vh,56px)">04 — ABOUT</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,5vw,90px);align-items:start">
+        <p data-fx="reveal" style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,4.4vw,72px);line-height:1.05;letter-spacing:-0.02em;opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">I'm interested in the space between structure and creativity.</p>
+        <div data-fx="reveal" data-delay="140" style="display:flex;flex-direction:column;gap:22px;opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.65;color:#24231F">PMO work taught me to see the shape of a thing — dependencies, capacity, the gap between what a report says and what is actually happening. Photography taught me the opposite discipline: stop analysing, look, and wait for the moment that explains itself.</p>
+          <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.65;color:#24231F">Writing is where the two meet. It is how I find out whether an idea holds up once the slides are gone.</p>
+          <a href="#about" onClick="{{ goAbout }}" data-cursor="READ" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px;align-self:flex-start">MORE ABOUT ME →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#14130F;color:#F2F0EC;padding:clamp(90px,16vh,220px) clamp(20px,4vw,56px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A;margin-bottom:clamp(30px,6vh,70px)">05 — CLOSING</div>
+      <h2 data-fx="reveal" style="margin:0;font-size:clamp(46px,12vw,190px);line-height:0.88;font-weight:700;letter-spacing:-0.05em;opacity:0;transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)">SYSTEMS.<br />IMAGES.<br />WORDS.</h2>
+      <a href="#work" onClick="{{ goWork }}" data-cursor="EXPLORE" style="display:inline-block;margin-top:clamp(34px,6vh,72px);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#F2F0EC;border-bottom:1px solid #B4552A;padding-bottom:8px">EXPLORE THE WORK →</a>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ WORK ══════════════════ -->
+  <sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(130px,22vh,240px) clamp(20px,4vw,56px) clamp(50px,8vh,110px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,64px);align-items:end">
+        <h1 style="margin:0;font-size:clamp(38px,7.6vw,132px);line-height:0.9;font-weight:700;letter-spacing:-0.045em">I make complexity<br />easier to see.</h1>
+        <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.65;color:#24231F;max-width:44ch">Portfolio governance, performance reporting, KPI design and the unglamorous process work that makes a PMO trusted instead of tolerated. Mostly: turning numbers people distrust into numbers they act on.</p>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);padding:clamp(28px,5vh,56px) clamp(20px,4vw,56px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(20px,3vw,50px)">
+        <div>
+          <div data-count="22" style="font-size:clamp(38px,5.4vw,86px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A;margin-top:6px">PROJECT ACCOUNTS BENCHMARKED</div>
+        </div>
+        <div>
+          <div data-count="3213" style="font-size:clamp(38px,5.4vw,86px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A;margin-top:6px">PRODUCTION DEFECTS ANALYSED</div>
+        </div>
+        <div>
+          <div data-count="3" data-suffix=" FY" style="font-size:clamp(38px,5.4vw,86px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A;margin-top:6px">OF HISTORY BEHIND THE BENCHMARK</div>
+        </div>
+        <div style="display:flex;align-items:flex-end">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;line-height:1.9;border-left:1px solid #B4552A;padding-left:14px">FROM THE FY22–FY24<br />DEFECT KPI STUDY.<br />CLIENTS ANONYMISED</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(70px,11vh,150px) clamp(20px,4vw,56px)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:clamp(24px,4vh,50px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">
+        <span>CAPABILITY MAP</span><span>HOVER TO SEE THE THINKING</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,70px);align-items:start">
+        <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+          <sc-for list="{{ capabilities }}" as="cap" hint-placeholder-count="7">
+            <div onMouseEnter="{{ cap.enter }}" onClick="{{ cap.enter }}" data-cursor="MAP" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:clamp(12px,1.8vh,20px) 0;border-bottom:1px solid rgba(20,19,15,0.13);cursor:pointer;color:{{ cap.color }}">
+              <span style="font-size:clamp(19px,2.4vw,38px);font-weight:600;letter-spacing:-0.025em;line-height:1.05">{{ cap.name }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">{{ cap.num }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:sticky;top:120px;background:#14130F;color:#F2F0EC;padding:clamp(24px,3vw,44px);min-height:clamp(300px,44vh,440px);display:flex;flex-direction:column;justify-content:space-between;gap:26px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A;margin-bottom:14px">{{ activeNum }} — SELECTED</div>
+            <div style="font-size:clamp(22px,2.6vw,40px);font-weight:600;letter-spacing:-0.03em;line-height:1.1">{{ activeName }}</div>
+            <p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#C9C5BC;max-width:40ch">{{ activeBlurb }}</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px">
+            <sc-for list="{{ activeChain }}" as="step" hint-placeholder-count="5">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;padding:8px 12px;border:1px solid rgba(242,240,236,0.28);color:#F2F0EC">{{ step }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px) clamp(80px,12vh,170px)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:clamp(20px,3vh,40px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">
+        <span>CASE STUDIES</span><span>01 / 03</span>
+      </div>
+      <a href="#case" onClick="{{ goCase }}" data-cursor="EXPLORE" data-fx="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,50px);align-items:center;padding:clamp(20px,3vh,34px) 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+        <div style="aspect-ratio:16/10;background:#14130F;border:1px solid rgba(20,19,15,0.13);display:flex;align-items:flex-end;padding:clamp(18px,2.4vw,34px);overflow:hidden">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(11px,1.1vw,15px);letter-spacing:0.04em;line-height:1.9;color:#F2F0EC">DPMR = ( DEFECTS / PO VALUE )<br /><span style="color:#D2703F">× 1,000,000</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">CASE 01 · KPI DESIGN</span>
+          <span style="font-size:clamp(26px,3.4vw,54px);font-weight:700;letter-spacing:-0.035em;line-height:1.02">Measuring quality, not speed</span>
+          <span style="font-size:15px;line-height:1.6;color:#24231F;max-width:46ch">Three years of production-defect data, two rejected methods, and a defect-density KPI that finally compares a small engagement with a strategic programme fairly.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px;align-self:flex-start">READ THE CASE STUDY →</span>
+        </div>
+      </a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,3vw,50px);border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);padding:clamp(18px,3vh,30px) 0;color:#66615A">
+        <a href="#case2" onClick="{{ goCase2 }}" data-cursor="EXPLORE" style="color:#14130F">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">CASE 02 · DECISION TOOLING</div>
+          <div style="font-size:clamp(20px,2.2vw,30px);font-weight:600;letter-spacing:-0.02em;margin-top:8px">The CPMO Dashboard</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#9A4522;margin-top:10px">READ THE CASE STUDY →</div>
+        </a>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em">CASE 03 · PROCESS</div>
+          <div style="font-size:clamp(20px,2.2vw,30px);font-weight:600;letter-spacing:-0.02em;margin-top:8px">Stage-Gate Rebuild</div>
+        </div>
+        <div style="display:flex;align-items:flex-end;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em">WRITE-UPS IN PROGRESS</div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ CASE STUDY ══════════════════ -->
+  <sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(92px,12vh,146px) clamp(20px,4vw,56px) clamp(26px,4vh,48px);max-width:1280px;margin:0 auto">
+      <a href="#work" onClick="{{ goWork }}" data-cursor="BACK" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">← WORK / CASE 01</a>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(16px,2.6vw,52px);margin-top:clamp(16px,2.6vh,32px)">
+        <h1 style="flex:1 1 440px;margin:0;font-size:clamp(38px,6.1vw,102px);line-height:0.94;font-weight:700;letter-spacing:-0.045em;max-width:17ch">Measuring quality, not speed</h1>
+        <p style="flex:1 1 280px;margin:0 0 clamp(2px,0.8vh,10px);font-size:clamp(16px,1.35vw,21px);line-height:1.5;max-width:42ch;color:#24231F">Designing a production-defect KPI to replace time-based SLAs across a multi-account delivery portfolio.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(16px,2vw,36px);margin-top:clamp(24px,3.4vh,44px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">
+        <div>ROLE<br /><span style="color:#14130F">KPI DESIGN &amp; ANALYSIS</span></div>
+        <div>SCOPE<br /><span style="color:#14130F">22 ACCOUNTS · 3 FISCAL YEARS</span></div>
+        <div>DATA<br /><span style="color:#14130F">3,213 PRODUCTION DEFECTS</span></div>
+        <div>OUTPUT<br /><span style="color:#14130F">DPMR + MAD KPI FRAMEWORK</span></div>
+      </div>
+      <div style="margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#66615A;border-left:1px solid #B4552A;padding-left:14px;line-height:1.8;max-width:86ch">CLIENT NAMES AND CONTRACT VALUES WITHHELD. PROJECTS ARE LABELLED A–S AND VALUE IS SHOWN AS AN INDEXED SCALE; DEFECT COUNTS, DPMR AND MAD SCORES ARE AS ANALYSED.</div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px);max-width:1280px;margin:0 auto">
+      <div style="border:1px solid rgba(20,19,15,0.13);padding:clamp(20px,3vw,40px);background:#ECEAE4">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:baseline;margin-bottom:clamp(20px,3vh,34px)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">THE ANALYSIS, IN THREE MOVES</div>
+          <div style="display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em">
+            <button onClick="{{ setRaw }}" data-cursor="VIEW 01" style="background:{{ rawOn }};color:{{ rawInk }};border:1px solid rgba(20,19,15,0.25);padding:9px 13px;font:inherit;letter-spacing:inherit;cursor:pointer">01 RAW</button>
+            <button onClick="{{ setDpmr }}" data-cursor="VIEW 02" style="background:{{ dpmrOn }};color:{{ dpmrInk }};border:1px solid rgba(20,19,15,0.25);padding:9px 13px;font:inherit;letter-spacing:inherit;cursor:pointer">02 DPMR</button>
+            <button onClick="{{ setMad }}" data-cursor="VIEW 03" style="background:{{ madOn }};color:{{ madInk }};border:1px solid rgba(20,19,15,0.25);padding:9px 13px;font:inherit;letter-spacing:inherit;cursor:pointer">03 MAD</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,44px);align-items:start">
+          <div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-bottom:12px">
+              <span>{{ viewY }}</span><span>{{ readout }}</span>
+            </div>
+            <div style="position:relative;height:clamp(280px,42vh,420px);border-left:1px solid rgba(20,19,15,0.25);border-bottom:1px solid rgba(20,19,15,0.25)">
+              <div style="{{ normLine }}"></div>
+              <div style="{{ normLabel }}">PORTFOLIO NORM · MAD 0</div>
+              <sc-for list="{{ points }}" as="p" hint-placeholder-count="19">
+                <div style="{{ p.pos }}">
+                  <div onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" onClick="{{ p.enter }}" data-cursor="PROJECT {{ p.id }}" style="width:{{ p.dotSize }};height:{{ p.dotSize }};border-radius:50%;background:{{ p.dotBg }};cursor:pointer;transition:width .3s ease,height .3s ease"></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:12px">
+              <span>SMALLER</span><span>PROJECT VALUE (INDEXED) →</span><span>LARGER</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px;padding-top:clamp(0px,2vh,26px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#9A4522">{{ viewLabel }}</div>
+            <p style="margin:0;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#24231F;max-width:44ch">{{ viewVerdict }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#66615A">
+              <span style="display:flex;align-items:center;gap:8px"><span style="width:11px;height:11px;border-radius:50%;background:#14130F;display:inline-block"></span>WITHIN TOLERANCE</span>
+              <span style="display:flex;align-items:center;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#B4552A;display:inline-block"></span>ABOVE TOLERANCE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(46px,6vh,88px) clamp(20px,4vw,56px);max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(20px,2.8vh,36px)">
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">01 CONTEXT</div>
+        <p style="flex:1 1 320px;margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">System quality and project performance were measured through Service-Level Agreements — time-based KPIs, principally Time to Resolution. It was the metric everyone reported, and the one nobody trusted.</p>
+      </div>
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">02 PROBLEM</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:18px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">A time-based SLA measures how fast we respond. It says nothing about how good the system is — and it can be gamed by the calendar.</p>
+          <div style="display:flex;flex-direction:column">
+            <div data-fx="reveal" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:13px 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">a</span>
+              <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#24231F;max-width:56ch">SLAs measure response, not quality — a team could hit every target while the system stayed fragile.</span>
+            </div>
+            <div data-fx="reveal" data-delay="90" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:13px 0;border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">b</span>
+              <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#24231F;max-width:56ch">A fast fix means nothing if the defects keep coming back — speed was beside the point.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">03 APPROACH</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:18px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">The goal: a metric that reflects true system quality, works fairly across project sizes, and is simple enough to enforce.</p>
+          <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:#24231F;max-width:66ch">The opening hypothesis was the obvious one: bigger projects should naturally carry more defects, so project value could be used to normalise the count. Testing it honestly is what made the rest of the work necessary. Use the three views above to follow the argument.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">CORRELATION TEST</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">Z-SCORE ATTEMPT</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">DPMR</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">MAD</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid #B4552A;padding:8px 12px;color:#9A4522">KPI BANDS</span>
+          </div>
+        </div>
+      </div>
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">04 SOLUTION</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:clamp(20px,2.6vh,32px)">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">Two pieces, in sequence. First a normalised measure — Defects Per Million Ringgit — so projects of any size become directly comparable on defect density. Then a robust benchmark, because the normalised data was still too skewed for a mean or a z-score to describe.</p>
+
+          <div style="background:#14130F;color:#F2F0EC;padding:clamp(22px,3vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A;margin-bottom:18px">THE NORMALISATION</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(13px,1.5vw,21px);letter-spacing:0.02em;line-height:1.7">DPMR = ( Production Defects / PO Value ) × 1,000,000</div>
+            <p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:#C9C5BC;max-width:52ch">Defect density per million of contract value. A small project with twenty defects and a strategic programme with eighty can finally be judged on the same axis.</p>
+          </div>
+
+          <div style="border:1px solid rgba(20,19,15,0.13)">
+            <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:baseline;padding:clamp(16px,2vw,24px);border-bottom:1px solid rgba(20,19,15,0.13)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">THE BENCHMARK — MEDIAN ABSOLUTE DEVIATION</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">STEP THROUGH IT →</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+              <div style="display:flex;flex-direction:column;border-right:1px solid rgba(20,19,15,0.13);min-width:0">
+                <sc-for list="{{ madSteps }}" as="s" hint-placeholder-count="5">
+                  <div onMouseEnter="{{ s.pick }}" onClick="{{ s.pick }}" data-cursor="STEP {{ s.k }}" style="display:flex;align-items:baseline;gap:14px;padding:clamp(13px,1.8vh,18px) clamp(16px,2vw,24px);border-bottom:1px solid rgba(20,19,15,0.13);cursor:pointer">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:{{ s.color }}">{{ s.k }}</span>
+                    <span style="font-size:clamp(15px,1.4vw,20px);font-weight:600;letter-spacing:-0.015em;color:{{ s.ink }}">{{ s.t }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="padding:clamp(20px,3vw,36px);display:flex;flex-direction:column;gap:18px;justify-content:center;background:#ECEAE4">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#9A4522">{{ madTitle }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(12px,1.15vw,16px);line-height:1.7;color:#14130F">{{ madFormula }}</div>
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#24231F;max-width:38ch">{{ madNote }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">05 THE SCORE</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:clamp(18px,2.4vh,28px)">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">Every project's distance from the norm maps onto a 1–5 KPI score. Four bands, one scale, no manual grouping by project size — and a number each team can be held to.</p>
+          <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+            <sc-for list="{{ bands }}" as="b" hint-placeholder-count="4">
+              <div onMouseEnter="{{ b.enter }}" onMouseLeave="{{ b.leave }}" onClick="{{ b.enter }}" data-cursor="BAND {{ b.k }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px clamp(16px,3vw,40px);padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13);cursor:pointer;color:{{ b.color }}">
+                <span style="flex:0 0 auto;font-size:clamp(30px,4vw,58px);font-weight:700;letter-spacing:-0.04em;line-height:0.9;width:clamp(44px,6vw,80px)">{{ b.k }}</span>
+                <span style="flex:1 1 200px;font-size:clamp(15px,1.4vw,20px);line-height:1.4;font-weight:600;letter-spacing:-0.015em">{{ b.meaning }}</span>
+                <span style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">{{ b.rule }}</span>
+                <span style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;min-width:9ch;text-align:right">{{ b.count }} PROJECTS</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;line-height:1.9;border-left:1px solid #B4552A;padding-left:14px;max-width:56ch">HOVER A BAND TO ISOLATE THOSE PROJECTS IN THE CHART ABOVE. BAND THRESHOLDS SHOWN AS IMPLEMENTED FOR FY24.</div>
+        </div>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:18px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">06 IMPACT</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:clamp(16px,2.2vh,26px)">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">A fairer, simpler and more actionable way to score production defects across the whole portfolio — with a fixed benchmark drawn from three years of history, so the target does not move underneath the teams chasing it.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:clamp(16px,2vw,32px)">
+            <div>
+              <div data-count="19" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">PROJECTS ON ONE SCALE</div>
+            </div>
+            <div>
+              <div data-count="5" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">METHODS TESTED, TWO REJECTED</div>
+            </div>
+            <div>
+              <div data-count="10" data-suffix="%" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">IMPROVEMENT TARGET ON MEAN DPMR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote data-fx="reveal" style="margin:0;padding:clamp(22px,3.2vh,42px) 0;border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,3.1vw,48px);line-height:1.14;letter-spacing:-0.02em;max-width:36ch;opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">The statistics were the easy part. Choosing a methodology management could adopt to actually drive improvement took longer.</blockquote>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 0 clamp(96px,11vw,164px);position:sticky;top:84px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">07 REFLECTION</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:16px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:66ch">The most useful thing I did was disprove my own hypothesis. Project value felt like the obvious normaliser — the data said no, and binning and percentile scoring went with it.</p>
+          <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:#24231F;max-width:66ch">MAD earned its place in the analysis but not the final score. A KPI that needs a statistics lesson to defend won't survive its first governance meeting — so the version that shipped is the plainest one still defensible.</p>
+        </div>
+      </div>
+
+      <a href="#contact" onClick="{{ goContact }}" data-cursor="SAY HI" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px;align-self:flex-start">DISCUSS THIS WORK →</a>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ CASE STUDY 02 ══════════════════ -->
+  <sc-if value="{{ isCase2 }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(120px,20vh,220px) clamp(20px,4vw,56px) clamp(40px,6vh,80px)">
+      <a href="#work" onClick="{{ goWork }}" data-cursor="BACK" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">← WORK / CASE 02</a>
+      <h1 style="margin:clamp(22px,4vh,50px) 0 0;font-size:clamp(38px,7.4vw,128px);line-height:0.92;font-weight:700;letter-spacing:-0.045em;max-width:20ch">Three days of Excel, or four minutes</h1>
+      <p style="margin:clamp(18px,3vh,32px) 0 0;font-size:clamp(17px,1.6vw,24px);line-height:1.5;max-width:52ch;color:#24231F">A CPMO decision tool that replaced the monthly manual consolidation — profit &amp; loss, forecast, headcount and cost optimisation in one place, self-serve for management.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(16px,2vw,36px);margin-top:clamp(34px,6vh,72px);border-top:1px solid rgba(20,19,15,0.13);padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">
+        <div>ROLE<br /><span style="color:#14130F">DESIGN, ANALYSIS &amp; BUILD</span></div>
+        <div>SCOPE<br /><span style="color:#14130F">4 MODULES · WHOLE PORTFOLIO</span></div>
+        <div>STACK<br /><span style="color:#14130F">PYTHON · PANDAS · PLOTLY · DASH</span></div>
+        <div>USERS<br /><span style="color:#14130F">CPMO + DELIVERY MANAGEMENT</span></div>
+      </div>
+      <div style="margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;border-left:1px solid #B4552A;padding-left:14px;line-height:1.9;max-width:60ch">SCREENS BELOW ARE FAITHFUL RECREATIONS OF THE SHIPPED TOOL, REDRAWN IN THIS PORTFOLIO'S TYPE AND COLOUR. CLIENT NAMES AND FINANCIALS ARE REPLACED WITH REPRESENTATIVE FIGURES.</div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px)">
+      <div data-shot="1" style="border:1px solid rgba(20,19,15,0.13);background:#ECEAE4">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding:clamp(16px,2vw,24px);border-bottom:1px solid rgba(20,19,15,0.13)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">THE TOOL — TWO OF FOUR MODULES</div>
+          <div style="display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em">
+            <button onClick="{{ setPerf }}" data-cursor="MODULE 01" style="background:{{ perfOn }};color:{{ perfInk }};border:1px solid rgba(20,19,15,0.25);padding:9px 13px;font:inherit;letter-spacing:inherit;cursor:pointer">01 PERFORMANCE</button>
+            <button onClick="{{ setOpt }}" data-cursor="MODULE 02" style="background:{{ optOn }};color:{{ optInk }};border:1px solid rgba(20,19,15,0.25);padding:9px 13px;font:inherit;letter-spacing:inherit;cursor:pointer">02 OPTIMISATION</button>
+          </div>
+        </div>
+
+        <sc-if value="{{ showPerf }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:clamp(18px,3vw,36px);display:flex;flex-direction:column;gap:clamp(20px,3vh,34px)">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:rgba(20,19,15,0.13);border:1px solid rgba(20,19,15,0.13)">
+            <sc-for list="{{ perfKpis }}" as="k" hint-placeholder-count="4">
+              <div style="background:#F2F0EC;padding:clamp(14px,2vw,22px);display:flex;flex-direction:column;gap:10px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#66615A">{{ k.label }}</span>
+                <span style="font-size:clamp(20px,2.4vw,32px);font-weight:700;letter-spacing:-0.03em;line-height:1">{{ k.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:baseline;margin-bottom:18px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A">{{ chartTitle }}</span>
+              <span style="display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em">
+                <button onClick="{{ setRev }}" data-cursor="REVENUE" style="background:{{ revOn }};color:{{ revInk }};border:1px solid rgba(20,19,15,0.25);padding:7px 11px;font:inherit;letter-spacing:inherit;cursor:pointer">REVENUE</button>
+                <button onClick="{{ setCost }}" data-cursor="COST" style="background:{{ costOn }};color:{{ costInk }};border:1px solid rgba(20,19,15,0.25);padding:7px 11px;font:inherit;letter-spacing:inherit;cursor:pointer">COST</button>
+              </span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:clamp(4px,1vw,14px);height:clamp(180px,26vh,260px);border-bottom:1px solid rgba(20,19,15,0.25);padding-bottom:2px">
+              <sc-for list="{{ months }}" as="m" hint-placeholder-count="12">
+                <div style="flex:1 1 0;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0">
+                  <div style="width:100%;display:flex;align-items:flex-end;justify-content:center;gap:3px;height:100%">
+                    <div title="{{ m.msLabel }}" style="{{ m.msBar }}"></div>
+                    <div title="{{ m.peLabel }}" style="{{ m.peBar }}"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:clamp(4px,1vw,14px);margin-top:8px">
+              <sc-for list="{{ months }}" as="m" hint-placeholder-count="12">
+                <div style="flex:1 1 0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.08em;color:#66615A;min-width:0;overflow:hidden">{{ m.label }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#66615A">
+              <span style="display:flex;align-items:center;gap:8px"><span style="width:11px;height:11px;background:#14130F;display:inline-block"></span>M&amp;S</span>
+              <span style="display:flex;align-items:center;gap:8px"><span style="width:11px;height:11px;background:#B4552A;display:inline-block"></span>PROJECT + ENHANCEMENT</span>
+            </div>
+          </div>
+
+          <div style="border:1px solid rgba(20,19,15,0.13);overflow-x:auto">
+            <div style="display:flex;gap:16px;justify-content:space-between;align-items:baseline;padding:14px clamp(12px,2vw,20px);border-bottom:1px solid rgba(20,19,15,0.13);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A"><span>MONTHLY BREAKDOWN — COST COMPONENTS</span><span>DOWNLOAD ↓</span></div>
+            <div style="min-width:640px">
+              <div style="display:grid;grid-template-columns:1.4fr 1fr repeat(5,1fr);gap:10px;padding:12px clamp(12px,2vw,20px);background:#14130F;color:#F2F0EC;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.16em">
+                <span>PROJECT</span><span>TYPE</span><span style="text-align:right">REVENUE</span><span style="text-align:right">LABOUR</span><span style="text-align:right">OT PAY</span><span style="text-align:right">EC / 3RD PTY</span><span style="text-align:right">TOTAL COST</span>
+              </div>
+              <sc-for list="{{ perfRows }}" as="row" hint-placeholder-count="6">
+                <div style="{{ row.style }}">
+                  <span style="font-weight:600">{{ row.project }}</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#66615A">{{ row.type }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.revenue }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.labour }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.ot }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.ec }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums;font-weight:600">{{ row.total }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ showOpt }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:clamp(18px,3vw,36px);display:flex;flex-direction:column;gap:clamp(20px,3vh,34px)">
+          <div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(20,19,15,0.13);border:1px solid rgba(20,19,15,0.13)">
+            <sc-for list="{{ optKpis }}" as="k" hint-placeholder-count="6">
+              <div style="flex:1 1 210px;background:#F2F0EC;padding:clamp(14px,2vw,22px);display:flex;flex-direction:column;gap:10px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#66615A">{{ k.label }}</span>
+                <span style="font-size:clamp(20px,2.4vw,32px);font-weight:700;letter-spacing:-0.03em;line-height:1;color:{{ k.ink }}">{{ k.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.5vw,32px);align-items:start">
+            <div style="background:#14130F;color:#F2F0EC;padding:clamp(18px,2.4vw,30px);display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:baseline">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A">OPTIMISATION SIMULATOR — RESOURCE CHANGES</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#D2703F">{{ simDeltaLabel }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ simRows }}" as="s" hint-placeholder-count="3">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;border:1px solid rgba(242,240,236,0.24);padding:10px 11px">
+                    <span style="display:flex;border:1px solid rgba(242,240,236,0.28)">
+                      <button onClick="{{ s.setNew }}" data-cursor="NEW HIRE" style="background:{{ s.newBg }};color:{{ s.newInk }};border:0;padding:7px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;cursor:pointer">NEW HIRE</button>
+                      <button onClick="{{ s.setLeave }}" data-cursor="LEAVING" style="background:{{ s.leaveBg }};color:{{ s.leaveInk }};border:0;padding:7px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;cursor:pointer">LEAVING</button>
+                    </span>
+                    <select value="{{ s.grade }}" onChange="{{ s.onGrade }}" data-cursor="GRADE" style="background:transparent;color:#F2F0EC;border:1px solid rgba(242,240,236,0.28);padding:7px 8px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;cursor:pointer">
+                      <sc-for list="{{ grades }}" as="g" hint-placeholder-count="3">
+                        <option value="{{ g }}" style="color:#14130F">{{ g }}</option>
+                      </sc-for>
+                    </select>
+                    <select value="{{ s.origin }}" onChange="{{ s.onOrigin }}" data-cursor="ORIGIN" style="background:transparent;color:#F2F0EC;border:1px solid rgba(242,240,236,0.28);padding:7px 8px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;cursor:pointer">
+                      <sc-for list="{{ origins }}" as="o" hint-placeholder-count="2">
+                        <option value="{{ o }}" style="color:#14130F">{{ o }}</option>
+                      </sc-for>
+                    </select>
+                    <span style="display:flex;align-items:center;border:1px solid rgba(242,240,236,0.28)">
+                      <button onClick="{{ s.dec }}" data-cursor="LESS" style="background:transparent;color:#F2F0EC;border:0;padding:6px 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer">−</button>
+                      <span style="min-width:22px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#F2F0EC">{{ s.qty }}</span>
+                      <button onClick="{{ s.inc }}" data-cursor="MORE" style="background:transparent;color:#F2F0EC;border:0;padding:6px 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer">+</button>
+                    </span>
+                    <select value="{{ s.month }}" onChange="{{ s.onMonth }}" data-cursor="FROM" style="background:transparent;color:#F2F0EC;border:1px solid rgba(242,240,236,0.28);padding:7px 8px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;cursor:pointer">
+                      <sc-for list="{{ fyMonths }}" as="fm" hint-placeholder-count="12">
+                        <option value="{{ fm }}" style="color:#14130F">{{ fm }}</option>
+                      </sc-for>
+                    </select>
+                    <span style="margin-left:auto;display:flex;align-items:center;gap:10px">
+                      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:{{ s.costInk }}">{{ s.cost }}</span>
+                      <sc-if value="{{ s.canRemove }}" hint-placeholder-val="{{ true }}">
+                        <button onClick="{{ s.remove }}" data-cursor="REMOVE" style="background:transparent;color:#A8A29A;border:0;padding:4px 2px;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer">×</button>
+                      </sc-if>
+                    </span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:9px">
+                <button onClick="{{ addSimRow }}" data-cursor="ADD ROW" style="background:transparent;color:#F2F0EC;border:1px solid rgba(242,240,236,0.4);padding:9px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;cursor:pointer">+ ADD ROW</button>
+                <button onClick="{{ resetSim }}" data-cursor="RESET" style="background:transparent;color:#A8A29A;border:1px solid rgba(242,240,236,0.22);padding:9px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;cursor:pointer">RESET</button>
+              </div>
+              <p style="margin:0;font-size:14px;line-height:1.6;color:#C9C5BC;max-width:44ch">Change a row and the results recalculate live. Each one costs out against the grade × origin rate card at 20 mandays a month, for every month left in the fiscal year — so excess cost, excess headcount and forecast GPM all move together.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1px;background:rgba(20,19,15,0.13);border:1px solid rgba(20,19,15,0.13)">
+              <sc-for list="{{ simResults }}" as="r" hint-placeholder-count="4">
+                <div style="background:#F2F0EC;padding:clamp(14px,2vw,20px);display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:baseline">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#66615A">{{ r.label }}</span>
+                  <span style="display:flex;align-items:baseline;gap:12px">
+                    <span style="font-size:clamp(17px,1.8vw,24px);font-weight:700;letter-spacing:-0.02em">{{ r.value }}</span>
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:{{ r.deltaInk }}">{{ r.delta }}</span>
+                  </span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border:1px solid rgba(20,19,15,0.13);overflow-x:auto">
+            <div style="display:flex;gap:16px;justify-content:space-between;align-items:baseline;padding:14px clamp(12px,2vw,20px);border-bottom:1px solid rgba(20,19,15,0.13);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A"><span>PROJECT BREAKDOWN — OVERVIEW (FULL FY)</span><span>DOWNLOAD ↓</span></div>
+            <div style="min-width:640px">
+              <div style="display:grid;grid-template-columns:1.4fr repeat(5,1fr);gap:10px;padding:12px clamp(12px,2vw,20px);background:#14130F;color:#F2F0EC;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.16em">
+                <span>PROJECT</span><span style="text-align:right">REVENUE</span><span style="text-align:right">ALLOWABLE COST</span><span style="text-align:right">TOTAL COST</span><span style="text-align:right">EXCESS HC</span><span style="text-align:right">GPM</span>
+              </div>
+              <sc-for list="{{ optRows }}" as="row" hint-placeholder-count="6">
+                <div style="{{ row.style }}">
+                  <span style="font-weight:600">{{ row.project }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.revenue }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.allowable }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums">{{ row.cost }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums;color:{{ row.hcInk }}">{{ row.hc }}</span>
+                  <span style="text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:{{ row.gpmInk }}">{{ row.gpm }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section style="padding:clamp(60px,10vh,140px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(44px,7vh,96px)">
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:24px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">01 CONTEXT</div>
+        <p style="flex:1 1 320px;margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">Portfolio profit and loss, revenue forecast, resource lists and rate cards lived in four separate workbooks, each owned by a different person and each shaped slightly differently every month.</p>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:24px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">02 PROBLEM</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:22px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">The analysis was scattered and entirely manual. It took hours, it broke quietly, and by the time management saw a number the month it described was already gone.</p>
+          <div style="display:flex;flex-direction:column">
+            <div data-fx="reveal" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">a</span>
+              <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#24231F;max-width:56ch">Hours of copy-paste per cycle, with every merge and mapping done by hand — so errors were not unlikely, they were expected.</span>
+            </div>
+            <div data-fx="reveal" data-delay="90" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">b</span>
+              <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#24231F;max-width:56ch">Management could only ask questions the last report had already answered. Anything else meant a request, a queue and another cycle of lag.</span>
+            </div>
+            <div data-fx="reveal" data-delay="180" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">c</span>
+              <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#24231F;max-width:56ch">Nobody could test a decision before making it. “What if we add two seniors in November?” had no answer short of rebuilding the model.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:24px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">03 APPROACH</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:24px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">Automate the consolidation first, then design the interface around the four questions management actually asked — how did we do, what is coming, who do we have, and what should we change.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">MULTI-HEADER INGEST</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">MODULE ↔ PROJECT MAPPING</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">GROUPED ACCOUNTS</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:8px 12px">RATE CARD × MANDAYS</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid #B4552A;padding:8px 12px;color:#9A4522">SELF-SERVE SIMULATION</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:24px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">04 SOLUTION</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:clamp(26px,4vh,46px)">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">One application, four modules, a single load of the source files. Performance and Optimisation are the two above; Forecast and Headcount sit behind the same navigation.</p>
+
+          <div style="background:#14130F;color:#F2F0EC;padding:clamp(22px,3vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A;margin-bottom:18px">THE COST MODEL</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(12px,1.4vw,19px);letter-spacing:0.02em;line-height:1.9">Burn rate = Σ ( rate[grade, origin] × 20 mandays )<br />Allowable cost = Total revenue × ( 1 − target GPM )<br />Excess headcount = Excess cost / ( avg MD rate × 20 × months left )</div>
+            <p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:#C9C5BC;max-width:52ch">Three lines that turn a headcount argument into an arithmetic one. Excess cost stops being a feeling about a team being “heavy” and becomes a number with a rate card behind it.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+            <sc-for list="{{ modules }}" as="m" hint-placeholder-count="4">
+              <div style="display:flex;flex-wrap:wrap;gap:10px clamp(16px,3vw,44px);align-items:baseline;padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13)">
+                <span style="flex:0 1 54px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#9A4522">{{ m.n }}</span>
+                <span style="flex:1 1 220px;font-size:clamp(18px,2vw,28px);font-weight:600;letter-spacing:-0.02em">{{ m.name }}</span>
+                <span style="flex:1 1 260px;font-size:14px;line-height:1.6;color:#66615A">{{ m.desc }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);border-top:1px solid rgba(20,19,15,0.13);padding-top:24px;opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">05 IMPACT</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:clamp(20px,3vh,34px)">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">Analysis that took hours now takes minutes, and management no longer waits for it. They open the tool, filter to the account they care about, and run their own scenario.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(18px,2.5vw,40px)">
+            <div>
+              <div data-count="4" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">WORKBOOKS FOLDED INTO ONE TOOL</div>
+            </div>
+            <div>
+              <div data-count="12" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">MONTHS OF P&amp;L, LIVE ON LOAD</div>
+            </div>
+            <div>
+              <div data-count="0" style="font-size:clamp(32px,4.4vw,68px);font-weight:700;letter-spacing:-0.04em;line-height:1">0</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;margin-top:6px">DAYS OF LAG BETWEEN QUESTION AND ANSWER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote data-fx="reveal" style="margin:0;padding:clamp(28px,5vh,60px) 0;border-top:1px solid rgba(20,19,15,0.13);border-bottom:1px solid rgba(20,19,15,0.13);font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,3.6vw,58px);line-height:1.15;letter-spacing:-0.02em;max-width:30ch;opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">The reporting was never the deliverable. Removing the wait was.</blockquote>
+
+      <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:clamp(14px,3vw,60px);opacity:0;transform:translateY(24px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+        <div style="flex:0 1 200px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">06 REFLECTION</div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:20px">
+          <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:60ch">Most of the build was defensive: source columns arrive named differently every month, so the loaders resolve headers by pattern and fall back to safe defaults rather than failing.</p>
+          <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:#24231F;max-width:60ch">The simulator earned its keep for a reason I did not plan for. Letting managers test their own “what if” ended most of the arguments about the numbers, because they could see exactly which assumption they disagreed with.</p>
+        </div>
+      </div>
+
+      <a href="#contact" onClick="{{ goContact }}" data-cursor="SAY HI" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px;align-self:flex-start">DISCUSS THIS WORK →</a>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ PHOTOGRAPHY ══════════════════ -->
+  <sc-if value="{{ isPhoto }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(104px,18vh,220px) clamp(20px,4vw,56px) clamp(26px,4vh,56px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,4vw,64px);align-items:end">
+        <h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(40px,8vw,120px);line-height:0.96;letter-spacing:-0.02em">Rooms that only<br />happen once.</h1>
+        <p style="margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.65;color:#24231F;max-width:44ch">Stage, congregation, available light. I shoot without flash and without asking anyone to hold a moment they were already in — which means most of the work is knowing where to stand and when to stop watching the screen.</p>
+      </div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px)">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid rgba(20,19,15,0.13);padding-top:clamp(14px,2vh,20px)">
+        <sc-for list="{{ photoFilters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.pick }}" data-cursor="FILTER" style="min-height:44px;padding:0 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;background:{{ f.bg }};color:{{ f.ink }};border:1px solid {{ f.border }};cursor:pointer;-webkit-tap-highlight-color:transparent">{{ f.label }}</button>
+        </sc-for>
+        <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A">{{ photoCount }}</span>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2.2vw,32px);padding:clamp(20px,3vh,36px) clamp(20px,4vw,56px) clamp(60px,10vh,130px)">
+      <sc-for list="{{ shownPhotos }}" as="p" hint-placeholder-count="7">
+        <button onClick="{{ p.open }}" data-cursor="VIEW" style="display:flex;flex-direction:column;gap:12px;padding:0;margin:0;background:transparent;border:0;text-align:left;font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent">
+          <span style="display:block;aspect-ratio:3/2;overflow:hidden;background:#DEDAD3;border:1px solid rgba(20,19,15,0.13)">
+            <img src="{{ p.thumb }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)" />
+          </span>
+          <span style="display:flex;justify-content:space-between;gap:14px;align-items:baseline;border-top:1px solid rgba(20,19,15,0.13);padding-top:10px">
+            <span style="font-size:16px;font-weight:600;letter-spacing:-0.01em">{{ p.title }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A">{{ p.tag }}</span>
+          </span>
+          <span style="font-size:14px;line-height:1.5;color:#66615A">{{ p.cap }}</span>
+        </button>
+      </sc-for>
+    </section>
+
+    <section style="background:#14130F;color:#F2F0EC;padding:clamp(60px,10vh,140px) clamp(20px,4vw,56px)">
+      <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,4.4vw,64px);line-height:1.1;letter-spacing:-0.02em;max-width:26ch">Shooting an event, or need a set covered?</p>
+      <a href="#contact" onClick="{{ goContact }}" data-cursor="SAY HI" style="display:inline-block;margin-top:clamp(26px,4vh,52px);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#F2F0EC;border-bottom:1px solid #B4552A;padding-bottom:8px">GET IN TOUCH →</a>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(130px,22vh,240px) clamp(20px,4vw,56px) clamp(50px,8vh,110px)">
+      <h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,7.4vw,124px);line-height:1.0;letter-spacing:-0.025em;max-width:22ch">Three ways of looking at the world.</h1>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px) clamp(60px,10vh,140px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,54px)">
+        <div data-fx="reveal" style="border-top:1px solid rgba(20,19,15,0.13);padding-top:20px;opacity:0;transform:translateY(26px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:14px">PMO</div>
+          <div style="font-size:clamp(22px,2.4vw,36px);font-weight:600;letter-spacing:-0.025em;line-height:1.1">taught me to think in systems.</div>
+        </div>
+        <div data-fx="reveal" data-delay="110" style="border-top:1px solid rgba(20,19,15,0.13);padding-top:20px;opacity:0;transform:translateY(26px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:14px">PHOTOGRAPHY</div>
+          <div style="font-size:clamp(22px,2.4vw,36px);font-weight:600;letter-spacing:-0.025em;line-height:1.1">taught me to pay attention.</div>
+        </div>
+        <div data-fx="reveal" data-delay="220" style="border-top:1px solid rgba(20,19,15,0.13);padding-top:20px;opacity:0;transform:translateY(26px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:14px">WRITING</div>
+          <div style="font-size:clamp(22px,2.4vw,36px);font-weight:600;letter-spacing:-0.025em;line-height:1.1">taught me to ask why.</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px) clamp(70px,11vh,150px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,5vw,80px);align-items:start">
+        <div style="aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(20,19,15,0.13)">
+          <div data-parallax="0.06" style="height:122%;margin-top:-11%;background:repeating-linear-gradient(135deg,#E4E1DA 0 11px,#ECEAE4 11px 22px);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A">PORTRAIT OF JONATHAN</span>
+          </div>
+        </div>
+        <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:22px">
+          <p style="margin:0;font-size:clamp(16px,1.4vw,21px);line-height:1.6;color:#24231F">I'm an analytical problem solver and PMO Executive, working at the intersection of data, structure and strategy — breaking complex operational problems down and turning them into clear, actionable insight. Technology is a catalyst; the core of the work is analytical thinking, systems design and problem decomposition.</p>
+          <p style="margin:0;font-size:clamp(16px,1.4vw,21px);line-height:1.6;color:#24231F">At Hitachi eBworx I specialise in governance, audit and data analysis, improving project quality and efficiency through process improvement and measurement people can actually act on. Most of that work is proprietary, so what I publish are sanitised case studies that show the thinking rather than the client.</p>
+          <p style="margin:0;font-size:clamp(16px,1.4vw,21px);line-height:1.6;color:#24231F">Outside that, I photograph people and events, mostly in available light, and I write essays about certainty, measurement and the odd places where the two disagree. The three habits reinforce each other more than they compete.</p>
+          <a href="#" data-cursor="DOWNLOAD" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border:1px solid rgba(20,19,15,0.25);padding:14px 20px;align-self:flex-start" style-hover="border-color:#B4552A;color:#9A4522">DOWNLOAD CV (PDF) ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(20,19,15,0.13);padding:clamp(60px,10vh,140px) clamp(20px,4vw,56px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:baseline;margin-bottom:clamp(26px,4vh,56px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A">
+        <span>WHAT I SPECIALISE IN</span><span>FOUR HABITS</span>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+        <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:10px clamp(16px,3vw,50px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 60px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#9A4522">01</span>
+          <span style="flex:1 1 260px;font-size:clamp(19px,2.2vw,32px);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Turn ambiguous problems into structured, solvable questions</span>
+          <span style="flex:1 1 240px;font-size:14px;line-height:1.6;color:#66615A">Framing first. Most bad analysis is a good method applied to the wrong question.</span>
+        </div>
+        <div data-fx="reveal" data-delay="80" style="display:flex;flex-wrap:wrap;gap:10px clamp(16px,3vw,50px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 60px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#9A4522">02</span>
+          <span style="flex:1 1 260px;font-size:clamp(19px,2.2vw,32px);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Design KPIs and metrics that drive the right behaviour</span>
+          <span style="flex:1 1 240px;font-size:14px;line-height:1.6;color:#66615A">A measure is an incentive whether you meant it to be or not.</span>
+        </div>
+        <div data-fx="reveal" data-delay="160" style="display:flex;flex-wrap:wrap;gap:10px clamp(16px,3vw,50px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 60px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#9A4522">03</span>
+          <span style="flex:1 1 260px;font-size:clamp(19px,2.2vw,32px);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Apply data analysis to governance, quality and delivery</span>
+          <span style="flex:1 1 240px;font-size:14px;line-height:1.6;color:#66615A">Exploratory work, risk analysis and audit evidence that survives scrutiny.</span>
+        </div>
+        <div data-fx="reveal" data-delay="240" style="display:flex;flex-wrap:wrap;gap:10px clamp(16px,3vw,50px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-bottom:1px solid rgba(20,19,15,0.13);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 60px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#9A4522">04</span>
+          <span style="flex:1 1 260px;font-size:clamp(19px,2.2vw,32px);font-weight:600;letter-spacing:-0.02em;line-height:1.15">Build frameworks and tools that support decisions at scale</span>
+          <span style="flex:1 1 240px;font-size:14px;line-height:1.6;color:#66615A">Standardised, repeatable, and simple enough to outlive me.</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,70px);margin-top:clamp(44px,7vh,90px)">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:18px">CORE COMPETENCIES</div>
+          <div style="display:flex;flex-wrap:wrap;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">DATA ANALYSIS &amp; EDA</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">KPI DESIGN</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">PERFORMANCE MEASUREMENT</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">AUDIT &amp; GOVERNANCE</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">COMPLIANCE</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">RESOURCE OPTIMISATION</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">RISK ANALYSIS</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">PROCESS STANDARDISATION</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:18px">TOOLS — AS ENABLERS, NOT THE POINT</div>
+          <div style="display:flex;flex-wrap:wrap;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">PYTHON</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">SQL</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">TABLEAU</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">EXCEL</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">PANDAS</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">NUMPY</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">PLOTLY</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;border:1px solid rgba(20,19,15,0.22);padding:9px 13px">AIRFLOW</span>
+          </div>
+          <p style="margin:22px 0 0;font-size:15px;line-height:1.65;color:#24231F;max-width:44ch">Published repositories are sanitised case studies and recreations — each one weighted towards problem framing, assumptions and trade-offs, methodology, then conclusions.</p>
+          <a href="{{ githubHref }}" target="_blank" rel="noopener" data-cursor="VISIT" style="display:inline-block;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;border-bottom:1px solid #B4552A;padding-bottom:6px">SEE THE REPOSITORIES →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#14130F;color:#F2F0EC;padding:clamp(70px,11vh,150px) clamp(20px,4vw,56px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A;margin-bottom:clamp(26px,4vh,54px)">SELECTED BACKGROUND</div>
+      <div style="display:flex;flex-direction:column">
+        <div data-fx="reveal" style="display:flex;flex-wrap:wrap;gap:8px clamp(14px,3vw,44px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-top:1px solid rgba(242,240,236,0.2);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 120px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#A8A29A">2022 —</span>
+          <span style="flex:1 1 220px;font-size:clamp(18px,2vw,28px);font-weight:600;letter-spacing:-0.02em">PMO Executive · Hitachi eBworx</span>
+          <span style="flex:1 1 260px;font-size:14px;line-height:1.6;color:#C9C5BC">Governance, audit and data analysis; performance reporting and capacity modelling.</span>
+        </div>
+        <div data-fx="reveal" data-delay="90" style="display:flex;flex-wrap:wrap;gap:8px clamp(14px,3vw,44px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-top:1px solid rgba(242,240,236,0.2);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 120px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#A8A29A">2018 — 2022</span>
+          <span style="flex:1 1 220px;font-size:clamp(18px,2vw,28px);font-weight:600;letter-spacing:-0.02em">Project Analyst / Lead</span>
+          <span style="flex:1 1 260px;font-size:14px;line-height:1.6;color:#C9C5BC">Delivery reporting, stage-gate process, PMO tooling.</span>
+        </div>
+        <div data-fx="reveal" data-delay="180" style="display:flex;flex-wrap:wrap;gap:8px clamp(14px,3vw,44px);align-items:baseline;padding:clamp(16px,2.4vh,26px) 0;border-top:1px solid rgba(242,240,236,0.2);border-bottom:1px solid rgba(242,240,236,0.2);opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <span style="flex:0 1 120px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#A8A29A">ONGOING</span>
+          <span style="flex:1 1 220px;font-size:clamp(18px,2vw,28px);font-weight:600;letter-spacing:-0.02em">Photography &amp; essays</span>
+          <span style="flex:1 1 260px;font-size:14px;line-height:1.6;color:#C9C5BC">Personal work: people, events, places — and writing alongside it.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(130px,20vh,220px) clamp(20px,4vw,56px) clamp(40px,6vh,80px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:clamp(20px,3vh,40px)">CONTACT / OPEN TO CONVERSATIONS</div>
+      <h1 style="margin:0;font-size:clamp(56px,15vw,260px);line-height:0.85;font-weight:700;letter-spacing:-0.055em">LET'S<br />TALK.</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,4vw,70px);margin-top:clamp(34px,6vh,80px);align-items:start">
+        <p style="margin:0;font-size:clamp(17px,1.6vw,24px);line-height:1.55;max-width:46ch;color:#24231F">If you have an ambiguous problem, a KPI nobody trusts, or a governance process that has quietly stopped working — that is the kind of conversation I enjoy most.</p>
+        <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.65;color:#24231F;max-width:46ch">I'm a PMO Executive working across governance, audit and decision support at Hitachi eBworx. Happy to talk about analysis work, KPI and reporting design, or a photography or writing commission.</p>
+      </div>
+    </section>
+
+    <section style="padding:0 clamp(20px,4vw,56px) clamp(60px,9vh,120px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,70px);align-items:start">
+
+        <div style="display:flex;flex-direction:column;gap:clamp(24px,4vh,44px)">
+          <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+            <a href="{{ mailtoHref }}" data-cursor="EMAIL" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13)" style-hover="color:#9A4522">
+              <span style="font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-0.025em">Email</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#66615A">{{ emailLabel }}</span>
+            </a>
+            <a href="{{ linkedinHref }}" target="_blank" rel="noopener" data-cursor="VISIT" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13)" style-hover="color:#9A4522">
+              <span style="font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-0.025em">LinkedIn</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#66615A">PMO · GOVERNANCE · DATA →</span>
+            </a>
+            <a href="{{ githubHref }}" target="_blank" rel="noopener" data-cursor="VISIT" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13)" style-hover="color:#9A4522">
+              <span style="font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-0.025em">GitHub</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#66615A">SANITISED CASE STUDIES →</span>
+            </a>
+            <a href="#" data-cursor="DOWNLOAD" style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;padding:clamp(14px,2vh,22px) 0;border-bottom:1px solid rgba(20,19,15,0.13)" style-hover="color:#9A4522">
+              <span style="font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-0.025em">Résumé</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#66615A">PDF ↓</span>
+            </a>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#66615A;margin-bottom:18px">GOOD REASONS TO WRITE</div>
+            <div style="display:flex;flex-direction:column;border-top:1px solid rgba(20,19,15,0.13)">
+              <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,19,15,0.13)">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">01</span>
+                <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#24231F">A metric or KPI set that is reported but not trusted.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,19,15,0.13)">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">02</span>
+                <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#24231F">An audit, governance or quality framework that needs structure.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,19,15,0.13)">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">03</span>
+                <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#24231F">A messy operational question that has to become a solvable one.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,19,15,0.13)">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A4522">04</span>
+                <span style="font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#24231F">A photograph, an event, or an essay you want written.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#66615A;line-height:1.9;border-left:1px solid #B4552A;padding-left:14px;max-width:48ch">BASED IN MALAYSIA · GMT+8<br />REPLIES USUALLY WITHIN A COUPLE OF DAYS</div>
+        </div>
+
+        <div style="background:#14130F;color:#F2F0EC;padding:clamp(24px,3.4vw,48px);display:flex;flex-direction:column;gap:clamp(18px,2.6vh,28px)">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:baseline">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#A8A29A">SEND A MESSAGE</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#A8A29A">OPENS YOUR MAIL CLIENT</span>
+          </div>
+
+          <label style="display:flex;flex-direction:column;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">YOUR NAME</span>
+            <input type="text" value="{{ fName }}" onChange="{{ onName }}" placeholder="Jane Doe" style="background:transparent;border:0;border-bottom:1px solid rgba(242,240,236,0.32);color:#F2F0EC;font-family:Archivo,Helvetica,sans-serif;font-size:17px;padding:9px 0;outline:none" />
+          </label>
+
+          <label style="display:flex;flex-direction:column;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">YOUR EMAIL</span>
+            <input type="email" value="{{ fEmail }}" onChange="{{ onEmail }}" placeholder="jane@company.com" style="background:transparent;border:0;border-bottom:1px solid rgba(242,240,236,0.32);color:#F2F0EC;font-family:Archivo,Helvetica,sans-serif;font-size:17px;padding:9px 0;outline:none" />
+          </label>
+
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">WHAT IS IT ABOUT</span>
+            <div style="display:flex;flex-wrap:wrap;gap:9px">
+              <sc-for list="{{ topics }}" as="t" hint-placeholder-count="4">
+                <button onClick="{{ t.pick }}" data-cursor="SELECT" style="background:{{ t.bg }};color:{{ t.ink }};border:1px solid {{ t.border }};padding:9px 13px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;cursor:pointer">{{ t.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <label style="display:flex;flex-direction:column;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A8A29A">MESSAGE</span>
+            <textarea rows="5" value="{{ fMsg }}" onChange="{{ onMsg }}" placeholder="A sentence or two on the problem is plenty." style="background:transparent;border:1px solid rgba(242,240,236,0.32);color:#F2F0EC;font-family:Archivo,Helvetica,sans-serif;font-size:16px;line-height:1.55;padding:13px;outline:none;resize:vertical"></textarea>
+          </label>
+
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+            <a href="{{ composedHref }}" data-cursor="SEND" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#F2F0EC;border:1px solid rgba(242,240,236,0.4);padding:15px 22px" style-hover="border-color:#D2703F;color:#D2703F">SEND MESSAGE →</a>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#A8A29A">{{ formHint }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(20,19,15,0.13);padding:clamp(60px,10vh,140px) clamp(20px,4vw,56px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,4vw,70px);align-items:end">
+        <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,3.4vw,54px);line-height:1.2;letter-spacing:-0.015em;max-width:26ch">“It is not enough to be right, it also has to be effective.”</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A;line-height:2">NEIL DEGRASSE TYSON<br />— THE LINE I WORK BY</div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid rgba(20,19,15,0.13);padding:clamp(28px,4vh,48px) clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#66615A">
+    <span>JONATHAN RYAN — STRUCTURE · PERSPECTIVE · STORY</span>
+    <span style="display:flex;gap:clamp(12px,2vw,28px)">
+      <a href="#work" onClick="{{ goWork }}" style="color:#66615A">WORK</a>
+      <a href="#about" onClick="{{ goAbout }}" style="color:#66615A">ABOUT</a>
+      <a href="#contact" onClick="{{ goContact }}" style="color:#66615A">CONTACT</a>
+    </span>
+    <span>© 2026</span>
+  </footer>
+
+  <sc-if value="{{ lightOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-light="1" style="position:fixed;inset:0;z-index:95;background:rgba(14,13,11,0.97);display:flex;flex-direction:column;gap:10px;padding:14px 12px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;color:#A8A29A;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em">
+        <span>{{ lightCounter }}</span>
+        <button onClick="{{ closeLight }}" data-cursor="CLOSE" style="min-width:80px;min-height:44px;background:transparent;border:1px solid rgba(242,240,236,0.28);color:#F2F0EC;font:inherit;letter-spacing:0.2em;cursor:pointer;-webkit-tap-highlight-color:transparent">CLOSE</button>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">{{ lightImg }}</div>
+      <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;color:#F2F0EC">
+        <button onClick="{{ prevLight }}" data-cursor="PREV" style="flex:0 0 auto;min-width:56px;min-height:48px;background:transparent;border:1px solid rgba(242,240,236,0.28);color:#F2F0EC;font-size:18px;cursor:pointer;-webkit-tap-highlight-color:transparent">←</button>
+        <span style="flex:1 1 auto;min-width:0;text-align:center">
+          <span style="display:block;font-size:15px;font-weight:600;letter-spacing:-0.01em">{{ lightTitle }}</span>
+          <span style="display:block;font-size:13px;line-height:1.45;color:#A8A29A;margin-top:3px">{{ lightCap }}</span>
+        </span>
+        <button onClick="{{ nextLight }}" data-cursor="NEXT" style="flex:0 0 auto;min-width:56px;min-height:48px;background:transparent;border:1px solid rgba(242,240,236,0.28);color:#F2F0EC;font-size:18px;cursor:pointer;-webkit-tap-highlight-color:transparent">→</button>
+      </div>
+      <div style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.22em;color:#66615A">SWIPE OR USE ← → · ESC TO CLOSE</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cursorOn }}" hint-placeholder-val="{{ false }}">
+    <div data-cursor-dot="1" style="position:fixed;top:0;left:0;z-index:100;pointer-events:none;display:flex;align-items:center;justify-content:center;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#9A4522;opacity:0;transition:width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1),opacity .25s ease;mix-blend-mode:normal">
+      <span data-cursor-label="1" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#F2F0EC;opacity:0;transition:opacity .25s ease;white-space:nowrap"></span>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Interaction&quot;},&quot;motionLevel&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;confident&quot;,&quot;maximal&quot;],&quot;default&quot;:&quot;confident&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Interaction&quot;},&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;work&quot;,&quot;case&quot;,&quot;case2&quot;,&quot;photo&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@jonathanryan.me&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;linkedin&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.linkedin.com/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;github&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://github.com/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+const CAPS = [
+  { name: "Portfolio governance", num: "01", blurb: "One set of rules for how work enters, moves through and leaves the portfolio.", chain: ["INTAKE", "PRIORITISE", "APPROVE", "TRACK", "CLOSE"] },
+  { name: "Project performance", num: "02", blurb: "Turning status noise into a small number of measures that actually move decisions.", chain: ["DATA", "KPI", "ANALYSIS", "INSIGHT", "ACTION"] },
+  { name: "Resource optimisation", num: "03", blurb: "Matching people to demand before the plan quietly assumes the impossible.", chain: ["HEADCOUNT", "CAPACITY", "COST", "REVENUE", "FORECAST"] },
+  { name: "Data & analytics", num: "04", blurb: "Modelling delivery data so the answer survives the follow-up question.", chain: ["SOURCE", "MODEL", "VALIDATE", "VISUALISE", "DECIDE"] },
+  { name: "Process improvement", num: "05", blurb: "Removing steps that exist because of history rather than need.", chain: ["MAP", "MEASURE", "SIMPLIFY", "STANDARDISE", "EMBED"] },
+  { name: "Reporting", num: "06", blurb: "Reports written for the reader's decision, not the author's comfort.", chain: ["AUDIENCE", "QUESTION", "EVIDENCE", "NARRATIVE", "CADENCE"] },
+  { name: "Risk & compliance", num: "07", blurb: "Making exposure visible early enough to be boring.", chain: ["IDENTIFY", "ASSESS", "MITIGATE", "MONITOR", "ASSURE"] }
+];
+
+const LABELS = { home: "JONATHAN RYAN", work: "WORK", case: "CASE 01", case2: "CASE 02", photo: "PHOTOGRAPHY", about: "ABOUT", contact: "CONTACT" };
+
+const PHOTOS = [
+  { f: "IMG_2733", title: "Worthy Is The Lamb", cap: "The whole room, one frame, from the back.", tag: "ROOM" },
+  { f: "IMG_2261", title: "Lead Voice", cap: "Batik and a green wash, caught mid-phrase.", tag: "STAGE" },
+  { f: "IMG_2466", title: "The Laugh", cap: "He broke halfway through his own point.", tag: "PORTRAIT" },
+  { f: "IMG_2700", title: "Reach", cap: "Purple streaks, hand up, eyes closed.", tag: "STAGE" },
+  { f: "IMG_2304", title: "Low End", cap: "Bass in blue — nobody watches this player.", tag: "PORTRAIT" },
+  { f: "IMG_2715", title: "Call And Response", cap: "White on orange, dancers holding the back line.", tag: "STAGE" },
+  { f: "IMG_2719", title: "Keys", cap: "Red glow, quiet concentration, no audience.", tag: "PORTRAIT" }
+];
+const PHOTO_TAGS = ["ALL", "STAGE", "PORTRAIT", "ROOM"];
+
+// Case 02 — representative figures (MYR '000 per month). Client names replaced.
+const MONTHS = ["APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC","JAN","FEB","MAR"];
+const SERIES = {
+  Revenue: {
+    ms: [1980, 2010, 2040, 2005, 2100, 2085, 2120, 2140, 2095, 2160, 2180, 2205],
+    pe: [1450, 1620, 1880, 2010, 1760, 2240, 2380, 1950, 2120, 2260, 2410, 2280]
+  },
+  Cost: {
+    ms: [1520, 1560, 1580, 1550, 1610, 1600, 1640, 1650, 1620, 1670, 1690, 1710],
+    pe: [1180, 1310, 1520, 1610, 1430, 1780, 1890, 1560, 1690, 1800, 1910, 1820]
+  }
+};
+const PERF_ROWS = [
+  { project: "Bank A RCMS", type: "M&S", revenue: 8420, labour: 5210, ot: 186, ec: 402 },
+  { project: "Bank A BCS", type: "Project", revenue: 6180, labour: 4030, ot: 245, ec: 610 },
+  { project: "Bank B RCMS", type: "M&S", revenue: 7340, labour: 4880, ot: 132, ec: 288 },
+  { project: "Bank C DCRMS", type: "Enhancement", revenue: 4260, labour: 3390, ot: 298, ec: 545 },
+  { project: "Bank D FES", type: "Project", revenue: 5110, labour: 3720, ot: 204, ec: 476 },
+  { project: "Bank E ACMS", type: "M&S", revenue: 3980, labour: 2540, ot: 96, ec: 214 }
+];
+const OPT_ROWS = [
+  { project: "Bank A RCMS", revenue: 8420, cost: 5798 },
+  { project: "Bank A BCS", revenue: 6180, cost: 4885 },
+  { project: "Bank B RCMS", revenue: 7340, cost: 5300 },
+  { project: "Bank C DCRMS", revenue: 4260, cost: 4233 },
+  { project: "Bank D FES", revenue: 5110, cost: 4400 },
+  { project: "Bank E ACMS", revenue: 3980, cost: 2850 }
+];
+// Rate card — MYR per manday, by grade × origin. 20 mandays a month.
+const RATES = {
+  "Senior": { Local: 1450, Offshore: 980 },
+  "Consultant": { Local: 1150, Offshore: 760 },
+  "Analyst": { Local: 820, Offshore: 540 }
+};
+const GRADES = ["Senior", "Consultant", "Analyst"];
+const ORIGINS = ["Local", "Offshore"];
+const FY_MONTHS = ["Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026","Feb 2026","Mar 2026"];
+const SIM_SEED = [
+  { action: "new", grade: "Senior", origin: "Local", qty: 2, month: "Nov 2025" },
+  { action: "leave", grade: "Consultant", origin: "Offshore", qty: 1, month: "Dec 2025" },
+  { action: "new", grade: "Analyst", origin: "Offshore", qty: 3, month: "Jan 2026" }
+];
+const CASE2_MODULES = [
+  { n: "01", name: "Performance", desc: "YTD revenue, cost, ratio and GPM — split M&S against Project + Enhancement, with a cost-component breakdown per month." },
+  { n: "02", name: "Forecast", desc: "Secured against unsecured revenue, editable inline so a manager can test a forecast without touching the source file." },
+  { n: "03", name: "Headcount", desc: "Burn rate and forecast cost to fiscal year end, headcount by grade and origin, full resource list with filters." },
+  { n: "04", name: "Optimisation", desc: "Allowable cost against actual, excess cost and headcount, forecast GPM — plus the resource-change simulator." }
+];
+
+// FY24 benchmark set. Client names withheld; PO value shown as an indexed scale
+// and a size band. Defect counts, DPMR, MAD scores and KPI scores are as analysed.
+const PD = [
+  { id: "A", band: "Small", scale: 37, defects: 0, dpmr: 0, mad: -1.0, kpi: 5 },
+  { id: "B", band: "Small", scale: 5, defects: 0, dpmr: 0, mad: -1.0, kpi: 5 },
+  { id: "C", band: "Small", scale: 32, defects: 0, dpmr: 0, mad: -1.0, kpi: 5 },
+  { id: "D", band: "Medium", scale: 68, defects: 2, dpmr: 0.78, mad: -0.92, kpi: 5 },
+  { id: "E", band: "Medium", scale: 74, defects: 8, dpmr: 2.88, mad: -0.71, kpi: 5 },
+  { id: "F", band: "Medium", scale: 63, defects: 11, dpmr: 4.35, mad: -0.56, kpi: 5 },
+  { id: "G", band: "Strategic", scale: 100, defects: 81, dpmr: 4.96, mad: -0.5, kpi: 4 },
+  { id: "H", band: "Strategic", scale: 95, defects: 57, dpmr: 5.04, mad: -0.49, kpi: 4 },
+  { id: "I", band: "Medium", scale: 58, defects: 16, dpmr: 6.67, mad: -0.33, kpi: 4 },
+  { id: "J", band: "Large", scale: 84, defects: 51, dpmr: 9.89, mad: 0, kpi: 3 },
+  { id: "K", band: "Medium", scale: 53, defects: 21, dpmr: 10.77, mad: 0.09, kpi: 3 },
+  { id: "L", band: "Small", scale: 21, defects: 9, dpmr: 20.2, mad: 1.04, kpi: 1 },
+  { id: "M", band: "Medium", scale: 47, defects: 38, dpmr: 21.73, mad: 1.2, kpi: 1 },
+  { id: "N", band: "Medium", scale: 79, defects: 82, dpmr: 21.87, mad: 1.21, kpi: 1 },
+  { id: "O", band: "Small", scale: 26, defects: 13, dpmr: 22.86, mad: 1.31, kpi: 1 },
+  { id: "P", band: "Large", scale: 89, defects: 155, dpmr: 28.16, mad: 1.85, kpi: 1 },
+  { id: "Q", band: "Medium", scale: 42, defects: 107, dpmr: 80.34, mad: 7.13, kpi: 1 },
+  { id: "R", band: "Small", scale: 16, defects: 52, dpmr: 130.72, mad: 12.22, kpi: 1 },
+  { id: "S", band: "Small", scale: 11, defects: 24, dpmr: 152.82, mad: 14.46, kpi: 1 }
+];
+
+const VIEWS = {
+  raw: {
+    label: "PO VALUE → DEFECT COUNT",
+    y: "PRODUCTION DEFECTS",
+    max: 160,
+    val: (p) => p.defects,
+    read: (p) => p.defects + " defects",
+    verdict: "No usable relationship. Some of the largest engagements carried a handful of defects; some of the smallest carried dozens. Project value alone cannot predict defect volume, so it cannot fairly benchmark it."
+  },
+  dpmr: {
+    label: "PO VALUE → DPMR",
+    y: "DEFECTS PER MILLION (DPMR)",
+    max: 160,
+    val: (p) => p.dpmr,
+    read: (p) => p.dpmr.toFixed(1) + " DPMR",
+    verdict: "Normalising by value makes projects of different sizes directly comparable — but the distribution is heavily right-skewed, so a mean or a z-score would be dragged around by a few extreme projects."
+  },
+  mad: {
+    label: "DISTANCE FROM THE NORM",
+    y: "MAD SCORE",
+    max: 15,
+    val: (p) => p.mad,
+    read: (p) => "MAD " + p.mad.toFixed(2) + " · KPI " + p.kpi,
+    verdict: "Median Absolute Deviation is robust to those extremes. Every project now sits a measurable distance from the portfolio norm, and that distance maps directly onto an enforceable KPI score."
+  }
+};
+
+const MAD_STEPS = [
+  { k: "a", t: "Median DPMR per bin", f: "Median_DPMR = MEDIAN(DPMR)", n: "The centre of the portfolio — unmoved by outliers, unlike a mean." },
+  { k: "b", t: "Deviation", f: "Deviation = DPMR − Median_DPMR", n: "How far above or below the norm each project sits." },
+  { k: "c", t: "Absolute deviation", f: "ABS_Deviation = ABS(DPMR − Median_DPMR)", n: "Direction removed, so spread can be measured on its own terms." },
+  { k: "d", t: "MAD", f: "MAD = MEDIAN(ABS_Deviation)", n: "A robust unit of spread for a skewed distribution." },
+  { k: "e", t: "MAD score", f: "MAD_Score = (DPMR − Median_DPMR) / MAD", n: "Distance from the norm, expressed in robust units — comparable across every project." }
+];
+
+class Component extends DCLogic {
+  state = { route: this.props.startPage || "home", photoIdx: null, photoTag: "ALL", curtain: false, curtainExit: false, curtainLabel: "", cap: 1, view: "raw", madStep: 0, hoverKpi: 0, focus: null, fName: "", fEmail: "", fMsg: "", topic: "Analysis & KPI design", mod: "perf", metric: "Revenue" };
+
+  editSim(i, patch) {
+    const rows = (this.state.sim || SIM_SEED).map((r, j) => (j === i ? Object.assign({}, r, patch) : r));
+    this.setState({ sim: rows });
+  }
+
+  case2Vals() {
+    const myr = (k) => "MYR " + Math.round(k).toLocaleString("en-US") + "k";
+    const metric = this.state.metric;
+    const s = SERIES[metric];
+    const peak = Math.max.apply(null, s.ms.concat(s.pe));
+    const bar = (v, color) => ({
+      width: "46%", maxWidth: "22px", height: (v / peak * 100).toFixed(1) + "%",
+      background: color, transition: "height .7s cubic-bezier(.16,1,.3,1)"
+    });
+    const sum = (a) => a.reduce((x, y) => x + y, 0);
+    const rev = sum(SERIES.Revenue.ms) + sum(SERIES.Revenue.pe);
+    const cost = sum(SERIES.Cost.ms) + sum(SERIES.Cost.pe);
+    const rowStyle = (i) => ({
+      display: "grid", gridTemplateColumns: "1.4fr 1fr repeat(5,1fr)", gap: "10px",
+      padding: "12px clamp(12px,2vw,20px)", fontSize: "13px",
+      background: i % 2 ? "rgba(20,19,15,0.035)" : "transparent",
+      borderBottom: "1px solid rgba(20,19,15,0.09)"
+    });
+    const optRowStyle = (i) => Object.assign({}, rowStyle(i), { gridTemplateColumns: "1.4fr repeat(5,1fr)" });
+    const TARGET = 0.30, PER_HEAD = 105;
+    const R = this._R = OPT_ROWS.reduce((a, r) => a + r.revenue, 0);
+    const C = this._C = OPT_ROWS.reduce((a, r) => a + r.cost, 0);
+    const allow = this._allow = R * (1 - TARGET);
+    const excess = this._excess = Math.max(0, C - allow);
+    const sim = this.state.sim || SIM_SEED;
+    const monthsLeft = (m) => FY_MONTHS.length - FY_MONTHS.indexOf(m);
+    const rowCost = (r) => (RATES[r.grade][r.origin] * 20 * monthsLeft(r.month) * (r.qty || 0)) / 1000;
+    const simDelta = sim.reduce((a, r) => a + (r.action === "leave" ? -1 : 1) * rowCost(r), 0);
+    const simCost = C + simDelta;
+    const simExcess = Math.max(0, simCost - allow);
+    const simGpm = (R - simCost) / R * 100;
+    const gpm = (R - C) / R * 100;
+    const signed = (n, unit, dp) => (n >= 0 ? "+ " : "− ") + unit.replace("#", dp ? Math.abs(n).toFixed(dp) : Math.round(Math.abs(n)).toLocaleString("en-US"));
+    return {
+      showPerf: this.state.mod === "perf",
+      showOpt: this.state.mod === "opt",
+      setPerf: () => this.setState({ mod: "perf" }),
+      setOpt: () => this.setState({ mod: "opt" }),
+      perfOn: this.state.mod === "perf" ? "#9A4522" : "transparent",
+      perfInk: this.state.mod === "perf" ? "#F2F0EC" : "#14130F",
+      optOn: this.state.mod === "opt" ? "#9A4522" : "transparent",
+      optInk: this.state.mod === "opt" ? "#F2F0EC" : "#14130F",
+      setRev: () => this.setState({ metric: "Revenue" }),
+      setCost: () => this.setState({ metric: "Cost" }),
+      revOn: metric === "Revenue" ? "#14130F" : "transparent",
+      revInk: metric === "Revenue" ? "#F2F0EC" : "#14130F",
+      costOn: metric === "Cost" ? "#14130F" : "transparent",
+      costInk: metric === "Cost" ? "#F2F0EC" : "#14130F",
+      chartTitle: metric.toUpperCase() + " OVER TIME — FY24",
+      perfKpis: [
+        { label: "REVENUE (YTD)", value: myr(rev) },
+        { label: "COST (YTD)", value: myr(cost) },
+        { label: "REVENUE : COST", value: (rev / cost).toFixed(2) },
+        { label: "GPM (YTD)", value: ((rev - cost) / rev * 100).toFixed(1) + "%" }
+      ],
+      months: MONTHS.map((m, i) => ({
+        label: m,
+        msBar: bar(s.ms[i], "#14130F"), peBar: bar(s.pe[i], "#B4552A"),
+        msLabel: "M&S " + m + " · " + myr(s.ms[i]),
+        peLabel: "Project + Enh " + m + " · " + myr(s.pe[i])
+      })),
+      perfRows: PERF_ROWS.map((r, i) => ({
+        project: r.project, type: r.type, style: rowStyle(i),
+        revenue: myr(r.revenue), labour: myr(r.labour), ot: myr(r.ot), ec: myr(r.ec),
+        total: myr(r.labour + r.ot + r.ec)
+      })),
+      optKpis: (() => {
+        const R = this._R, C = this._C, allow = this._allow, excess = this._excess;
+        return [
+          { label: "TOTAL REVENUE", value: myr(R), ink: "#14130F" },
+          { label: "ALLOWABLE COST", value: myr(allow), ink: "#14130F" },
+          { label: "TOTAL COST (YTD + FCST)", value: myr(C), ink: "#14130F" },
+          { label: "EXCESS COST", value: myr(excess), ink: "#B4552A" },
+          { label: "EXCESS HEADCOUNT", value: (excess / PER_HEAD).toFixed(1), ink: "#B4552A" },
+          { label: "FORECAST GPM", value: ((R - C) / R * 100).toFixed(1) + "%", ink: "#14130F" }
+        ];
+      })(),
+      grades: GRADES, origins: ORIGINS, fyMonths: FY_MONTHS,
+      simRows: sim.map((r, i) => ({
+        action: r.action, grade: r.grade, origin: r.origin, qty: r.qty, month: r.month,
+        isLeave: r.action === "leave",
+        newBg: r.action === "new" ? "#F2F0EC" : "transparent",
+        newInk: r.action === "new" ? "#14130F" : "#A8A29A",
+        leaveBg: r.action === "leave" ? "#D2703F" : "transparent",
+        leaveInk: r.action === "leave" ? "#14130F" : "#A8A29A",
+        cost: (r.action === "leave" ? "− " : "+ ") + "MYR " + Math.round(rowCost(r)).toLocaleString("en-US") + "k",
+        costInk: r.action === "leave" ? "#8FA88A" : "#D2703F",
+        setNew: () => this.editSim(i, { action: "new" }),
+        setLeave: () => this.editSim(i, { action: "leave" }),
+        onGrade: (e) => this.editSim(i, { grade: e.target.value }),
+        onOrigin: (e) => this.editSim(i, { origin: e.target.value }),
+        onMonth: (e) => this.editSim(i, { month: e.target.value }),
+        dec: () => this.editSim(i, { qty: Math.max(1, (sim[i].qty || 1) - 1) }),
+        inc: () => this.editSim(i, { qty: Math.min(20, (sim[i].qty || 1) + 1) }),
+        remove: () => this.setState({ sim: sim.filter((_, j) => j !== i) }),
+        canRemove: sim.length > 1
+      })),
+      addSimRow: () => this.setState({ sim: sim.concat([{ action: "new", grade: "Analyst", origin: "Offshore", qty: 1, month: "Jan 2026" }]) }),
+      resetSim: () => this.setState({ sim: SIM_SEED.slice() }),
+      simDeltaLabel: signed(simDelta, "MYR #k"),
+      simResults: [
+        { label: "SIMULATED TOTAL COST", value: myr(simCost), delta: signed(simDelta, "MYR #k"), deltaInk: "#B4552A" },
+        { label: "SIMULATED EXCESS COST", value: myr(simExcess), delta: signed(simExcess - excess, "MYR #k"), deltaInk: "#B4552A" },
+        { label: "SIMULATED EXCESS HEADCOUNT", value: (simExcess / PER_HEAD).toFixed(1), delta: signed((simExcess - excess) / PER_HEAD, "#", 1), deltaInk: "#B4552A" },
+        { label: "SIMULATED GPM", value: simGpm.toFixed(1) + "%", delta: signed(simGpm - gpm, "# pts", 1), deltaInk: "#B4552A" }
+      ],
+      optRows: OPT_ROWS.map((r, i) => {
+        const allow = r.revenue * (1 - TARGET);
+        const excess = Math.max(0, r.cost - allow);
+        const gpm = (r.revenue - r.cost) / r.revenue * 100;
+        return {
+          project: r.project, style: optRowStyle(i),
+          revenue: myr(r.revenue), allowable: myr(allow), cost: myr(r.cost),
+          hc: (excess / PER_HEAD).toFixed(1),
+          hcInk: excess > 0 ? "#B4552A" : "#66615A",
+          gpm: gpm.toFixed(1) + "%",
+          gpmInk: gpm < TARGET * 100 ? "#B4552A" : "#14130F"
+        };
+      }),
+      modules: CASE2_MODULES
+    };
+  }
+
+  motionScale() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return 0;
+    const m = this.props.motionLevel || "confident";
+    const base = m === "calm" ? 0.45 : m === "maximal" ? 1.5 : 1;
+    return window.innerWidth < 760 ? base * 0.5 : base;
+  }
+
+  photoList() {
+    const t = this.state.photoTag;
+    return t === "ALL" ? PHOTOS : PHOTOS.filter((p) => p.tag === t);
+  }
+
+  openPhoto = (i) => () => { document.body.style.overflow = "hidden"; this.setState({ photoIdx: i }); };
+  closePhoto = () => { document.body.style.overflow = ""; this.setState({ photoIdx: null }); };
+  stepPhoto = (d) => () => {
+    const n = this.photoList().length || 1;
+    this.setState((s) => ({ photoIdx: ((s.photoIdx || 0) + d + n) % n }));
+  };
+
+  go = (route) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    if (this.state.photoIdx != null) this.closePhoto();
+    if (route === this.state.route) { window.scrollTo(0, 0); return; }
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dur = reduce ? 1 : 600;
+    const ease = "cubic-bezier(.76,0,.24,1)";
+    const el = this.curtainEl(LABELS[route] || "");
+    el.animate([{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], { duration: dur, easing: ease, fill: "forwards" });
+    clearTimeout(this._t1); clearTimeout(this._t2);
+    this._t1 = setTimeout(() => {
+      this.setState({ route }, () => {
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => this.scan());
+        setTimeout(() => this.scan(), 120);
+        setTimeout(() => this.scan(), 500);
+      });
+      const out = el.animate([{ transform: "translateY(0)" }, { transform: "translateY(-100%)" }], { duration: dur, easing: ease, fill: "forwards" });
+      const clear = () => { if (this._curtain === el) this._curtain = null; el.remove(); this.scan(); };
+      out.onfinish = clear;
+      this._t2 = setTimeout(clear, dur + 200);
+    }, dur + 40);
+  };
+
+  curtainEl(label) {
+    if (this._curtain) this._curtain.remove();
+    const el = document.createElement("div");
+    el.setAttribute("data-curtain", "");
+    el.style.cssText = "position:fixed;inset:0;z-index:90;background:#14130F;transform:translateY(100%);display:flex;align-items:center;justify-content:center;pointer-events:none";
+    const s = document.createElement("span");
+    s.style.cssText = "font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#A8A29A";
+    s.textContent = label;
+    el.appendChild(s);
+    document.body.appendChild(el);
+    this._curtain = el;
+    return el;
+  }
+
+  componentDidMount() {
+    this._loop = () => { this.tick(); this._raf = requestAnimationFrame(this._loop); };
+    this._raf = requestAnimationFrame(this._loop);
+    this._onScroll = () => this.tick();
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    window.addEventListener("resize", this._onScroll);
+    this._onVis = () => {
+      if (document.visibilityState !== "visible") return;
+      cancelAnimationFrame(this._raf);
+      this._raf = requestAnimationFrame(this._loop);
+      document.querySelectorAll('[data-count][data-final]:not([data-done])').forEach((el) => {
+        el.setAttribute("data-done", "1");
+        el.textContent = el.getAttribute("data-final");
+      });
+    };
+    document.addEventListener("visibilitychange", this._onVis);
+    this._touch = !(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+    if (this._touch) this.forceUpdate();
+    this._onMove = (e) => {
+      this._mx = e.clientX; this._my = e.clientY;
+      if (!this._craf) this._craf = requestAnimationFrame(this.cursorTick);
+    };
+    this._onOver = (e) => {
+      const t = e.target && e.target.closest ? e.target.closest("[data-cursor]") : null;
+      this.setCursor(t ? t.getAttribute("data-cursor") : "");
+    };
+    document.addEventListener("mousemove", this._onMove, { passive: true });
+    document.addEventListener("mouseover", this._onOver, { passive: true });
+    this._onKey = (e) => {
+      if (this.state.photoIdx == null) return;
+      if (e.key === "Escape") this.closePhoto();
+      else if (e.key === "ArrowRight") this.stepPhoto(1)();
+      else if (e.key === "ArrowLeft") this.stepPhoto(-1)();
+    };
+    this._onTS = (e) => { const t = e.touches[0]; this._sx = t.clientX; this._sy = t.clientY; };
+    this._onTE = (e) => {
+      if (this.state.photoIdx == null || this._sx == null) return;
+      const t = e.changedTouches[0], dx = t.clientX - this._sx, dy = t.clientY - this._sy;
+      if (Math.abs(dx) > 46 && Math.abs(dx) > Math.abs(dy)) this.stepPhoto(dx < 0 ? 1 : -1)();
+      this._sx = null;
+    };
+    document.addEventListener("keydown", this._onKey);
+    document.addEventListener("touchstart", this._onTS, { passive: true });
+    document.addEventListener("touchend", this._onTE, { passive: true });
+    this.scan();
+    setTimeout(() => this.scan(), 400);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    window.removeEventListener("scroll", this._onScroll);
+    window.removeEventListener("resize", this._onScroll);
+    document.removeEventListener("visibilitychange", this._onVis);
+    document.removeEventListener("mousemove", this._onMove);
+    document.removeEventListener("mouseover", this._onOver);
+    document.removeEventListener("keydown", this._onKey);
+    document.removeEventListener("touchstart", this._onTS);
+    document.removeEventListener("touchend", this._onTE);
+    document.body.style.overflow = "";
+    if (this.io) this.io.disconnect();
+  }
+
+  cursorTick = () => {
+    this._craf = 0;
+    const dot = document.querySelector("[data-cursor-dot]");
+    if (!dot) return;
+    const first = this._cx == null;
+    this._cx = first ? this._mx : this._cx + (this._mx - this._cx) * 0.22;
+    this._cy = first ? this._my : this._cy + (this._my - this._cy) * 0.22;
+    dot.style.transform = "translate3d(" + this._cx + "px," + this._cy + "px,0)";
+    if (dot.style.opacity !== "1") dot.style.opacity = "1";
+    if (Math.abs(this._mx - this._cx) > 0.4 || Math.abs(this._my - this._cy) > 0.4) this._craf = requestAnimationFrame(this.cursorTick);
+  };
+
+  setCursor(label) {
+    if (this._label === label) return;
+    this._label = label;
+    const dot = document.querySelector("[data-cursor-dot]");
+    const lab = document.querySelector("[data-cursor-label]");
+    if (!dot || !lab) return;
+    if (label) {
+      const w = Math.max(64, label.length * 8 + 30);
+      dot.style.width = w + "px"; dot.style.height = "34px"; dot.style.borderRadius = "18px";
+      dot.style.margin = "-17px 0 0 " + (-w / 2) + "px";
+      lab.textContent = label; lab.style.opacity = "1";
+    } else {
+      dot.style.width = "12px"; dot.style.height = "12px"; dot.style.borderRadius = "50%";
+      dot.style.margin = "-6px 0 0 -6px";
+      lab.style.opacity = "0";
+    }
+  }
+
+  scan() {
+    if (this.io) this.io.disconnect();
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        this.show(en.target);
+        this.io.unobserve(en.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll('[data-fx="reveal"]').forEach((el) => this.io.observe(el));
+
+    this.bio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        this.show(en.target);
+        this.bio.unobserve(en.target);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll("[data-bar],[data-count]").forEach((el) => this.bio.observe(el));
+
+    this.reveals = Array.prototype.slice.call(document.querySelectorAll('[data-fx="reveal"],[data-bar],[data-count]'));
+    this.parallax = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+    this.pins = Array.prototype.slice.call(document.querySelectorAll("[data-pin]"));
+    this.hero = document.querySelector("[data-hero]");
+    this.heroWords = Array.prototype.slice.call(document.querySelectorAll("[data-hero-word]"));
+    this.heroSub = document.querySelector("[data-hero-sub]");
+    this.tick();
+  }
+
+  count(el) {
+    const target = parseFloat(el.getAttribute("data-count"));
+    const suffix = el.getAttribute("data-suffix") || "";
+    const start = performance.now(), dur = 1400;
+    const fmt = (n) => Math.round(n).toLocaleString("en-US");
+    el.setAttribute("data-final", fmt(target) + suffix);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * e) + (p === 1 ? suffix : "");
+      if (p < 1) requestAnimationFrame(step); else el.setAttribute("data-done", "1");
+    };
+    requestAnimationFrame(step);
+  }
+
+  apply(el) {
+    if (el.hasAttribute("data-fx")) { el.style.opacity = "1"; el.style.transform = "none"; }
+    if (el.hasAttribute("data-bar")) el.style.height = el.getAttribute("data-bar") + "%";
+  }
+
+  show(el) {
+    if (el.hasAttribute("data-shown")) return;
+    el.setAttribute("data-shown", "0");
+    const d = parseInt(el.getAttribute("data-delay") || "0", 10);
+    setTimeout(() => {
+      el.setAttribute("data-shown", "1");
+      this.apply(el);
+      if (el.hasAttribute("data-count")) this.count(el);
+    }, d);
+  }
+
+  tick(force) {
+    const vh = window.innerHeight, ms = this.motionScale();
+    const key = window.scrollY + "|" + vh + "|" + window.innerWidth + "|" + document.documentElement.scrollHeight;
+    if (!force && key === this._key && this._idle > 6) return;
+    this._idle = key === this._key ? (this._idle || 0) + 1 : 0;
+    this._key = key;
+    try {
+      document.querySelectorAll('[data-shown="1"]').forEach((el) => {
+        if (el.hasAttribute("data-fx") && el.style.opacity !== "1") { el.style.opacity = "1"; el.style.transform = "none"; }
+        if (el.hasAttribute("data-bar")) {
+          const h = el.getAttribute("data-bar") + "%";
+          if (el.style.height !== h) el.style.height = h;
+        }
+        if (el.hasAttribute("data-done")) {
+          const f = el.getAttribute("data-final");
+          if (f && el.textContent !== f) el.textContent = f;
+        } else if (el.hasAttribute("data-count") && !el.hasAttribute("data-final")) {
+          this.count(el);
+        }
+      });
+      const cands = document.querySelectorAll('[data-fx="reveal"]:not([data-shown]),[data-bar]:not([data-shown]),[data-count]:not([data-shown])');
+      for (let i = 0; i < cands.length; i++) {
+        const el = cands[i];
+        if (el.hasAttribute("data-shown")) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.94) this.show(el);
+      }
+    } catch (err) { console.warn("reveal pass:", err && err.message); }
+    const hero = document.querySelector("[data-hero]");
+    const heroWords = Array.prototype.slice.call(document.querySelectorAll("[data-hero-word]"));
+    const heroSub = document.querySelector("[data-hero-sub]");
+    if (hero && heroWords.length) {
+      const r = hero.getBoundingClientRect();
+      const span = hero.offsetHeight - vh;
+      const p = Math.max(0, Math.min(1, -r.top / (span || 1)));
+      const n = heroWords.length - 1;
+      heroWords.forEach((w, i) => {
+        const local = p * n - i;
+        const o = Math.max(0, 1 - Math.abs(local) * 1.75);
+        w.style.opacity = String(o);
+        w.style.transform = "translate3d(0," + (-local * 46 * ms) + "px,0) scale(" + (1 - Math.abs(local) * 0.08) + ")";
+        w.style.filter = o < 0.25 ? "blur(" + Math.min(6, (1 - o) * 5) + "px)" : "none";
+      });
+      if (heroSub) {
+        const so = Math.max(0, Math.min(1, (p - 0.82) / 0.16));
+        heroSub.style.opacity = String(so);
+        heroSub.style.transform = "translate3d(0," + (1 - so) * 18 + "px,0)";
+      }
+    }
+    document.querySelectorAll("[data-pin]").forEach((pin) => {
+      const track = pin.querySelector("[data-pin-track]");
+      if (!track) return;
+      if (window.innerWidth < 760) { if (track.style.transform) track.style.transform = ""; return; }
+      const r = pin.getBoundingClientRect();
+      const span = pin.offsetHeight - vh;
+      const p = Math.max(0, Math.min(1, -r.top / (span || 1)));
+      const dist = Math.max(0, track.scrollWidth - window.innerWidth + 48);
+      track.style.transform = "translate3d(" + (-p * dist) + "px,0,0)";
+    });
+    document.querySelectorAll("[data-parallax]").forEach((el) => {
+      const speed = parseFloat(el.getAttribute("data-parallax")) * ms;
+      const frame = el.parentElement || el;
+      const r = frame.getBoundingClientRect();
+      const limit = Math.max(0, (el.offsetHeight - frame.clientHeight) / 2);
+      let off = (r.top + r.height / 2 - vh / 2) * -speed;
+      off = Math.max(-limit, Math.min(limit, off));
+      el.style.transform = "translate3d(0," + off.toFixed(2) + "px,0)";
+    });
+  }
+
+  renderVals() {
+    this._idle = 0;
+    const r = this.state.route;
+    const active = CAPS[this.state.cap] || CAPS[0];
+    const navColor = (k) => (r === k ? "#9A4522" : "#14130F");
+    const vk = this.state.view, v = VIEWS[vk], hk = this.state.hoverKpi, focus = this.state.focus;
+    // MAD is a signed score: the median sits at zero, so the axis needs a norm
+    // line with the below-norm half spread out beneath it.
+    const ZERO = 34, NEG = 26, POS = 60, NEG_MIN = -1.15, POS_MAX = 15;
+    const scaleY = (n) => {
+      if (vk !== "mad") return Math.min(96, Math.pow(Math.max(0, n) / v.max, 0.42) * 96);
+      if (n >= 0) return ZERO + Math.min(POS, Math.pow(n / POS_MAX, 0.55) * POS);
+      return ZERO - Math.min(NEG, (Math.max(NEG_MIN, n) / NEG_MIN) * NEG);
+    };
+    const points = PD.map((p) => {
+      const dim = (hk && p.kpi !== hk) || (focus && focus !== p.id);
+      const out = p.kpi === 1;
+      return {
+        id: p.id, band: p.band, read: v.read(p),
+        pos: {
+          position: "absolute",
+          left: (4 + p.scale * 0.92) + "%",
+          bottom: scaleY(v.val(p)) + "%",
+          transform: "translate(-50%,50%)",
+          transition: "left .9s cubic-bezier(.16,1,.3,1),bottom .9s cubic-bezier(.16,1,.3,1),opacity .4s ease",
+          opacity: dim ? 0.16 : 1,
+          zIndex: dim ? 1 : 2
+        },
+        dotBg: out ? "#B4552A" : "#14130F",
+        dotSize: focus === p.id ? "18px" : out ? "13px" : "11px",
+        enter: () => this.setState({ focus: p.id }),
+        leave: () => this.setState({ focus: null })
+      };
+    });
+    const focused = focus ? PD.find((p) => p.id === focus) : null;
+    const bands = [5, 4, 3, 1].map((k) => ({
+      k: String(k),
+      count: PD.filter((p) => p.kpi === k).length,
+      rule: k === 5 ? "MAD ≤ −0.5" : k === 4 ? "−0.5 to −0.3" : k === 3 ? "−0.3 to +1.0" : "> +1.0",
+      meaning: k === 5 ? "Materially better than the norm" : k === 4 ? "Better than the norm" : k === 3 ? "At the norm" : "Above tolerance — investigate",
+      color: hk === k ? "#9A4522" : "#14130F",
+      enter: () => this.setState({ hoverKpi: k }),
+      leave: () => this.setState({ hoverKpi: 0 })
+    }));
+    const madStep = MAD_STEPS[this.state.madStep];
+    const email = this.props.email || "hello@jonathanryan.me";
+    const st = this.state;
+    const body = "Hi Jonathan,\n\n" + (st.fMsg || "") + "\n\n— " + (st.fName || "") + (st.fEmail ? " (" + st.fEmail + ")" : "");
+    const composed = "mailto:" + email + "?subject=" + encodeURIComponent(st.topic + " — enquiry") + "&body=" + encodeURIComponent(body);
+    const TOPICS = ["Analysis & KPI design", "Governance & audit", "Process improvement", "Photography / writing"];
+    const shown = this.photoList();
+    const lit = this.state.photoIdx == null ? null : shown[this.state.photoIdx];
+    return Object.assign(this.case2Vals(), {
+      emailLabel: email.toUpperCase(),
+      mailtoHref: "mailto:" + email,
+      linkedinHref: this.props.linkedin || "https://www.linkedin.com/",
+      githubHref: this.props.github || "https://github.com/",
+      composedHref: composed,
+      fName: st.fName, fEmail: st.fEmail, fMsg: st.fMsg,
+      onName: (e) => this.setState({ fName: e.target.value }),
+      onEmail: (e) => this.setState({ fEmail: e.target.value }),
+      onMsg: (e) => this.setState({ fMsg: e.target.value }),
+      formHint: st.fMsg ? "READY TO SEND" : "TELL ME THE PROBLEM",
+      topics: TOPICS.map((t) => ({
+        label: t.toUpperCase(),
+        bg: st.topic === t ? "#B4552A" : "transparent",
+        ink: st.topic === t ? "#F2F0EC" : "#F2F0EC",
+        border: st.topic === t ? "#B4552A" : "rgba(242,240,236,0.32)",
+        pick: () => this.setState({ topic: t })
+      })),
+      viewLabel: v.label, viewY: v.y, viewVerdict: v.verdict,
+      normLine: {
+        position: "absolute", left: 0, right: 0, bottom: ZERO + "%",
+        borderTop: "1px dashed rgba(154,69,34,0.7)",
+        opacity: vk === "mad" ? 1 : 0,
+        transition: "opacity .5s ease", pointerEvents: "none", zIndex: 0
+      },
+      normLabel: {
+        position: "absolute", left: 0, bottom: (ZERO + 1) + "%",
+        fontFamily: "'IBM Plex Mono',monospace", fontSize: "9px", letterSpacing: "0.18em",
+        color: "#9A4522", opacity: vk === "mad" ? 1 : 0,
+        transition: "opacity .5s ease", pointerEvents: "none", zIndex: 0
+      },
+      points: points,
+      readout: focused ? "PROJECT " + focused.id + " · " + focused.band.toUpperCase() + " · " + v.read(focused) : "HOVER A PROJECT",
+      rawOn: vk === "raw" ? "#9A4522" : "transparent",
+      rawInk: vk === "raw" ? "#F2F0EC" : "#14130F",
+      dpmrOn: vk === "dpmr" ? "#9A4522" : "transparent",
+      dpmrInk: vk === "dpmr" ? "#F2F0EC" : "#14130F",
+      madOn: vk === "mad" ? "#9A4522" : "transparent",
+      madInk: vk === "mad" ? "#F2F0EC" : "#14130F",
+      setRaw: () => this.setState({ view: "raw" }),
+      setDpmr: () => this.setState({ view: "dpmr" }),
+      setMad: () => this.setState({ view: "mad" }),
+      madSteps: MAD_STEPS.map((s, i) => ({
+        k: s.k, t: s.t,
+        color: i === this.state.madStep ? "#9A4522" : "#66615A",
+        ink: i === this.state.madStep ? "#14130F" : "#66615A",
+        pick: () => this.setState({ madStep: i })
+      })),
+      madFormula: madStep.f, madNote: madStep.n, madTitle: madStep.t,
+      bands: bands,
+      isHome: r === "home", isWork: r === "work", isCase: r === "case",
+      isCase2: r === "case2", isPhoto: r === "photo",
+      goPhoto: this.go("photo"), photoColor: navColor("photo"),
+      photoCount: shown.length + " OF " + PHOTOS.length + " FRAMES",
+      photoFilters: PHOTO_TAGS.map((t) => ({
+        label: t,
+        bg: this.state.photoTag === t ? "#14130F" : "transparent",
+        ink: this.state.photoTag === t ? "#F2F0EC" : "#14130F",
+        border: this.state.photoTag === t ? "#14130F" : "rgba(20,19,15,0.28)",
+        pick: () => this.setState({ photoTag: t, photoIdx: null }, () => { document.body.style.overflow = ""; requestAnimationFrame(() => this.scan()); })
+      })),
+      shownPhotos: shown.map((p, i) => ({
+        thumb: "photos/" + p.f + "-s.jpg", title: p.title, cap: p.cap, tag: p.tag,
+        open: this.openPhoto(i)
+      })),
+      lightOpen: !!lit,
+      lightImg: lit ? React.createElement("img", { src: "photos/" + lit.f + ".jpg", alt: lit.title, style: { maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" } }) : null,
+      lightTitle: lit ? lit.title : "",
+      lightCap: lit ? lit.cap : "",
+      lightCounter: lit ? String(this.state.photoIdx + 1).padStart(2, "0") + " / " + String(shown.length).padStart(2, "0") + " · " + lit.tag : "",
+      closeLight: this.closePhoto, nextLight: this.stepPhoto(1), prevLight: this.stepPhoto(-1),
+      isAbout: r === "about", isContact: r === "contact",
+      goCase2: this.go("case2"),
+
+      cursorOn: this.props.cursor !== false && !this._touch,
+      goHome: this.go("home"), goWork: this.go("work"), goCase: this.go("case"),
+      goAbout: this.go("about"), goContact: this.go("contact"),
+      workColor: navColor("work"), aboutColor: navColor("about"), contactColor: navColor("contact"),
+      capabilities: CAPS.map((c, i) => ({
+        name: c.name, num: c.num,
+        color: i === this.state.cap ? "#9A4522" : "#14130F",
+        enter: () => this.setState({ cap: i })
+      })),
+      activeName: active.name, activeNum: active.num, activeBlurb: active.blurb, activeChain: active.chain
+    });
+  }
+}
+
+</script>
+</body>
+</html>
