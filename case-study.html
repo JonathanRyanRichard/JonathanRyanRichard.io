@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-head-fonts href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet">
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+<title>Case study · Jonathan Ryan Richard</title>
+<meta name="description" content="A PMO case study with an interactive model: the problem, how it was measured and what changed. By Jonathan Ryan Richard.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jonathanryanrichard.github.io/case-study.html">
+<meta property="og:url" content="https://jonathanryanrichard.github.io/case-study.html">
+<meta property="og:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jonathan Ryan Richard: How I Work and How I See">
+<meta name="twitter:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta name="author" content="Jonathan Ryan Richard">
+<meta name="theme-color" content="#FAF9F7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jonathan Ryan Richard">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="Case study · Jonathan Ryan Richard">
+<meta property="og:description" content="A PMO case study with an interactive model: the problem, how it was measured and what changed. By Jonathan Ryan Richard.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Case study · Jonathan Ryan Richard">
+<meta name="twitter:description" content="A PMO case study with an interactive model: the problem, how it was measured and what changed. By Jonathan Ryan Richard.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PMO case study","author":{"@type":"Person","name":"Jonathan Ryan Richard"}}</script>
+<script>window.JRR_THEMES={"light":{"--bg":"#FAF9F7","--panel":"#FFFFFF","--ink":"#14151A","--muted":"#61636C","--line":"#E3E1DC","--accent":"#2F4B8C","--accent-soft":"#EAEEF7","--series":"#C3CAD9","--critical":"#B4472A","--warn":"#7D5C0C"},"dark":{"--bg":"#0F1114","--panel":"#15181D","--ink":"#F1F0EC","--muted":"#9A9CA5","--line":"#272A31","--accent":"#8FA8E0","--accent-soft":"#1B2130","--series":"#3E465A","--critical":"#E5684A","--warn":"#D9A441"}};(function(){try{window.JRRTheme.apply(window.JRR_THEMES,window.JRRTheme.resolve(),false);}catch(e){}})();</script>
+<style>
+  :root {
+    --bg:#FAF9F7; --panel:#FFFFFF; --ink:#14151A; --muted:#61636C; --line:#E3E1DC;
+    --accent:#2F4B8C; --accent-soft:#EAEEF7; --series:#C3CAD9; --critical:#B4472A; --warn:#7D5C0C;
+    color-scheme: light;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { margin:0; padding:0; background:var(--bg); }
+  body { color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; font-size:16px; line-height:1.6; transition:background 400ms ease, color 400ms ease; }
+  h1,h2,h3,p { margin:0; }
+  a { color:var(--accent); text-decoration:none; }
+  a:not(.btn):hover { color:var(--ink); }
+  button { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  ::selection { background:var(--accent); color:var(--bg); }
+  .mono { font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  .wrap { max-width:1080px; margin:0 auto; }
+  .sec { padding:clamp(40px,5vw,72px) clamp(20px,4vw,56px); border-bottom:1px solid var(--line); }
+  h2.h { font-weight:600; font-size:clamp(24px,3.1vw,36px); letter-spacing:-0.01em; line-height:1.12; text-wrap:balance; }
+  .skip { position:absolute; left:-999px; top:8px; background:var(--accent); color:var(--bg); padding:10px 16px; border-radius:999px; z-index:50; }
+  .skip:focus { left:16px; }
+  .skip:hover { color:var(--bg); }
+  #progress { position:fixed; top:0; left:0; height:2px; z-index:50; background:var(--accent); width:0; }
+
+  nav.top { position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px clamp(20px,4vw,56px); background:var(--bg); border-bottom:1px solid var(--line); }
+  nav.top .brand { display:flex; align-items:baseline; gap:14px; min-width:0; }
+  nav.top .brand a { font-weight:500; font-size:20px; color:var(--ink); white-space:nowrap; }
+  nav.top .links { display:flex; align-items:center; gap:clamp(12px,2vw,26px); font-weight:500; font-size:14px; }
+  nav.top .links a, nav.top .links button { color:var(--muted); }
+  nav.top .links button { border:0; background:transparent; cursor:pointer; padding:10px 4px; min-height:44px; }
+  nav.top .links a { display:inline-flex; align-items:center; min-height:44px; }
+  nav.top .links a:hover, nav.top .links button:hover { color:var(--ink); }
+  @media (max-width:1000px) { nav.top .brand .mono { display:none; } }
+  @media (max-width:520px) { nav.top { gap:8px; padding:8px 16px; } nav.top .brand a { font-size:16px; } nav.top .links { gap:8px; } }
+
+  /* header */
+  .head { animation:rise 1000ms 120ms cubic-bezier(.22,.61,.36,1) both; }
+  .head h1 { font-weight:700; font-size:clamp(32px,4.9vw,56px); letter-spacing:-0.025em; line-height:1.06; margin:20px 0 22px; max-width:24ch; text-wrap:balance; }
+  .stand { font-size:18px; line-height:1.7; color:var(--muted); max-width:58ch; text-wrap:pretty; }
+  .metaline { display:flex; flex-wrap:wrap; gap:10px 36px; margin-top:28px; padding-top:22px; border-top:1px solid var(--line); }
+  .metaline div { display:flex; flex-direction:column; gap:4px; min-width:0; }
+  .metaline .v { font-size:14px; line-height:1.45; max-width:34ch; }
+  .repo { display:inline-flex; align-items:center; min-height:44px; margin-top:8px; }
+  @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .stat { background:var(--panel); padding:24px 24px 22px; }
+  .stat b { display:block; font-weight:700; font-size:clamp(32px,4vw,48px); letter-spacing:-0.025em; line-height:1.06; color:var(--accent); }
+  .stat span { display:block; font-size:14px; line-height:1.5; margin-top:10px; }
+
+  /* model */
+  .modelsec { background:var(--accent-soft); }
+  .modelhead { max-width:60ch; display:flex; flex-direction:column; gap:14px; }
+  .modelhead p { color:var(--muted); font-size:16px; line-height:1.7; }
+  .mcard { margin-top:30px; border:1px solid var(--line); background:var(--panel); padding:clamp(18px,3vw,34px); }
+  .mgrid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(24px,4vw,52px); align-items:start; }
+  @media (max-width:760px) { .mgrid { grid-template-columns:minmax(0,1fr); gap:26px; } }
+  .ctl .row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  .ctl label { font-size:14px; font-weight:500; }
+  .ctl output { font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--accent); }
+  input[type=range] { -webkit-appearance:none; appearance:none; width:100%; height:44px; margin:0; background:transparent; cursor:pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height:4px; border-radius:2px; background:linear-gradient(to right,var(--accent) var(--p,50%),var(--line) var(--p,50%)); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; margin-top:-9px; border-radius:50%; background:var(--panel); border:2px solid var(--accent); }
+  input[type=range]::-moz-range-track { height:4px; border-radius:2px; background:var(--line); }
+  input[type=range]::-moz-range-progress { height:4px; border-radius:2px; background:var(--accent); }
+  input[type=range]::-moz-range-thumb { width:18px; height:18px; border-radius:50%; background:var(--panel); border:2px solid var(--accent); }
+  .bars { display:flex; flex-direction:column; gap:16px; }
+  .bar { display:grid; grid-template-columns:1fr auto; gap:6px 12px; align-items:baseline; }
+  .bar .n { font-size:14px; color:var(--muted); }
+  .bar .v { font-family:'IBM Plex Mono',monospace; font-size:14px; }
+  .bar .track { grid-column:1 / -1; height:12px; background:var(--bg); border:1px solid var(--line); }
+  .bar .fill { height:100%; width:100%; transform:scaleX(0); transform-origin:left center; transition:transform 500ms cubic-bezier(.22,.61,.36,1), background 200ms; }
+  .tiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
+  .tiles > div { background:var(--panel); padding:14px 16px; min-width:0; }
+  .tiles b { display:block; font-weight:600; font-size:clamp(20px,2.6vw,26px); letter-spacing:-0.01em; line-height:1.1; white-space:nowrap; }
+  .tiles .mono { display:block; margin-top:7px; line-height:1.45; }
+  .tiles.big b { font-size:clamp(22px,3.2vw,32px); }
+  .note { font-size:14px; line-height:1.7; color:var(--muted); margin-top:16px; }
+  .dash { margin-top:clamp(28px,4vw,44px); padding-top:clamp(24px,3.5vw,36px); border-top:1px solid var(--line); }
+  .dashgrid { display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(20px,4vw,44px); align-items:center; margin-top:16px; }
+  @media (max-width:640px) { .dashgrid { grid-template-columns:minmax(0,1fr); justify-items:start; } }
+  .donut { position:relative; width:150px; height:150px; border-radius:50%; flex:none; transition:background 500ms; }
+  .donut::after { content:""; position:absolute; inset:19px; border-radius:50%; background:var(--panel); }
+  .donut .c { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .donut .c b { font-weight:700; font-size:28px; letter-spacing:-0.02em; line-height:1; color:var(--accent); }
+  .chip { display:inline-block; margin-top:14px; padding:6px 12px; border:1px solid var(--line); font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink); }
+
+  /* why it failed */
+  .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:28px; }
+  @media (max-width:720px) { .cards { grid-template-columns:minmax(0,1fr); } }
+  .card { padding:22px 24px; border:1px solid var(--line); background:var(--panel); }
+  .card p { font-size:16px; line-height:1.65; color:var(--muted); margin-top:10px; text-wrap:pretty; }
+  .two { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:clamp(24px,5vw,72px); align-items:end; }
+  @media (max-width:820px) { .two { grid-template-columns:minmax(0,1fr); } }
+  .lead { font-size:18px; line-height:1.65; color:var(--muted); max-width:46ch; text-wrap:pretty; }
+
+  /* steps */
+  .steps { margin-top:28px; }
+  .step { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.7fr); gap:clamp(12px,4vw,56px); padding:16px 0; border-top:1px solid var(--line); align-items:baseline; }
+  @media (max-width:720px) { .step { grid-template-columns:minmax(0,1fr); gap:6px; padding:18px 0; } }
+  .step h3 { font-weight:600; font-size:clamp(18px,2vw,22px); letter-spacing:-0.01em; line-height:1.3; margin-top:6px; }
+  .step p { font-size:16px; line-height:1.7; color:var(--muted); max-width:56ch; text-wrap:pretty; }
+
+  /* change + lessons */
+  .change { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); align-items:start; }
+  @media (max-width:820px) { .change { grid-template-columns:minmax(0,1fr); } }
+  .ba { display:grid; grid-template-columns:1fr 1fr; gap:6px 20px; margin-top:22px; }
+  .ba .hd { padding-bottom:10px; }
+  .ba span.b, .ba span.a { padding:14px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.55; }
+  .ba span.b { color:var(--muted); text-decoration:line-through; text-decoration-color:var(--line); }
+  .quote { padding:24px 26px; border-left:2px solid var(--accent); background:var(--panel); font-style:italic; font-size:clamp(20px,2.2vw,24px); line-height:1.5; }
+  .lessons { display:flex; flex-direction:column; gap:14px; margin-top:16px; }
+  .lessons div { display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; }
+  .lessons i { display:block; width:6px; height:6px; margin-top:9px; background:var(--accent); }
+  .lessons span { font-size:16px; line-height:1.65; color:var(--muted); text-wrap:pretty; }
+
+  .others { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:20px; }
+  .other { display:flex; flex-direction:column; gap:10px; padding:22px 24px; border:1px solid var(--line); background:var(--panel); color:var(--ink); }
+  .other:hover { background:var(--accent-soft); }
+  .other b { font-weight:600; font-size:22px; line-height:1.3; }
+  .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:18px clamp(20px,4vw,56px); border-top:1px solid var(--line); font-size:14px; font-weight:500; }
+  .foot a { display:inline-flex; align-items:center; min-height:44px; color:var(--muted); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:1ms !important; transition-duration:1ms !important; } html { scroll-behavior:auto; } }
+
+  .modelsec { scroll-margin-top:64px; }
+  .try { display:flex; align-items:center; gap:10px 16px; flex-wrap:wrap; margin-top:26px; padding:14px 18px; border:1px solid var(--line); background:var(--panel); }
+  .try p { font-size:16px; line-height:1.5; flex:1 1 300px; }
+  .try strong { color:var(--accent); font-weight:600; }
+  .pill { min-height:44px; padding:0 20px; border-radius:999px; border:1px solid var(--line); background:transparent; font-weight:500; font-size:14px; cursor:pointer; }
+  .pill:hover { border-color:var(--ink); }
+  .pill.primary { background:var(--accent); border-color:var(--accent); color:var(--bg); }
+  .pill.primary:hover { background:var(--ink); border-color:var(--ink); color:var(--bg); }
+  details.key { margin-top:20px; max-width:64ch; }
+  details.key > summary { display:inline-flex; align-items:center; min-height:44px; cursor:pointer; color:var(--accent); font-size:14px; font-weight:500; list-style:none; }
+  details.key > summary::-webkit-details-marker { display:none; }
+  details.key > summary::after { content:""; width:7px; height:7px; margin-left:10px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform 200ms; }
+  details.key[open] > summary::after { transform:rotate(-135deg) translateY(-2px); }
+  details.key dl { display:grid; grid-template-columns:minmax(120px,auto) minmax(0,1fr); gap:10px 20px; margin:8px 0 0; padding:16px 18px; border:1px solid var(--line); background:var(--panel); }
+  details.key dt { font-weight:600; font-size:14px; }
+  details.key dd { margin:0; font-size:14px; line-height:1.6; color:var(--muted); }
+  @media (max-width:560px) { details.key dl { grid-template-columns:minmax(0,1fr); gap:2px; } details.key dd { margin-bottom:10px; } }
+  details.key.inline { margin-top:12px; }
+  .tiles .sub { display:block; margin-top:4px; font-size:12px; line-height:1.4; color:var(--muted); }
+  .cards.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  @media (max-width:820px) { .cards.three { grid-template-columns:minmax(0,1fr); } }
+  .donutrow { display:flex; align-items:center; gap:clamp(16px,3vw,28px); flex-wrap:wrap; }
+  .donut.big { width:160px; height:160px; }
+  .donut.big::after { inset:20px; }
+  .bands { display:flex; flex-direction:column; gap:6px; flex:1; min-width:170px; }
+  .band { display:flex; justify-content:space-between; gap:10px; font-size:14px; padding:8px 12px; border:1px solid var(--line); color:var(--muted); }
+  .band i { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; }
+  .band[data-on="true"] { background:var(--accent-soft); color:var(--ink); font-weight:600; border-color:var(--bandc,var(--accent)); }
+  .diag { margin-top:22px; padding-top:16px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:6px; }
+  .diag b { font-weight:600; font-size:18px; }
+  .diag p { font-size:16px; line-height:1.65; max-width:44ch; }
+  .scores { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
+  .scores > div { background:var(--panel); padding:18px 18px 16px; min-width:0; }
+  .scores b.score { display:block; margin:8px 0 6px; font-weight:700; font-size:clamp(30px,4.4vw,44px); letter-spacing:-0.02em; line-height:1; }
+  .scores .sc { display:block; font-size:14px; line-height:1.45; }
+  @media (max-width:520px) { nav.top .links .opt { display:none; } }
+  details.more { margin-bottom:14px; }
+  details.more > summary { display:none; }
+  .rej { margin-top:14px; max-width:56ch; }
+  .rej > div { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:16px; padding:10px 0; border-top:1px solid var(--line); font-size:14px; line-height:1.5; }
+  .rej > div span:last-child { color:var(--muted); }
+  .rej > div span:first-child { font-weight:500; }
+  @media (max-width:720px) {
+    details.more > summary { display:inline-flex; align-items:center; min-height:44px; cursor:pointer; color:var(--accent); font-size:14px; font-weight:500; list-style:none; }
+    details.more > summary::-webkit-details-marker { display:none; }
+    details.more > summary::after { content:""; width:7px; height:7px; margin-left:10px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform 200ms; }
+    details.more[open] > summary::after { transform:rotate(-135deg) translateY(-2px); }
+    details.more.dash > .mono { display:none; }
+    .dash { margin-top:12px; padding-top:4px; }
+    .bar.rev { display:none; }
+    .mcard { padding:16px; }
+    .mgrid { gap:14px; }
+    .bars { gap:12px; }
+    .tiles.big { margin-top:16px !important; }
+    .donut.big { width:108px; height:108px; }
+    .donut.big::after { inset:14px; }
+    .donut.big .c b { font-size:24px; }
+    .donutrow { flex-wrap:nowrap; gap:16px; }
+    .bands { min-width:0; gap:4px; }
+    .diag { margin-top:14px; padding-top:12px; }
+  }
+  @media (max-width:560px) { .rej > div { grid-template-columns:minmax(0,1fr); gap:2px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="top" aria-label="Primary">
+  <div class="brand"><a href="index.html">Jonathan Ryan Richard</a><span class="mono">Case study</span></div>
+  <div class="links">
+    <a href="case-studies.html">All cases</a>
+    <a class="opt" href="how-i-work.html">How I Work</a>
+    <button id="themeBtn" type="button">Dark</button>
+  </div>
+</nav>
+
+<main id="main">
+<article id="case-costing" data-title="An excess-cost algorithm, and the dashboard I deployed it on" hidden>
+  <header class="sec" style="padding-bottom:clamp(32px,5vw,56px);">
+    <div class="wrap head">
+      <div class="mono" style="color:var(--accent); letter-spacing:0.2em;">Resourcing &amp; analytics</div>
+      <h1 tabindex="-1">An excess-cost algorithm, and the dashboard I deployed it on</h1>
+      <p class="stand">Six teams reported how stretched they were six different ways, and three hand-built monthly reports disagreed with each other. I wrote an algorithm that turns a target profit margin into a budget, and any overspend into a number of people, then built and deployed the dashboard it runs on.</p>
+      <div style="margin-top:20px;"><button type="button" class="pill primary jump">Jump to the live model ↓</button></div>
+      <div class="metaline"><div><span class="mono">Role</span><span class="v">PMO Executive · algorithm design, build, deployment</span></div><div><span class="mono">Scope</span><span class="v">Six delivery teams, 100+ staff visible</span></div><div><span class="mono">Tools</span><span class="v">Python, pandas, Dash/Plotly, server deployment</span></div></div>
+      
+      <details class="key"><summary>New to these terms? Plain-English key</summary>
+        <dl><dt>GPM (gross profit margin)</dt><dd>The share of revenue left after the direct costs of delivering the work.</dd><dt>Allowable cost</dt><dd>The most a project can cost and still hit its target margin.</dd><dt>Excess headcount</dt><dd>The overspend expressed as a number of people, so a resourcing decision can act on it.</dd><dt>Rate card</dt><dd>A price list giving every person a cost by grade and country of origin.</dd><dt>YTD</dt><dd>Year to date: the actual figures so far this financial year.</dd></dl>
+      </details>
+    </div>
+  </header>
+
+  <section class="sec" aria-label="Results" style="padding-top:clamp(28px,4vw,48px); padding-bottom:clamp(28px,4vw,48px);">
+    <div class="wrap stats"><div class="stat"><b>4</b><span>Reports consolidated into one deployed app</span></div><div class="stat"><b>−50%</b><span>Manual analysis effort removed</span></div><div class="stat"><b>100+</b><span>Staff visible on the live dashboard</span></div><div class="stat"><b>Monthly</b><span>Actuals and forecast refresh cycle</span></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="two">
+        <div><div class="mono" style="margin-bottom:14px;">Why the old view failed</div><h2 class="h">Everyone knew cost was too high. Nobody could say by how much.</h2></div>
+        <p class="lead">Resourcing decisions ran on advocacy: the team that argued most persuasively about being stretched tended to get the next hire.</p>
+      </div>
+      <div class="cards"><div class="card"><div class="mono" style="color:var(--accent);">Not comparable</div><p>Teams calculated utilisation on different bases. Leave, support duty and internal work were treated inconsistently, so a high number and a low number could describe the same reality.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Not forward-looking</div><p>Only closed actuals were counted, so a team was judged on what had already happened while the commitments that would decide the year sat outside the measure.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Not actionable</div><p>Even where an overrun was visible in ringgit, nothing converted it into heads, grades or origins, so the finding never became a resourcing instruction.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Not current</div><p>Every scenario question meant a new manual extract and a wait of days, so scenarios were rarely asked and almost never compared.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec modelsec">
+    <div class="wrap">
+      <div class="modelhead">
+        <div class="mono">The model, live</div>
+        <h2 class="h">The algorithm, then the view it ships in.</h2>
+        <p>Set a target margin and the model works out the most the project can cost. Whatever it costs beyond that is the overspend, shown in ringgit and as a number of people.</p>
+      </div>
+      <div class="try" data-run='{"s-target":20}' data-reset='{"s-target":30,"s-head":121,"s-off":35,"s-mon":5}'>
+        <p><strong>Try this:</strong> Pull the target margin down to 20% and watch the overspend disappear.</p>
+        <button type="button" class="pill primary tryrun">Show me</button>
+        <button type="button" class="pill tryreset">Reset</button>
+      </div>
+      <div class="mcard">
+      <div class="mgrid">
+        <div>
+          <div class="bars">
+            <div class="bar rev"><span class="n">Revenue · YTD + forecast</span><span class="v" id="rev"></span><div class="track"><div class="fill" id="rev-f" style="background:var(--accent)"></div></div></div>
+            <div class="bar"><span class="n" id="allow-n"></span><span class="v" id="allow"></span><div class="track"><div class="fill" id="allow-f" style="background:var(--series)"></div></div></div>
+            <div class="bar"><span class="n">Actual cost · YTD + forecast</span><span class="v" id="act"></span><div class="track"><div class="fill" id="act-f"></div></div></div>
+          </div>
+          <div class="tiles big" style="margin-top:24px;">
+            <div><b id="ex"></b><span class="mono">Excess cost</span><span class="sub">over the allowable budget</span></div>
+            <div><b id="hd"></b><span class="mono">Excess headcount</span><span class="sub">the same overspend, in people</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="ctl"><div class="row"><label for="s-target">Target GPM</label><output id="s-target-o" for="s-target"></output></div><input type="range" id="s-target" min="10" max="50" step="1" value="30"></div><div class="ctl"><div class="row"><label for="s-head">Headcount on the project</label><output id="s-head-o" for="s-head"></output></div><input type="range" id="s-head" min="20" max="140" step="1" value="121"></div><div class="ctl"><div class="row"><label for="s-off">Offshore mix</label><output id="s-off-o" for="s-off"></output></div><input type="range" id="s-off" min="0" max="80" step="1" value="35"></div><div class="ctl"><div class="row"><label for="s-mon">Months to fiscal year end</label><output id="s-mon-o" for="s-mon"></output></div><input type="range" id="s-mon" min="1" max="12" step="1" value="5"></div>
+          <details class="more" style="margin-top:14px;"><summary>More figures</summary><div class="tiles" id="tiles"></div></details>
+          <p class="note" id="note" aria-live="polite"></p>
+        </div>
+      </div>
+      <details class="more dash"><summary>On the dashboard</summary>
+        <div class="mono" style="color:var(--accent);">On the dashboard</div>
+        <p class="note" style="margin-top:6px;">Built and deployed in-house, refreshed monthly.</p>
+        <div class="dashgrid">
+          <div class="donut" id="donut" role="img" aria-label="Forecasted gross profit margin"><div class="c"><b id="gpm"></b><span class="mono" style="margin-top:4px;">Forecasted GPM</span></div></div>
+          <div><div class="tiles" id="rollup"></div><p class="note">The same figures as the dashboard shows them: one source, one period, four views (performance, forecast, resources, optimisation).</p></div>
+        </div>
+      </details>
+      </div>
+      <span class="chip">Illustrative model · figures anonymised.</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="mono" style="margin-bottom:14px;">Approach</div>
+      <h2 class="h" style="max-width:26ch;">Work back from the target margin, then ship it where people can use it.</h2>
+      <div class="steps">
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 01</span><h3>Invert the margin target</h3></div><div><p>Margin is reported after the fact, so the algorithm runs it backwards: allowable cost = revenue × (1 − target margin). Cost becomes a budget you can be measured against before the year closes.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 02</span><h3>Cost the forecast off a rate card</h3></div><div><p>Every person is priced from their grade and country of origin against a fixed manday month, summed into a monthly burn rate and run to year end, beside the secured and unsecured revenue forecast.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 03</span><h3>Refresh monthly</h3></div><div><p>Each month actuals replace the forecast they supersede and the forward view is recalculated, so the measure moves with the portfolio.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 04</span><h3>Express the gap in heads</h3></div><div><p>Excess cost, divided by the cost of a head over the remaining months, becomes excess headcount: a number a resourcing conversation can act on directly.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 05</span><h3>Build the dashboard and deploy it</h3></div><div><p>I built it in Python and deployed it to the server myself: four views over one reconciled source, with hires, leavers, grades and origins as inputs, so a scenario is answered in the meeting.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--accent-soft);">
+    <div class="wrap change">
+      <div>
+        <div class="mono" style="margin-bottom:14px;">What changed</div>
+        <h2 class="h">Before, and after.</h2>
+        <div class="ba">
+          <span class="mono hd">Before</span><span class="mono hd">After</span>
+          <span class="b">Six incomparable utilisation figures</span><span class="a">One algorithm: allowable cost from target GPM</span>
+          <span class="b">Closed actuals only, always in arrears</span><span class="a">Actuals plus forecast, refreshed monthly</span>
+          <span class="b">Forward cost estimated by feel</span><span class="a">Burn rate priced per head from the rate card</span>
+          <span class="b">Three hand-built monthly reports</span><span class="a">One dashboard, built and deployed in-house</span>
+          <span class="b">Scenario questions became data requests</span><span class="a">Scenarios answered live in the meeting</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:26px;">
+        <div class="quote">“A number nobody can interrogate is a number nobody will act on.”</div>
+        <div><div class="mono">What I took from it</div>
+          <div class="lessons"><div><i></i><span>Expose the fragile assumption rather than burying it. The forecast horizon and the origin mix are the weakest inputs, so both are controls a reviewer can move.</span></div><div><i></i><span>Define the measure in the unit the decision runs in. Ringgit of overrun starts a debate; 29 heads of overrun ends one.</span></div><div><i></i><span>An algorithm nobody can reach is a document. Building and deploying the dashboard myself is why the measure is used monthly rather than quoted once.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="border-bottom:0; padding-top:clamp(32px,5vw,64px);">
+    <div class="wrap"><div class="mono">Other case studies</div><div class="others"><a class="other" href="#der"><span class="mono" style="color:var(--accent);">Quality diagnostics</span><b>Defect Escape Rate: ending the guesswork in Exco reviews</b></a><a class="other" href="#dpmr"><span class="mono" style="color:var(--accent);">KPI design</span><b>From SLA scores to DPMR: measuring quality, not the clock</b></a></div></div>
+  </section>
+</article>
+
+<article id="case-der" data-title="Defect Escape Rate: ending the guesswork in Exco reviews" hidden>
+  <header class="sec" style="padding-bottom:clamp(32px,5vw,56px);">
+    <div class="wrap head">
+      <div class="mono" style="color:var(--accent); letter-spacing:0.2em;">Quality diagnostics</div>
+      <h1 tabindex="-1">Defect Escape Rate: ending the guesswork in Exco reviews</h1>
+      <p class="stand">Quality in executive review meetings ran on phrases like “we think this might be a testing issue.” The missing piece was not another count of bugs. It was a diagnosis: did the problem come from how the software was built, or from how it was tested?</p>
+      <div style="margin-top:20px;"><button type="button" class="pill primary jump">Jump to the live model ↓</button></div>
+      <div class="metaline"><div><span class="mono">Role</span><span class="v">PMO Executive · proposed and implemented</span></div><div><span class="mono">Audience</span><span class="v">Exco, Project Directors, Head of PMO</span></div><div><span class="mono">Tools</span><span class="v">JIRA, JQL, Python, Excel, PowerPoint</span></div></div>
+      <a class="repo" href="https://github.com/JonathanRyanRichard/PMO-Quality-Transformation" target="_blank" rel="noopener">Repository: PMO-Quality-Transformation ↗</a>
+      <details class="key"><summary>New to these terms? Plain-English key</summary>
+        <dl><dt>Defect</dt><dd>A fault in the software.</dd><dt>Exco</dt><dd>The executive committee that reviews project health.</dd><dt>VSIT</dt><dd>Vendor System Integration Testing: the vendor’s own testing of how the parts of the system work together. A defect found here was caught in test.</dd><dt>SIT/UAT</dt><dd>System Integration Testing and User Acceptance Testing: the later testing stages. A defect found here slipped past VSIT, so it escaped.</dd><dt>Test cases per man-day</dt><dd>How much testing is done for each day of tester effort. The standard here is 7.</dd></dl>
+      </details>
+    </div>
+  </header>
+
+  <section class="sec" aria-label="Results" style="padding-top:clamp(28px,4vw,48px); padding-bottom:clamp(28px,4vw,48px);">
+    <div class="wrap stats"><div class="stat"><b>90%</b><span>Project teams on standardised defect definitions</span></div><div class="stat"><b>15+ hrs</b><span>Manual collection removed each month</span></div><div class="stat"><b>40</b><span>Historical projects analysed for thresholds</span></div><div class="stat"><b>4</b><span>Phases from chaos to diagnostic</span></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="two">
+        <div><div class="mono" style="margin-bottom:14px;">Why the old view failed</div><h2 class="h">Why “we think” was not good enough.</h2></div>
+        <p class="lead">Executive decisions were being taken on inference, with no metric able to settle the disagreement.</p>
+      </div>
+      <div class="cards three"><div class="card"><div class="mono" style="color:var(--accent);">Inconsistent</div><p>Different PMs reported different numbers for comparable situations because the classifications were understood differently across teams.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Undiagnostic</div><p>Comparing defects caught in test against those found later raised the question but could not answer it: many late defects could mean weak testing or a weak build.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Manual</div><p>Data was collected by email each cycle: 15+ hours a month of chasing, and a pack that was out of date the moment it was assembled.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec modelsec">
+    <div class="wrap">
+      <div class="modelhead">
+        <div class="mono">The model, live</div>
+        <h2 class="h">Run the diagnostic yourself.</h2>
+        <p>Set how many defects were caught in testing and how many escaped. The escape rate lands in a colour band, and the diagnosis changes with how much testing was done.</p>
+      </div>
+      <div class="try" data-run='{"d-tcd":4}' data-reset='{"d-vsit":38,"d-sit":62,"d-tcd":7}'>
+        <p><strong>Try this:</strong> Drag test cases per man-day below 7 and watch the diagnosis flip from a build problem to a testing problem.</p>
+        <button type="button" class="pill primary tryrun">Show me</button>
+        <button type="button" class="pill tryreset">Reset</button>
+      </div>
+      <div class="mcard">
+      <div class="mgrid">
+        <div>
+          <div class="donutrow">
+            <div class="donut big" id="d-donut" role="img" aria-label="Defect escape rate"><div class="c"><b id="d-val"></b><span class="mono" style="margin-top:4px;">Escape rate</span></div></div>
+            <div class="bands" id="d-bands"></div>
+          </div>
+          <div class="diag"><span class="mono">Diagnosis</span><b id="d-band"></b><p id="d-diag" aria-live="polite"></p></div>
+        </div>
+        <div>
+          <details class="more"><summary>How the rate is calculated</summary><p class="mono" style="letter-spacing:0.08em; text-transform:none; line-height:1.7; margin-top:8px;">DER = escaped ÷ (caught + escaped) × 100</p><p class="note" style="margin-top:6px;">In words: the share of all defects that escaped testing and only surfaced later.</p></details>
+          <div class="ctl"><div class="row"><label for="d-vsit">Defects caught in test (VSIT)</label><output id="d-vsit-o" for="d-vsit"></output></div><input type="range" id="d-vsit" min="10" max="200" step="1" value="38"></div><div class="ctl"><div class="row"><label for="d-sit">Defects that escaped (SIT/UAT)</label><output id="d-sit-o" for="d-sit"></output></div><input type="range" id="d-sit" min="5" max="200" step="1" value="62"></div><div class="ctl"><div class="row"><label for="d-tcd">Test cases per man-day (standard: 7)</label><output id="d-tcd-o" for="d-tcd"></output></div><input type="range" id="d-tcd" min="2" max="14" step="0.5" value="7"></div>
+        </div>
+      </div>
+      </div>
+      <span class="chip">Illustrative model · figures anonymised.</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="mono" style="margin-bottom:14px;">Approach</div>
+      <h2 class="h" style="max-width:26ch;">Standardise, introduce the missing diagnostic, then benchmark it on real data.</h2>
+      <div class="steps">
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Phase 01</span><h3>Standardise the definitions</h3></div><div><p>I trained project managers on what each defect classification actually means and corrected where team practice differed from the standard. Tracking moved into JIRA with shared definitions, reaching 90% of teams.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Phase 02</span><h3>Introduce Defect Escape Rate</h3></div><div><p>DER is the share of all defects that escaped testing and only surfaced later. It uses data already collected, so adoption cost nothing. Read against how much testing was done, it points at the build or at the testing.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Phase 03</span><h3>Benchmark against 40 projects</h3></div><div><p>I analysed 40 past projects to see the normal range, then agreed bands with the Head of PMO: green below 40%, amber 40 to 50%, red above 50%, each with a defined action.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Phase 04</span><h3>Automate the reporting</h3></div><div><p>Dashboards built on JIRA data replaced the email chase, cutting preparation from 15+ hours a month to around two, and letting teams see their own number before Exco did.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--accent-soft);">
+    <div class="wrap change">
+      <div>
+        <div class="mono" style="margin-bottom:14px;">What changed</div>
+        <h2 class="h">Before, and after.</h2>
+        <div class="ba">
+          <span class="mono hd">Before</span><span class="mono hd">After</span>
+          <span class="b">“We think this might be a testing issue”</span><span class="a">“DER of 65% indicates a testing effectiveness issue”</span>
+          <span class="b">Six competing readings of the same defect</span><span class="a">One taxonomy, 90% of teams reporting on it</span>
+          <span class="b">15+ hours a month collecting data by email</span><span class="a">JQL dashboards, around two hours a month</span>
+          <span class="b">No trigger for Exco intervention</span><span class="a">Green, amber and red bands with defined actions</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:26px;">
+        <div class="quote">“Credibility came from bringing data to the conversation, not from years of experience.”</div>
+        <div><div class="mono">What I took from it</div>
+          <div class="lessons"><div><i></i><span>Use the data the organisation already collects. A metric that needs new inputs will not be adopted, however elegant it is.</span></div><div><i></i><span>One number rarely diagnoses anything. DER only works read against coverage. Pairs of metrics beat single ones.</span></div><div><i></i><span>Fix the definitions before building the dashboard. The other order looks faster and is not.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="border-bottom:0; padding-top:clamp(32px,5vw,64px);">
+    <div class="wrap"><div class="mono">Other case studies</div><div class="others"><a class="other" href="#costing"><span class="mono" style="color:var(--accent);">Resourcing &amp; analytics</span><b>An excess-cost algorithm, and the dashboard I deployed it on</b></a><a class="other" href="#dpmr"><span class="mono" style="color:var(--accent);">KPI design</span><b>From SLA scores to DPMR: measuring quality, not the clock</b></a></div></div>
+  </section>
+</article>
+
+<article id="case-dpmr" data-title="From SLA scores to DPMR: measuring quality, not the clock" hidden>
+  <header class="sec" style="padding-bottom:clamp(32px,5vw,56px);">
+    <div class="wrap head">
+      <div class="mono" style="color:var(--accent); letter-spacing:0.2em;">KPI design</div>
+      <h1 tabindex="-1">From SLA scores to DPMR: measuring quality, not the clock</h1>
+      <p class="stand">Software quality was scored on how fast problems were fixed, not on how many problems there were. A team could fix quickly, keep producing defects, and still score well. The replacement counts defects per million ringgit (RM) of project cost.</p>
+      <div style="margin-top:20px;"><button type="button" class="pill primary jump">Jump to the live model ↓</button></div>
+      <div class="metaline"><div><span class="mono">Role</span><span class="v">PMO Executive · KPI design, P&amp;C context</span></div><div><span class="mono">Collaboration</span><span class="v">Head of CPMO set the improvement target</span></div><div><span class="mono">Tools</span><span class="v">Excel, descriptive statistics, sensitivity testing</span></div></div>
+      <a class="repo" href="https://github.com/JonathanRyanRichard/Production-Defect-KPI-Redesign" target="_blank" rel="noopener">Repository: Production-Defect-KPI-Redesign ↗</a>
+      <details class="key"><summary>New to these terms? Plain-English key</summary>
+        <dl><dt>SLA</dt><dd>Service level agreement: a promised time to fix a problem. Meeting it counted as good quality.</dd><dt>DPMR</dt><dd>Defects per million ringgit: production defects divided by project cost in millions.</dd><dt>Benchmark</dt><dd>The target a project is compared against.</dd><dt>R²</dt><dd>How well one number predicts another, from 0 (not at all) to 1 (perfectly).</dd><dt>CPMO</dt><dd>Central Project Management Office.</dd></dl>
+      </details>
+    </div>
+  </header>
+
+  <section class="sec" aria-label="Results" style="padding-top:clamp(28px,4vw,48px); padding-bottom:clamp(28px,4vw,48px);">
+    <div class="wrap stats"><div class="stat"><b>DPMR</b><span>Defects per million ringgit, the final metric</span></div><div class="stat"><b>−10%</b><span>Improvement built into the benchmark</span></div><div class="stat"><b>1 to 5</b><span>Quality score, explainable in one sentence</span></div><div class="stat"><b>5</b><span>Methods tested and rejected before DPMR</span></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="two">
+        <div><div class="mono" style="margin-bottom:14px;">What the redesign had to satisfy</div><h2 class="h">A metric that measured speed and called it quality.</h2></div>
+        <p class="lead">A fast fix on a system that kept producing defects still scored well, and client-set deadlines could make a late fix count as on time. Three requirements, all at once:</p>
+      </div>
+      <div class="cards three"><div class="card"><div class="mono" style="color:var(--accent);">Fairness</div><p>It had to reflect defect performance rather than response speed, and compare projects of very different sizes on the same axis.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Adoptability</div><p>Simple enough for organisation-wide use. A metric that needs a footnote does not get quoted correctly.</p></div><div class="card"><div class="mono" style="color:var(--accent);">Defensibility</div><p>It had to be explainable and defensible in front of Exco and to the project being scored, including when the score is bad.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec modelsec">
+    <div class="wrap">
+      <div class="modelhead">
+        <div class="mono">The model, live</div>
+        <h2 class="h">Score a project under both lenses.</h2>
+        <p>The same project, scored two ways. The SLA lens only counts how many fixes met the deadline. The DPMR lens compares defects with project cost, against a target.</p>
+      </div>
+      <div class="try" data-run='{"p-def":60}' data-reset='{"p-def":18,"p-cost":1200000,"p-sla":92}'>
+        <p><strong>Try this:</strong> Raise production defects to 60. The SLA score stays put; the DPMR score drops.</p>
+        <button type="button" class="pill primary tryrun">Show me</button>
+        <button type="button" class="pill tryreset">Reset</button>
+      </div>
+      <div class="mcard">
+      <div class="mgrid">
+        <div>
+          <div class="scores">
+            <div><span class="mono">SLA lens</span><b class="score" id="p-sla-s"></b><span class="sc" id="p-sla-n"></span></div>
+            <div><span class="mono">DPMR lens</span><b class="score" id="p-dp-s"></b><span class="sc" id="p-dp-n"></span></div>
+          </div>
+          <p class="note" id="p-verdict" aria-live="polite"></p>
+        </div>
+        <div>
+          <div class="ctl"><div class="row"><label for="p-def">Production defects</label><output id="p-def-o" for="p-def"></output></div><input type="range" id="p-def" min="1" max="60" step="1" value="18"></div><div class="ctl"><div class="row"><label for="p-cost">Project cost</label><output id="p-cost-o" for="p-cost"></output></div><input type="range" id="p-cost" min="200000" max="6000000" step="100000" value="1200000"></div><div class="ctl"><div class="row"><label for="p-sla">Fixes closed inside the SLA window</label><output id="p-sla-o" for="p-sla"></output></div><input type="range" id="p-sla" min="60" max="100" step="1" value="92"></div>
+          <p class="mono" style="letter-spacing:0.08em; text-transform:none; line-height:1.7; margin-top:8px;" id="p-rate"></p>
+          <details class="key inline"><summary>How the scores are given</summary>
+            <p class="note" style="margin-top:8px;"><strong>SLA lens:</strong> 5 = 95% or more of fixes on time, 4 = 90%, 3 = 80%, 2 = 70%, 1 = below 70%.</p>
+            <p class="note" style="margin-top:8px;"><strong>DPMR lens:</strong> 5 = at most 60% of the target, 4 = up to 85%, 3 = at the target, 2 = up to 140%, 1 = above 140%.</p>
+          </details>
+        </div>
+      </div>
+      </div>
+      <span class="chip">Illustrative model · figures anonymised.</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="mono" style="margin-bottom:14px;">Approach</div>
+      <h2 class="h" style="max-width:26ch;">Iterative, and willing to throw work away.</h2>
+      <div class="steps">
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 01</span><h3>Challenge the assumption</h3></div><div><p>The working idea was that bigger projects naturally have more defects, so project value could be the benchmark. Plotting three financial years gave R² = 0.25: some large projects were clean, some small ones were not. Project value predicts nothing, and the simple version died there.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 02</span><h3>Test candidates against real data</h3></div><div><p>Four statistical methods were tried and dropped. Each failed a practical test: could a project manager set a target, and could it be explained in a review?</p>
+          <div class="rej" role="list" aria-label="Methods rejected and why"><div role="listitem"><span>Raw defect counts</span><span>Project size does not predict defects, so it cannot be the yardstick</span></div><div role="listitem"><span>Z-score / bell curve</span><span>Assumes defects spread evenly around an average. Ours are lopsided: most projects have few, a handful have many</span></div><div role="listitem"><span>Ranking on the curve</span><span>Each project is graded against the others that year, so the same result could pass one year and fail the next, and managers could not set a target in advance</span></div><div role="listitem"><span>Grouping by size</span><span>Size bands gave fuzzy targets, and projects kept moving between bands</span></div><div role="listitem"><span>MAD score</span><span>Statistically sound, but nobody could explain it in a review or turn it into a 1 to 5 score</span></div></div></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 03</span><h3>Normalise by cost</h3></div><div><p>DPMR = production defects ÷ project cost in millions of RM. Cost is already agreed, audited and independent of negotiation, and testing confirmed the score stayed stable across project sizes.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 04</span><h3>Set an aspirational benchmark</h3></div><div><p>Benchmarks came from the historical average. Then the Head of CPMO made a strategic call: build in a 10% improvement, so target = average × 0.9. That turned a descriptive metric into one that pushes for better.</p></div></div>
+        <div class="step"><div><span class="mono" style="color:var(--accent);">Step 05</span><h3>Wrap it in a 1 to 5 score</h3></div><div><p>Managers want a rating, not a rate. Bands around the target produce a 1 to 5 quality score a project can explain without a statistician.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--accent-soft);">
+    <div class="wrap change">
+      <div>
+        <div class="mono" style="margin-bottom:14px;">What changed</div>
+        <h2 class="h">Before, and after.</h2>
+        <div class="ba">
+          <span class="mono hd">Before</span><span class="mono hd">After</span>
+          <span class="b">Time-based SLA scoring</span><span class="a">DPMR, defects per million ringgit</span>
+          <span class="b">Response speed rewarded</span><span class="a">Defect prevention rewarded</span>
+          <span class="b">Historical baseline accepted</span><span class="a">Benchmark set 10% below the average</span>
+          <span class="b">Management frustrated with the metric</span><span class="a">Management confident enough to decide on it</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:26px;">
+        <div class="quote">“Statistics were used to validate decisions, not to dictate them. It is not about the most sophisticated model. It is about the right model that actually gets used.”</div>
+        <div><div class="mono">What I took from it</div>
+          <div class="lessons"><div><i></i><span>Simple usually beats complex. The most statistically defensible method was the least defensible in the room, and knowing why each option was dropped is what made the final metric defensible.</span></div><div><i></i><span>Test the assumption before designing around it. “Bigger projects have more defects” felt obvious enough to build on, and R² = 0.25 saved a year of arguing about the wrong benchmark.</span></div><div><i></i><span>A benchmark is a policy choice, not just an average. The 10% adjustment is where analysis handed over to leadership, correctly.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="border-bottom:0; padding-top:clamp(32px,5vw,64px);">
+    <div class="wrap"><div class="mono">Other case studies</div><div class="others"><a class="other" href="#costing"><span class="mono" style="color:var(--accent);">Resourcing &amp; analytics</span><b>An excess-cost algorithm, and the dashboard I deployed it on</b></a><a class="other" href="#der"><span class="mono" style="color:var(--accent);">Quality diagnostics</span><b>Defect Escape Rate: ending the guesswork in Exco reviews</b></a></div></div>
+  </section>
+</article>
+</main>
+
+<footer class="foot" style="border-top:1px solid var(--line);">
+  <a href="case-studies.html">← All case studies</a>
+  <a href="resume.html">Full resume →</a>
+</footer>
+<script>
+(function () {
+  /* theme: the shared engine (theme.js) resolves, tweens and remembers the choice */
+  var THEMES = window.JRR_THEMES, btn = document.getElementById('themeBtn');
+  function label(dark) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  label(window.JRRTheme.resolve());
+  btn.addEventListener('click', function () {
+    var dark = !window.JRRTheme.resolve();
+    window.JRRTheme.choose(dark); window.JRRTheme.apply(THEMES, dark, true); label(dark);
+  });
+  window.JRRTheme.watch(function (dark) { window.JRRTheme.apply(THEMES, dark, true); label(dark); });
+
+  var prog = document.getElementById('progress');
+  function onScroll() { var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.width = (h > 0 ? Math.min(100, window.scrollY / h * 100) : 0) + '%'; }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  function $(id) { return document.getElementById(id); }
+  function money(n) { if (n >= 1000000) return 'RM ' + (n / 1000000).toFixed(2) + 'm'; if (n >= 1000) return 'RM ' + Math.round(n / 1000) + 'k'; return 'RM ' + Math.round(n); }
+  function paint(id, txt) { var el = $(id), min = +el.min, max = +el.max; el.style.setProperty('--p', ((+el.value - min) / (max - min) * 100) + '%'); $(id + '-o').textContent = txt; }
+  function tiles(el, arr) { el.innerHTML = arr.map(function (t) { return '<div><b style="color:' + t.c + '">' + t.v + '</b><span class="mono">' + t.l + '</span></div>'; }).join(''); }
+  var C = { good: 'var(--accent)', warn: 'var(--warn)', bad: 'var(--critical)' };
+
+  var mqm = window.matchMedia('(max-width:720px)');
+  function syncMore() { document.querySelectorAll('details.more').forEach(function (d) { d.open = !mqm.matches; }); }
+  if (mqm.addEventListener) mqm.addEventListener('change', syncMore); else mqm.addListener(syncMore);
+  syncMore();
+
+  /* ---------- routing: all three cases are in the page, the hash picks one ---------- */
+  var KEYS = ['costing', 'der', 'dpmr'], TITLES = {"costing":"An excess-cost algorithm, and the dashboard I deployed it on","der":"Defect Escape Rate: ending the guesswork in Exco reviews","dpmr":"From SLA scores to DPMR: measuring quality, not the clock"};
+  function route(focus) {
+    var k = (location.hash || '').slice(1); if (k === 'dashboard') k = 'costing'; if (KEYS.indexOf(k) < 0) k = 'costing';
+    KEYS.forEach(function (id) { $('case-' + id).hidden = id !== k; });
+    document.title = TITLES[k] + ' | Jonathan Ryan Richard';
+    if (focus) { window.scrollTo(0, 0); var h = $('case-' + k).querySelector('h1'); if (h) h.focus({ preventScroll: true }); }
+    onScroll();
+  }
+  window.addEventListener('hashchange', function () { route(true); }); route(false);
+
+  document.querySelectorAll('.jump').forEach(function (b) { b.addEventListener('click', function () { var m = document.querySelector('article:not([hidden]) .modelsec'); if (m) m.scrollIntoView({ behavior: (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth', block: 'start' }); }); });
+
+  /* ---------- "Try this": Show me / Reset animate the real sliders ---------- */
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tween(id, to) {
+    var el = $(id), from = +el.value;
+    if (calm) { el.value = to; el.dispatchEvent(new Event('input')); return; }
+    var t0 = null;
+    (function step(ts) { if (t0 === null) t0 = ts; var p = Math.min(1, (ts - t0) / 1100), e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; el.value = from + (to - from) * e; el.dispatchEvent(new Event('input')); if (p < 1) requestAnimationFrame(step); })(performance.now());
+  }
+  document.querySelectorAll('.try').forEach(function (box) {
+    var run = JSON.parse(box.getAttribute('data-run')), reset = JSON.parse(box.getAttribute('data-reset'));
+    box.querySelector('.tryrun').addEventListener('click', function () { Object.keys(reset).forEach(function (id) { if (!(id in run)) tween(id, reset[id]); }); Object.keys(run).forEach(function (id) { tween(id, run[id]); }); });
+    box.querySelector('.tryreset').addEventListener('click', function () { Object.keys(reset).forEach(function (id) { tween(id, reset[id]); }); });
+  });
+
+  /* ---------- 1. excess cost: same constants and formulas as the current Case Detail ---------- */
+  var RATE_ON = 1150, RATE_OFF = 690, MANDAYS = 20, YTD_REV = 34800000, YTD_COST = 24100000, FC_REV = 12600000;
+  function drawCosting() {
+    var target = +$('s-target').value, head = +$('s-head').value, off = +$('s-off').value, months = +$('s-mon').value;
+    paint('s-target', target + '%'); paint('s-head', head + ' staff'); paint('s-off', off + '% offshore'); paint('s-mon', months + (months === 1 ? ' month' : ' months'));
+    var md = RATE_ON * (1 - off / 100) + RATE_OFF * (off / 100), burn = head * md * MANDAYS, fcCost = burn * months;
+    var revenue = YTD_REV + FC_REV, cost = YTD_COST + fcCost, gpm = (revenue - cost) / revenue, tgt = target / 100;
+    var allow = revenue * (1 - tgt), excess = cost - allow, heads = excess / (md * MANDAYS * months);
+    var max = Math.max(revenue, cost, allow), over = excess > 0, col = over ? 'var(--critical)' : 'var(--accent)';
+    $('rev').textContent = money(revenue); $('allow-n').textContent = 'Allowable cost at ' + target + '% GPM'; $('allow').textContent = money(allow); $('act').textContent = money(cost);
+    $('rev-f').style.transform = 'scaleX(' + Math.max(0.01, revenue / max) + ')'; $('allow-f').style.transform = 'scaleX(' + Math.max(0.01, allow / max) + ')';
+    var af = $('act-f'); af.style.transform = 'scaleX(' + Math.max(0.01, cost / max) + ')'; af.style.background = col;
+    $('ex').textContent = (over ? '' : '−') + money(Math.abs(excess)); $('ex').style.color = col;
+    $('hd').textContent = (over ? '' : '−') + Math.abs(heads).toFixed(1); $('hd').style.color = col;
+    tiles($('tiles'), [{ v: (gpm * 100).toFixed(1) + '%', l: 'Forecasted GPM', c: gpm >= tgt ? 'var(--accent)' : 'var(--critical)' }, { v: money(Math.round(md)), l: 'Blended rate per manday', c: 'var(--ink)' }, { v: money(burn), l: 'Monthly burn rate', c: 'var(--ink)' }, { v: money(fcCost), l: 'Forecast cost to year end', c: 'var(--ink)' }]);
+    $('note').textContent = over
+      ? head + ' staff burning ' + money(burn) + ' a month puts total cost ' + money(excess) + ' above what a ' + target + '% GPM allows (about ' + heads.toFixed(1) + ' heads of it). Drop the target, shift the origin mix, or shorten the horizon and the same figure moves, which is what makes the conversation a decision rather than a defence.'
+      : head + ' staff at ' + money(burn) + ' a month sits inside the allowable cost for a ' + target + '% GPM, with ' + money(Math.abs(excess)) + ' of headroom. Raise the target or the headcount and the gap reappears.';
+    var pct = Math.max(0, Math.round(gpm * 100));
+    $('donut').style.background = 'conic-gradient(var(--accent) 0 ' + pct + '%, var(--series) ' + pct + '% 100%)'; $('gpm').textContent = (gpm * 100).toFixed(1) + '%';
+    tiles($('rollup'), [{ v: money(revenue), l: 'Revenue · YTD plus forecast', c: 'var(--ink)' }, { v: money(cost), l: 'Cost · YTD plus forecast', c: 'var(--ink)' }, { v: money(revenue - cost), l: 'Gross profit', c: 'var(--accent)' }, { v: head + ' staff', l: 'Costed off the rate card', c: 'var(--ink)' }]);
+  }
+  ['s-target', 's-head', 's-off', 's-mon'].forEach(function (id) { $(id).addEventListener('input', drawCosting); }); drawCosting();
+
+  /* ---------- 2. defect escape rate: green below 40, amber 40 to 50, red above 50 ---------- */
+  function drawDer() {
+    var v = +$('d-vsit').value, s = +$('d-sit').value, tcd = +$('d-tcd').value;
+    paint('d-vsit', String(v)); paint('d-sit', String(s)); paint('d-tcd', tcd.toFixed(1));
+    var der = Math.round(s / (v + s) * 1000) / 10;
+    var name = der < 40 ? 'Green' : der <= 50 ? 'Amber' : 'Red', col = der < 40 ? C.good : der <= 50 ? C.warn : C.bad;
+    $('d-val').textContent = der.toFixed(0) + '%'; $('d-val').style.color = col;
+    $('d-donut').style.background = 'conic-gradient(' + col + ' 0 ' + der + '%, var(--series) ' + der + '% 100%)';
+    $('d-donut').setAttribute('aria-label', 'Defect escape rate ' + der.toFixed(0) + ' percent, ' + name + ' band');
+    $('d-bands').innerHTML = [['Green', 'below 40%', C.good], ['Amber', '40 to 50%', C.warn], ['Red', 'above 50%', C.bad]].map(function (b) { return '<div class="band" data-on="' + (b[0] === name) + '" style="--bandc:' + b[2] + '"><span><i style="background:' + b[2] + '"></i>' + b[0] + '</span><span>' + b[1] + '</span></div>'; }).join('');
+    $('d-band').textContent = name + ' band'; $('d-band').style.color = der < 40 ? 'var(--ink)' : col;
+    $('d-diag').textContent = der < 40 ? 'Testing is catching defects before they escape. Nothing here points at either function.'
+      : tcd < 7 ? 'Escapes are high and testing is below the standard of seven test cases per man-day, so the evidence points at test coverage, not the build.'
+      : 'Escapes are high while testing meets the standard, so testing is doing its job on a weak build. That is a development problem.';
+  }
+  ['d-vsit', 'd-sit', 'd-tcd'].forEach(function (id) { $(id).addEventListener('input', drawDer); }); drawDer();
+
+  /* ---------- 3. SLA vs DPMR ---------- */
+  var NAMES = { 5: 'Excellent', 4: 'Good', 3: 'Acceptable', 2: 'Needs improvement', 1: 'Poor' }, BENCH = 12.5;
+  function sc(n) { return n >= 4 ? C.good : n === 3 ? 'var(--ink)' : C.bad; }
+  function drawDpmr() {
+    var d = +$('p-def').value, cost = +$('p-cost').value, sla = +$('p-sla').value;
+    paint('p-def', String(d)); paint('p-cost', money(cost)); paint('p-sla', sla + '%');
+    var dp = d / (cost / 1000000);
+    var ds = dp <= BENCH * 0.6 ? 5 : dp <= BENCH * 0.85 ? 4 : dp <= BENCH ? 3 : dp <= BENCH * 1.4 ? 2 : 1, ss = sla >= 95 ? 5 : sla >= 90 ? 4 : sla >= 80 ? 3 : sla >= 70 ? 2 : 1;
+    $('p-sla-s').textContent = ss + ' / 5'; $('p-sla-s').style.color = sc(ss); $('p-sla-n').textContent = NAMES[ss] + ' · ' + sla + '% of fixes inside the window';
+    $('p-dp-s').textContent = ds + ' / 5'; $('p-dp-s').style.color = sc(ds); $('p-dp-n').textContent = NAMES[ds] + ' · ' + dp.toFixed(1) + ' defects per RM 1m';
+    $('p-rate').textContent = 'DPMR = defects ÷ project cost in RM millions. Target: ' + BENCH + ' (the historical average less 10%).';
+    $('p-verdict').innerHTML = ss > ds ? '<strong>SLA says ' + NAMES[ss].toLowerCase() + ', DPMR says ' + NAMES[ds].toLowerCase() + '.</strong> The fixes were fast, but the system still produces defects. Only DPMR notices. Drag production defects and the SLA score sits still.'
+      : ss < ds ? '<strong>DPMR says ' + NAMES[ds].toLowerCase() + ', SLA says ' + NAMES[ss].toLowerCase() + '.</strong> Few defects for the money, but fixes ran late. Each lens catches a different failure.'
+      : '<strong>Both lenses agree at ' + ss + ' of 5.</strong> Push the defect count up and only DPMR reacts. Drag the SLA slider and only SLA does.';
+  }
+  ['p-def', 'p-cost', 'p-sla'].forEach(function (id) { $(id).addEventListener('input', drawDpmr); }); drawDpmr();
+})();
+</script>
+</body>
+</html>

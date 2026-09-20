@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-head-fonts href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet">
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+<title>Photography, design and writing · Jonathan Ryan Richard</title>
+<meta name="description" content="Photography, design and writing by Jonathan Ryan Richard: church service and charity production albums, design enquiries and essays.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jonathanryanrichard.github.io/how-i-see.html">
+<meta property="og:url" content="https://jonathanryanrichard.github.io/how-i-see.html">
+<meta property="og:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jonathan Ryan Richard: How I Work and How I See">
+<meta name="twitter:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta name="author" content="Jonathan Ryan Richard">
+<meta name="theme-color" content="#0E0F12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jonathan Ryan Richard">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="Photography, design and writing · Jonathan Ryan Richard">
+<meta property="og:description" content="Photography, design and writing by Jonathan Ryan Richard: church service and charity production albums, design enquiries and essays.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photography, design and writing · Jonathan Ryan Richard">
+<meta name="twitter:description" content="Photography, design and writing by Jonathan Ryan Richard: church service and charity production albums, design enquiries and essays.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"How I See: photography, design and writing","author":{"@type":"Person","name":"Jonathan Ryan Richard"}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#0C0D10; --bg-alt:#0A0B0E; --ink:#F2F0EC; --body:#CFD0D8; --soft:#C9CAD1; --muted:#A9AAB3; --muted-2:#8A8C95; --accent:#C9B892; --accent-soft:rgba(201,184,146,0.07); --glow:rgba(201,184,146,0.14); --line:rgba(255,255,255,0.14); --line-soft:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.28); --surface:#101116; --tile:#0E0F13; --stripe-a:#17181E; --nav-bg:rgba(12,13,16,0.74); --btn-bg:#C9B892; --btn-fg:#0C0D10; }
+  html, body { margin:0; padding:0; background:var(--bg); scroll-behavior:smooth; }
+  section[id] { scroll-margin-top:84px; }
+  /* Album view: 6-column grid so every row fills. third = 2 cols, half = 3 cols, full = whole row. */
+  .ph-head { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:clamp(24px,5vw,80px); align-items:end; }
+  .ph-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:clamp(28px,3.2vw,44px) clamp(16px,2vw,28px); }
+  .ph-grid > [data-span="third"] { grid-column:span 2; }
+  .ph-grid > [data-span="half"] { grid-column:span 3; }
+  .ph-grid > [data-span="full"] { grid-column:1 / -1; }
+  .ph-img { aspect-ratio:3 / 2; }
+  .ph-grid > [data-span="full"] .ph-img { aspect-ratio:16 / 9; }
+  .ph-grid > [data-span="full"] img { object-position:center 45%; }
+  @media (max-width:900px) {
+    .ph-head { grid-template-columns:minmax(0,1fr); }
+    .ph-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .ph-grid > [data-span] { grid-column:span 1; }
+    .ph-grid > [data-lead2="1"] { grid-column:1 / -1; }
+    .ph-grid > [data-span="full"] .ph-img { aspect-ratio:3 / 2; }
+    .ph-grid > [data-span="full"] img { object-position:center; }
+  }
+  @media (max-width:560px) {
+    .ph-grid { grid-template-columns:minmax(0,1fr); }
+    .ph-grid > [data-span] { grid-column:1 / -1; }
+  }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { color:var(--ink); }
+  @keyframes slowfade { from { opacity:0; } to { opacity:1; } }
+  @keyframes curtainIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes curtainOut { from { opacity:1; } to { opacity:0; } }
+  @keyframes labelUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+  @keyframes labelDrift { from { transform:none; } to { transform:translateY(-10px); } }
+  @keyframes ruleIn { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:1ms !important; animation-delay:0ms !important; transition-duration:1ms !important; }
+    html { scroll-behavior:auto !important; }
+  }
+</style>
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+</helmet>
+<div style="background:var(--bg); color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; min-height:100vh; overflow-x:hidden;">
+
+
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; padding:18px clamp(18px,4vw,48px); backdrop-filter:blur(14px); background:var(--nav-bg); border-bottom:1px solid var(--line-soft);">
+    <div style="display:flex; align-items:baseline; gap:14px;">
+      <a href="index.html" style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:21px; color:var(--ink);">Jonathan Ryan Richard</a>
+      <span style="display:{{ navTag }}; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted-2);">How I See</span>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpenAttr }}" aria-label="Menu" style="display:{{ menuBtn }}; align-items:center; justify-content:center; min-height:44px; min-width:88px; padding:0 16px; border:1px solid var(--line-strong); background:transparent; border-radius:999px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink);">{{ menuLabel }}</button>
+    <div onClick="{{ closeMenu }}" style="display:{{ navLinks }}; flex-direction:{{ navDir }}; width:{{ navWidth }}; line-height:{{ navLine }}; gap:clamp(12px,2vw,26px); align-items:{{ navAlign }}; font-family:'Schibsted Grotesk',system-ui,sans-serif; font-weight:500; font-size:14px; letter-spacing:0; flex-wrap:wrap;">
+      <a href="#photography" style="color:var(--muted-2);">Photography</a>
+      <a href="#design" style="color:var(--muted-2);">Design</a>
+      <a href="#writing" style="color:var(--muted-2);">Writing</a>
+      <button onClick="{{ toggleTheme }}" style="border:0; background:transparent; border-radius:999px; padding:6px 4px; text-align:left; cursor:pointer; font-family:'Schibsted Grotesk',system-ui,sans-serif; font-weight:500; font-size:14px; letter-spacing:0; color:var(--muted-2);">{{ themeLabel }}</button>
+      <a href="how-i-work.html" style="border:1px solid var(--line-strong); border-radius:999px; padding:7px 15px; line-height:1.4; text-align:center; color:var(--ink);">How I Work →</a>
+    </div>
+  </nav>
+<main id="main">
+
+  <header style="position:relative; min-height:100vh; display:flex; align-items:flex-end; padding:clamp(28px,6vw,80px); overflow:hidden;">
+    <div data-parallax="0.25" style="position:absolute; inset:-34% -4%; background-image:repeating-linear-gradient(112deg,var(--stripe-a) 0 3px,var(--bg) 3px 14px); opacity:0.85;"></div>
+    <div data-parallax="0.12" style="position:absolute; inset:0; background:radial-gradient(120% 80% at 70% 20%, var(--glow), transparent 60%);"></div>
+    <div style="position:relative; animation:slowfade 1800ms 500ms ease both;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent);">Photography, design, writing</div>
+      <h1 style="font-family:'EB Garamond',Georgia,serif; font-style:italic; font-weight:400; font-size:clamp(48px,10vw,150px); letter-spacing:-0.01em; line-height:0.9; margin:24px 0 20px; text-wrap:balance;">How I See</h1>
+      <p style="font-size:18px; line-height:1.7; color:var(--soft); max-width:46ch; margin:0;">The camera and the spreadsheet ask the same question: what's actually going on here? One answers with evidence. This one answers with attention.</p>
+    </div>
+  </header>
+
+  <section id="photography" style="padding:clamp(60px,9vw,130px) clamp(18px,4vw,48px); border-top:1px solid var(--line-soft);">
+    <div style="max-width:1240px; margin:0 auto;">
+
+      <sc-if value="{{ showAlbums }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h2 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(34px,5vw,60px); letter-spacing:-0.01em; line-height:1.1; margin:0 0 14px; text-wrap:balance;">Photography</h2>
+          <p style="font-size:18px; line-height:1.65; color:var(--muted); max-width:52ch; margin:0 0 clamp(28px,4vw,48px); text-wrap:pretty;">Church services and a charity production.</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:clamp(20px,3vw,36px);">
+            <sc-for list="{{ albums }}" as="a" hint-placeholder-count="2">
+              <div data-reveal="" onClick="{{ a.open }}" onKeyDown="{{ a.openKey }}" role="button" tabindex="0" aria-label="Open album: {{ a.title }}, {{ a.count }}" style="cursor:pointer; display:flex; flex-direction:column; gap:16px;">
+                <div style="position:relative; overflow:hidden; aspect-ratio:3/2; background:var(--surface); border:1px solid var(--line-soft);">
+                  <img src="{{ a.thumb }}" srcset="{{ a.srcset }}" sizes="{{ a.sizes }}" alt="{{ a.coverAlt }}" width="900" height="600" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;">
+                  <h3 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(26px,3vw,36px); letter-spacing:-0.01em; line-height:1.15; margin:0;">{{ a.title }}</h3>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted-2);">{{ a.count }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showAlbum }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <button onClick="{{ backToAlbums }}" style="cursor:pointer; border:1px solid var(--line-strong); background:transparent; border-radius:999px; padding:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); margin-bottom:clamp(28px,4vw,48px);">← All albums</button>
+
+          <div class="ph-head" style="padding-bottom:clamp(24px,3vw,40px); border-bottom:1px solid var(--line);">
+            <h2 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(44px,7.4vw,96px); line-height:0.95; letter-spacing:-0.03em; margin:0; text-wrap:balance;">{{ albumHeadline }}</h2>
+            <p style="font-size:18px; line-height:1.7; color:var(--soft); max-width:46ch; margin:0; padding-bottom:6px; text-wrap:pretty;">{{ albumIntro }}</p>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:clamp(18px,2.4vw,28px) 0 clamp(24px,3vw,40px);">
+            <div role="group" aria-label="Filter photos" style="display:flex; gap:10px; flex-wrap:wrap;">
+              <sc-if value="{{ showChips }}" hint-placeholder-val="{{ true }}">
+                <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+                  <button onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="cursor:pointer; min-height:44px; padding:0 20px; border:1px solid {{ f.bd }}; background:{{ f.bg }}; color:{{ f.fg }}; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase;">{{ f.label }}</button>
+                </sc-for>
+              </sc-if>
+            </div>
+            <span aria-live="polite" style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted-2);">{{ frameCount }}</span>
+          </div>
+
+          <div class="ph-grid">
+            <sc-for list="{{ photos }}" as="g" hint-placeholder-count="4">
+              <figure data-reveal="" data-span="{{ g.span }}" data-lead2="{{ g.lead2 }}" style="margin:0; display:flex; flex-direction:column;">
+                <div onClick="{{ g.open }}" onKeyDown="{{ g.openKey }}" role="button" tabindex="0" aria-label="Enlarge photo: {{ g.alt }}" class="ph-img" style="position:relative; overflow:hidden; cursor:zoom-in; background:var(--surface); border:1px solid var(--line-soft);">
+                  <img src="{{ g.thumb }}" srcset="{{ g.srcset }}" sizes="{{ g.sizes }}" alt="{{ g.alt }}" width="900" height="600" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <figcaption style="margin-top:14px; padding-top:12px; border-top:1px solid var(--line);">
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+                    <h3 style="font-family:'Schibsted Grotesk',system-ui,sans-serif; font-weight:600; font-size:16px; line-height:1.3; margin:0; color:var(--ink);">{{ g.title }}</h3>
+                    <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted-2);">{{ g.tag }}</span>
+                  </div>
+                  <p style="font-size:14px; line-height:1.55; color:var(--muted); margin:6px 0 0;">{{ g.note }}</p>
+                </figcaption>
+              </figure>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="design" style="padding:clamp(60px,9vw,130px) clamp(18px,4vw,48px); border-top:1px solid var(--line-soft); background:var(--bg-alt);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <h2 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(34px,5vw,60px); letter-spacing:-0.01em; line-height:1.1; margin:0 0 14px; text-wrap:balance;">Design</h2>
+      <p style="font-size:18px; line-height:1.65; color:var(--muted); max-width:52ch; margin:0; text-wrap:pretty; margin-bottom:clamp(28px,4vw,48px);">Social media designs and announcements, and more.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; align-items:start;">
+        <sc-for list="{{ designs }}" as="d" hint-placeholder-count="3">
+          <div data-reveal="" style="position:relative; overflow:hidden; aspect-ratio:{{ d.ratio }}; border:1px {{ d.border }} var(--line-strong); background:var(--tile);">
+            <sc-if value="{{ d.hasImage }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ d.src }}" alt="{{ d.alt }}" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+            </sc-if>
+            <sc-if value="{{ d.isEmpty }}" hint-placeholder-val="{{ true }}">
+              <div style="position:absolute; inset:0; padding:18px; display:flex; flex-direction:column; justify-content:flex-end; gap:6px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent);">{{ d.label }}</span>
+                <span style="font-size:14px; color:var(--muted-2);">Sample coming soon</span>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:clamp(48px,7vw,88px); padding-top:clamp(32px,5vw,56px); border-top:1px solid var(--line); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:clamp(24px,5vw,72px); align-items:start;">
+        <div>
+          <h3 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); letter-spacing:-0.01em; line-height:1.12; margin:0 0 16px; text-wrap:balance;">Need something designed?</h3>
+          <p style="font-size:16px; line-height:1.72; color:var(--muted); max-width:50ch; margin:0; text-wrap:pretty;">Social media designs and announcements are what I make. If your project is bigger, such as a rebrand or a website, or simply isn't on this list, ask anyway. I know people who do that work and can point you to the right one.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+          <a href="mailto:jonathanryanrichard07@gmail.com?subject=Design%20enquiry" style="display:inline-block; background:var(--btn-bg); color:var(--btn-fg); border-radius:999px; padding:13px 24px; font-size:16px;">Email about design</a>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:14px; color:var(--muted);">
+            <span>jonathanryanrichard07@gmail.com</span>
+            <button onClick="{{ copyAddress }}" style="cursor:pointer; border:1px solid var(--line-strong); background:transparent; border-radius:999px; padding:6px 14px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink);">{{ copyAddrLabel }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing" style="padding:clamp(60px,9vw,130px) clamp(18px,4vw,48px); border-top:1px solid var(--line-soft);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <h2 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(34px,5vw,60px); letter-spacing:-0.01em; line-height:1.1; margin:0 0 14px; text-wrap:balance;">Writing</h2>
+      <p style="font-size:18px; line-height:1.65; color:var(--muted); max-width:52ch; margin:0; text-wrap:pretty; margin-bottom:clamp(28px,4vw,48px);">Essays, reflections, and things I noticed.</p>
+      <div style="display:flex; flex-direction:column;">
+        <sc-for list="{{ essays }}" as="e" hint-placeholder-count="4">
+          <a data-reveal="" href="{{ e.href }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:clamp(12px,3vw,48px); align-items:baseline; padding:28px 0; border-top:1px solid var(--line-soft); color:var(--ink);">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent);">{{ e.kind }} · {{ e.date }}</div>
+              <h3 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(24px,3vw,34px); line-height:1.15; margin:10px 0 0; text-wrap:balance;">{{ e.title }}</h3>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <p style="font-size:16px; line-height:1.68; color:var(--muted); margin:0; text-wrap:pretty;">{{ e.excerpt }}</p>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted-2);">{{ e.read }} min read →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  </main>
+<footer style="display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; padding:30px clamp(18px,4vw,48px); border-top:1px solid var(--line-soft); font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted-2);">
+    <a href="index.html" style="color:var(--muted-2);">← One person. Two worlds.</a>
+    <a href="mailto:jonathanryanrichard07@gmail.com" style="color:var(--muted-2);">jonathanryanrichard07@gmail.com</a>
+  </footer>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" role="dialog" aria-modal="true" aria-label="Enlarged photo" style="position:fixed; inset:0; z-index:60; background:rgba(8,9,11,0.95); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:clamp(14px,4vw,56px); cursor:zoom-out; animation:slowfade 260ms ease both;">
+      <img src="{{ lightboxSrc }}" alt="{{ lightboxAlt }}" loading="lazy" style="max-width:100%; max-height:calc(100vh - 150px); width:auto; height:auto; object-fit:contain; display:block; border:1px solid rgba(255,255,255,0.1);" />
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; width:min(1100px,100%); font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8A8C95;">
+        <span>{{ lightboxCaption }}, {{ lightboxCount }}</span>
+        <div style="display:flex; gap:8px;">
+          <button onClick="{{ lightboxPrev }}" aria-label="Previous photo" style="cursor:pointer; border:1px solid rgba(255,255,255,0.28); background:transparent; border-radius:999px; padding:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#F2F0EC;">← Prev</button>
+          <button onClick="{{ lightboxNext }}" aria-label="Next photo" style="cursor:pointer; border:1px solid rgba(255,255,255,0.28); background:transparent; border-radius:999px; padding:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#F2F0EC;">Next →</button>
+          <button onClick="{{ closeLightbox }}" style="cursor:pointer; border:1px solid rgba(255,255,255,0.28); background:transparent; border-radius:999px; padding:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#F2F0EC;">Close · Esc</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { narrow: window.innerWidth <= 960, menuOpen: false, dark: true, album: null, filter: 'all', lightbox: null, copiedAddr: false, leaving: null };
+
+  mountedPage() {
+    this.restoreTheme();
+    this._parallax = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+    this._tick = () => {
+      this._raf = 0;
+      const y = window.scrollY;
+      this._parallax.forEach(el => {
+        el.style.transform = 'translate3d(0,' + (-y * parseFloat(el.getAttribute('data-parallax'))).toFixed(1) + 'px,0)';
+      });
+    };
+    this._onScroll = () => { if (!this._raf) this._raf = requestAnimationFrame(this._tick); };
+    if (!this.reduceMotion()) window.addEventListener('scroll', this._onScroll, { passive: true });
+   
+    this._onKey = (e) => {
+      if (this.state.lightbox === null) return;
+      const n = this.currentPhotos().length;
+      if (e.key === 'Escape') this.setState({ lightbox: null });
+      else if (e.key === 'ArrowRight') this.setState({ lightbox: (this.state.lightbox + 1) % n });
+      else if (e.key === 'ArrowLeft') this.setState({ lightbox: (this.state.lightbox + n - 1) % n });
+    };
+    window.addEventListener('keydown', this._onKey);
+    // Albums live in the URL (#album-worship) so links and the browser's back button work.
+    this._onHash = () => this.syncAlbumFromHash(false);
+    window.addEventListener('hashchange', this._onHash);
+    this.syncAlbumFromHash(true);
+    this.observe();
+  }
+  componentDidUpdate() { this.observe(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('hashchange', this._onHash);
+    if (this._raf) cancelAnimationFrame(this._raf);
+   
+    if (this._io) this._io.disconnect();
+  }
+
+  observe() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          e.target.style.filter = 'none';
+          this._io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.dataset.revealInit) return;
+      el.dataset.revealInit = '1';
+      if (this.reduceMotion()) { el.style.opacity = '1'; return; }
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px) scale(0.99)';
+      el.style.filter = 'blur(4px)';
+      el.style.transition = 'opacity 1400ms cubic-bezier(.22,.61,.36,1), transform 1400ms cubic-bezier(.22,.61,.36,1), filter 1400ms ease';
+      this._io.observe(el);
+    });
+  }
+
+  /* Albums: a title, a cover, and the headline and intro shown when the album opens. A photo belongs to an
+     album through its album field and appears in the order listed here. The Church Service headline is from the
+     user's mock. The Charity Production intro states only facts the user gave (7 homes, 800 attendees). */
+  albums = [
+    { id: 'church', title: 'Church Service', cover: 'IMG_2733', headline: 'Rooms that only happen once.', intro: 'Stage, congregation, available light. Church services: the worship team, the band, the speaker and the room.' },
+    { id: 'charity', title: 'Charity Production', cover: 'charity-1', headline: 'Seven homes, 800 people.', intro: 'A charity production that raised funds for seven homes, with 800 people in attendance.' }
+  ];
+
+  /* Web-sized copies live in photos/ (1800px + 900px thumbnail, metadata stripped). tag is Stage / Portrait / Room
+     and drives the filter chips. Titles and notes are descriptive only: no names, dates or venue claimed. The first
+     three Church Service entries come from the user's mock; every other title and note is a draft in the same voice. */
+  photos = [
+    { file: 'IMG_2733', album: 'church', tag: 'Room', title: 'Worthy Is The Lamb', note: 'The whole room, one frame, from the back.', alt: 'Congregation with raised hands facing the stage, song lyrics on the screen' },
+    { file: 'IMG_2261', album: 'church', tag: 'Stage', title: 'Lead Voice', note: 'Batik and a green wash, caught mid-phrase.', alt: 'Worship singer mid-song with one arm raised' },
+    { file: 'IMG_2466', album: 'church', tag: 'Portrait', title: 'The Laugh', note: 'Caught laughing beside the pulpit.', alt: 'Speaker laughing on stage beside the pulpit' },
+    { file: 'IMG_2715', album: 'church', tag: 'Stage', title: 'Hands Up', note: 'Two dancers in yellow, soft behind her.', alt: 'Worship singer with a raised hand, two dancers in yellow behind her' },
+    { file: 'IMG_2700', album: 'church', tag: 'Stage', title: 'Eyes Closed', note: 'One hand up under purple light, the band blurred behind.', alt: 'Worship singer with eyes closed and one hand raised, band members behind her' },
+    { file: 'IMG_2304', album: 'church', tag: 'Portrait', title: 'Bass, In Profile', note: 'Blue light and an in-ear monitor.', alt: 'Bass guitarist in profile wearing in-ear monitors' },
+    { file: 'IMG_2719', album: 'church', tag: 'Portrait', title: 'At The Keys', note: 'Keyboard and microphone against a grey wall.', alt: 'Keyboard player at a microphone' },
+
+    { file: 'charity-1', album: 'charity', tag: 'Portrait', title: 'The Embrace', note: 'Two people holding each other, a green wash behind them.', alt: 'Two performers embracing on stage, one in tears, a projected green scene behind them' },
+    { file: 'charity-2', album: 'charity', tag: 'Stage', title: 'Tambourine And Ribbons', note: 'Dancers in yellow and orange, ribbons in the air.', alt: 'Dancers in yellow and orange dresses holding a tambourine and ribbons' },
+    { file: 'charity-3', album: 'charity', tag: 'Stage', title: 'Bedside', note: 'A child in a striped gown, a soft toy between her and the woman in blue.', alt: 'A child in a striped gown on a hospital bed with a purple soft toy, a woman in blue scrubs beside her' },
+    { file: 'charity-4', album: 'charity', tag: 'Stage', title: 'Blue Silk', note: 'A dancer in red, blue silks arcing behind her head.', alt: 'A dancer in a red dress with blue silk flags raised above her head against a black stage' },
+    { file: 'charity-5', album: 'charity', tag: 'Portrait', title: 'Under The Blanket', note: 'Seated in a striped gown, smiling off to the side.', alt: 'A smiling performer in a striped gown seated under a quilted blanket' },
+    { file: 'charity-6', album: 'charity', tag: 'Portrait', title: 'Microphone And Tablet', note: 'A microphone in one hand, a tablet in the other.', alt: 'A man in a dark jacket speaking into a microphone while holding a tablet' },
+    { file: 'charity-7', album: 'charity', tag: 'Portrait', title: 'Shopping Bags', note: 'A wide smile, paper bags in one hand, a street projected behind.', alt: 'A smiling woman holding paper shopping bags in front of a projected street scene' }
+  ];
+
+  /* Design samples: empty slots until real work is added. To fill one, set src to a file in photos/
+     (for example src: 'photos/design-01.jpg', alt: 'what the design shows') and it replaces the placeholder. */
+  designs = [
+    { label: 'Social media design', ratio: '4/3', src: '', alt: '' },
+    { label: 'Announcement', ratio: '4/3', src: '', alt: '' },
+    { label: 'More design work', ratio: '4/3', src: '', alt: '' }
+  ];
+
+  themes = {
+    light: { '--bg':'#F3F1EC','--bg-alt':'#EAE7E0','--ink':'#14151A','--body':'#2A2C33','--soft':'#3B3D46','--muted':'#575963','--muted-2':'#5F616B','--accent':'#7A5C1E','--accent-soft':'rgba(122,92,30,0.08)','--glow':'rgba(122,92,30,0.10)','--line':'rgba(20,21,26,0.16)','--line-soft':'rgba(20,21,26,0.10)','--line-strong':'rgba(20,21,26,0.34)','--surface':'#E4E1DA','--tile':'#EFECE6','--stripe-a':'#EBE8E1','--nav-bg':'rgba(243,241,236,0.80)','--btn-bg':'#14151A','--btn-fg':'#F3F1EC' },
+    dark: { '--bg':'#0C0D10','--bg-alt':'#0A0B0E','--ink':'#F2F0EC','--body':'#CFD0D8','--soft':'#C9CAD1','--muted':'#A9AAB3','--muted-2':'#8A8C95','--accent':'#C9B892','--accent-soft':'rgba(201,184,146,0.07)','--glow':'rgba(201,184,146,0.14)','--line':'rgba(255,255,255,0.14)','--line-soft':'rgba(255,255,255,0.08)','--line-strong':'rgba(255,255,255,0.28)','--surface':'#101116','--tile':'#0E0F13','--stripe-a':'#17181E','--nav-bg':'rgba(12,13,16,0.74)','--btn-bg':'#C9B892','--btn-fg':'#0C0D10' }
+  };
+
+  applyTheme(dark, animate) {
+    window.JRRTheme.apply(this.themes, dark, animate !== false);
+  }
+
+  /* See side defaults to dark; a saved choice (shared with the Work pages) wins. */
+  restoreTheme() {
+    const dark = window.JRRTheme.resolve(true);
+    this.setState({ dark: dark });
+    this.applyTheme(dark, false);
+  }
+
+  reduceMotion() { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+
+  resetReveals() {
+    if (typeof this.observe !== 'function' || this.reduceMotion()) return;
+    document.querySelectorAll('[data-reveal]').forEach(el => { delete el.dataset.revealInit; });
+    if (this._io) { this._io.disconnect(); this._io = null; }
+    this.observe();
+  }
+
+  componentDidMount() { this.watchViewport(); if (this.mountedPage) this.mountedPage(); }
+
+  NARROW_AT = 960;
+
+  isNarrow() { return window.innerWidth <= this.NARROW_AT; }
+
+  syncViewport() {
+    const n = this.isNarrow();
+    if (n === this.state.narrow) return;
+    this.setState({ narrow: n, menuOpen: false });
+  }
+
+  watchViewport() {
+    this._onResize = () => this.syncViewport();
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('orientationchange', this._onResize);
+    if (window.ResizeObserver) {
+      this._ro = new ResizeObserver(this._onResize);
+      this._ro.observe(document.documentElement);
+    }
+    this.syncViewport();
+  }
+
+  navVals() {
+    const n = this.state.narrow, o = this.state.menuOpen;
+    return {
+      menuBtn: n ? 'inline-flex' : 'none',
+      menuLabel: o ? 'Close' : 'Menu',
+      menuOpenAttr: o ? 'true' : 'false',
+      navLinks: n ? (o ? 'flex' : 'none') : 'flex',
+      navDir: n ? 'column' : 'row',
+      navAlign: n ? 'stretch' : 'center',
+      navTag: n ? 'none' : 'inline',
+      navWidth: n ? '100%' : 'auto',
+      navLine: n ? '4' : 'normal',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+    };
+  }
+
+  renderVals() { return Object.assign(this.navVals(), this.pageVals()); }
+
+  albumPhotos() {
+    return this.photos.filter(p => p.album === this.state.album);
+  }
+
+  currentPhotos() {
+    const f = this.state.filter;
+    return this.albumPhotos().filter(p => f === 'all' || p.tag === f);
+  }
+
+  syncAlbumFromHash(initial) {
+    const h = (location.hash || '').replace('#', '');
+    const id = h.indexOf('album-') === 0 ? h.slice(6) : null;
+    const valid = this.albums.some(a => a.id === id) ? id : null;
+    if (valid !== this.state.album) this.setState({ album: valid, filter: 'all', lightbox: null });
+    if (initial && valid) this.scrollToPhotography();
+  }
+
+  scrollToPhotography() {
+    const el = document.getElementById('photography');
+    if (el) el.scrollIntoView({ behavior: this.reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  openAlbum(id) {
+    try { history.pushState(null, '', '#album-' + id); } catch (e) {}
+    this.setState({ album: id, filter: 'all', lightbox: null }, () => this.scrollToPhotography());
+  }
+
+  closeAlbum() {
+    try { history.pushState(null, '', '#photography'); } catch (e) {}
+    this.setState({ album: null, filter: 'all', lightbox: null }, () => this.scrollToPhotography());
+  }
+
+  copyText(text, flag) {
+    const show = (v) => {
+      this.setState({ [flag]: v });
+      setTimeout(() => this.setState({ [flag]: false }), 2200);
+    };
+    const fallback = () => {
+      const t = document.createElement('textarea');
+      t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed; opacity:0;';
+      document.body.appendChild(t); t.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) {}
+      t.remove();
+      show(ok ? 'ok' : 'fail');
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(() => show('ok'), fallback);
+    else fallback();
+  }
+
+  pageVals() {
+    const s = this.state;
+    const inAlbum = this.albumPhotos();
+    const list = this.currentPhotos();
+    const n = list.length;
+    const lb = s.lightbox;
+    const cur = lb === null ? null : list[lb];
+    const album = this.albums.find(a => a.id === s.album) || null;
+    const open = (i) => () => this.setState({ lightbox: i });
+    const openKey = (i) => (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState({ lightbox: i }); } };
+    const step = (d) => (e) => { if (e) e.stopPropagation(); this.setState({ lightbox: (this.state.lightbox + d + n) % n }); };
+    // rows always fill: a leftover single becomes a full-width lead, a leftover pair becomes two halves
+    const rem = n % 3;
+    const spanOf = (i) => (rem === 1 && i === 0) ? 'full' : (rem === 2 && i < 2) ? 'half' : 'third';
+    const tags = ['Stage', 'Portrait', 'Room'].filter(t => inAlbum.some(p => p.tag === t));
+    const chip = (key, label) => ({
+      label: label, pressed: s.filter === key ? 'true' : 'false',
+      onClick: () => this.setState({ filter: key, lightbox: null }),
+      bg: s.filter === key ? 'var(--ink)' : 'transparent',
+      fg: s.filter === key ? 'var(--bg)' : 'var(--soft)',
+      bd: s.filter === key ? 'var(--ink)' : 'var(--line-strong)'
+    });
+
+    return {
+      themeLabel: s.dark ? 'Light' : 'Dark',
+      toggleTheme: () => { const dark = !this.state.dark; this.setState({ dark: dark }); this.applyTheme(dark); window.JRRTheme.choose(dark); },
+      showAlbums: !album,
+      showAlbum: !!album,
+      albumHeadline: album ? album.headline : '',
+      albumIntro: album ? album.intro : '',
+      backToAlbums: () => this.closeAlbum(),
+      showChips: tags.length > 1,
+      filters: [chip('all', 'All')].concat(tags.map(t => chip(t, t))),
+      frameCount: n + ' of ' + inAlbum.length + ' frames',
+      albums: this.albums.map(a => {
+        const count = this.photos.filter(p => p.album === a.id).length;
+        const cover = this.photos.find(p => p.file === a.cover) || this.photos.find(p => p.album === a.id);
+        return {
+          title: a.title,
+          count: count + (count === 1 ? ' photo' : ' photos'),
+          thumb: 'photos/' + cover.file + '-thumb.jpg',
+          srcset: 'photos/' + cover.file + '-thumb.jpg 900w, photos/' + cover.file + '.jpg 1800w',
+          sizes: '(min-width: 800px) 45vw, 100vw',
+          coverAlt: cover.alt,
+          open: () => this.openAlbum(a.id),
+          openKey: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.openAlbum(a.id); } }
+        };
+      }),
+      photos: list.map((p, i) => {
+        const sp = spanOf(i);
+        return {
+          thumb: 'photos/' + p.file + '-thumb.jpg',
+          srcset: 'photos/' + p.file + '-thumb.jpg 900w, photos/' + p.file + '.jpg 1800w',
+          sizes: sp === 'full' ? '(min-width: 1300px) 1240px, 100vw' : sp === 'half' ? '(min-width: 900px) 50vw, 100vw' : '(min-width: 900px) 33vw, (min-width: 560px) 50vw, 100vw',
+          alt: p.alt, title: p.title, tag: p.tag, note: p.note,
+          span: sp,
+          lead2: (n % 2 === 1 && i === 0) ? '1' : '0',
+          open: open(i), openKey: openKey(i)
+        };
+      }),
+      designs: this.designs.map(d => ({
+        label: d.label, ratio: d.ratio, src: d.src, alt: d.alt,
+        hasImage: !!d.src, isEmpty: !d.src, border: d.src ? 'solid' : 'dashed'
+      })),
+      essays: [
+        { kind: 'Essay', date: 'Sep 2026', title: 'When the World Broke', excerpt: 'Where were you when the world broke? Not a metaphorical world. Your world.', read: 6, href: 'writing.html#when-the-world-broke' }
+      ],
+      lightboxOpen: lb !== null,
+      lightboxSrc: cur ? 'photos/' + cur.file + '.jpg' : '',
+      lightboxAlt: cur ? cur.alt : '',
+      lightboxCaption: cur ? cur.title + ', ' + cur.tag : '',
+      lightboxCount: cur ? (lb + 1) + ' of ' + n : '',
+      lightboxPrev: step(-1),
+      lightboxNext: step(1),
+      closeLightbox: () => this.setState({ lightbox: null }),
+      copyAddrLabel: s.copiedAddr === 'fail' ? 'Copy failed, select it by hand' : s.copiedAddr ? 'Copied' : 'Copy address',
+      copyAddress: () => this.copyText('jonathanryanrichard07@gmail.com', 'copiedAddr')
+    };
+  }
+}
+</script>
+</body>
+</html>

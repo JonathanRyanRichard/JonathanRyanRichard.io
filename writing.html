@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-head-fonts href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet">
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+<title>Essays · Jonathan Ryan Richard</title>
+<meta name="description" content="Essays and reflections by Jonathan Ryan Richard, including &quot;When the World Broke&quot;.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jonathanryanrichard.github.io/writing.html">
+<meta property="og:url" content="https://jonathanryanrichard.github.io/writing.html">
+<meta property="og:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jonathan Ryan Richard: How I Work and How I See">
+<meta name="twitter:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta name="author" content="Jonathan Ryan Richard">
+<meta name="theme-color" content="#0E0F12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jonathan Ryan Richard">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="Essays · Jonathan Ryan Richard">
+<meta property="og:description" content="Essays and reflections by Jonathan Ryan Richard, including &quot;When the World Broke&quot;.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Essays · Jonathan Ryan Richard">
+<meta name="twitter:description" content="Essays and reflections by Jonathan Ryan Richard, including &quot;When the World Broke&quot;.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When the World Broke","author":{"@type":"Person","name":"Jonathan Ryan Richard"},"inLanguage":"en"}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#0C0D10; --bg-alt:#0A0B0E; --ink:#F2F0EC; --body:#CFD0D8; --soft:#C9CAD1; --muted:#A9AAB3; --muted-2:#8A8C95; --accent:#C9B892; --accent-soft:rgba(201,184,146,0.07); --glow:rgba(201,184,146,0.14); --line:rgba(255,255,255,0.14); --line-soft:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.28); --surface:#101116; --tile:#0E0F13; --stripe-a:#17181E; --nav-bg:rgba(12,13,16,0.74); --btn-bg:#C9B892; --btn-fg:#0C0D10; }
+  html, body { margin:0; padding:0; background:var(--bg); scroll-behavior:smooth; }
+  section[id] { scroll-margin-top:84px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { color:var(--ink); }
+  @keyframes slowfade { from { opacity:0; } to { opacity:1; } }
+  @keyframes curtainIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes curtainOut { from { opacity:1; } to { opacity:0; } }
+  @keyframes labelUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+  @keyframes labelDrift { from { transform:none; } to { transform:translateY(-10px); } }
+  @keyframes ruleIn { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:1ms !important; animation-delay:0ms !important; transition-duration:1ms !important; }
+    html { scroll-behavior:auto !important; }
+  }
+</style>
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+</helmet>
+<div style="background:var(--bg); color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; min-height:100vh; overflow-x:hidden;">
+
+  <div ref="{{ progressRef }}" style="position:fixed; top:0; left:0; height:2px; z-index:50; background:var(--accent); width:0;"></div>
+
+  <nav style="position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; padding:18px clamp(18px,4vw,48px); backdrop-filter:blur(14px); background:var(--nav-bg); border-bottom:1px solid var(--line-soft);">
+    <div style="display:flex; align-items:baseline; gap:14px;">
+      <a href="index.html" style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:21px; color:var(--ink);">Jonathan Ryan Richard</a>
+      <span style="display:{{ navTag }}; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted-2);">Writing</span>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpenAttr }}" aria-label="Menu" style="display:{{ menuBtn }}; align-items:center; justify-content:center; min-height:44px; min-width:88px; padding:0 16px; border:1px solid var(--line-strong); background:transparent; border-radius:999px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink);">{{ menuLabel }}</button>
+    <div onClick="{{ closeMenu }}" style="display:{{ navLinks }}; flex-direction:{{ navDir }}; width:{{ navWidth }}; line-height:{{ navLine }}; gap:clamp(12px,2vw,24px); align-items:{{ navAlign }}; font-family:'Schibsted Grotesk',system-ui,sans-serif; font-weight:500; font-size:14px; letter-spacing:0; flex-wrap:wrap;">
+      <a href="how-i-see.html" style="color:var(--muted-2);">← How I See</a>
+      <sc-if value="{{ hasMany }}" hint-placeholder-val="{{ false }}"><a href="#index" style="color:var(--muted-2);">All writing</a></sc-if>
+      <button onClick="{{ toggleTheme }}" style="border:0; background:transparent; border-radius:999px; padding:6px 4px; text-align:left; cursor:pointer; font-family:'Schibsted Grotesk',system-ui,sans-serif; font-weight:500; font-size:14px; letter-spacing:0; color:var(--muted-2);">{{ themeLabel }}</button>
+      <a href="how-i-work.html" style="border:1px solid var(--line-strong); border-radius:999px; padding:7px 15px; line-height:1.4; text-align:center; color:var(--ink);">How I Work →</a>
+    </div>
+  </nav>
+<main id="main">
+
+  <header style="position:relative; padding:clamp(60px,10vw,150px) clamp(18px,4vw,48px) clamp(40px,6vw,80px); overflow:hidden;">
+    <div data-parallax="0.18" style="position:absolute; inset:-34% -6%; background-image:repeating-linear-gradient(112deg,var(--stripe-a) 0 3px,var(--bg) 3px 15px); opacity:0.8;"></div>
+    <div style="position:relative; max-width:1000px; margin:0 auto; animation:slowfade 1500ms 420ms ease both;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">{{ current.kind }}, {{ current.date }}, {{ current.read }} min read</div>
+      <h1 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(38px,6.6vw,88px); letter-spacing:-0.01em; line-height:1.0; margin:22px 0 22px; text-wrap:balance;">{{ current.title }}</h1>
+      <p style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-style:italic; font-size:clamp(21px,2.4vw,29px); line-height:1.5; color:var(--soft); max-width:40ch; margin:0; text-wrap:balance;">{{ current.standfirst }}</p>
+    </div>
+  </header>
+
+  <article style="padding:clamp(28px,4vw,52px) clamp(18px,4vw,48px) clamp(50px,8vw,110px);">
+    <div style="max-width:630px; margin:0 auto; opacity:{{ articleFade }}; transition:opacity 280ms ease;">
+      <sc-for list="{{ current.body }}" as="b" hint-placeholder-count="8">
+        <div style="margin-bottom:26px;">
+          <sc-if value="{{ b.isPull }}" hint-placeholder-val="{{ false }}">
+            <div style="margin:44px 0; padding-left:26px; border-left:1px solid var(--accent);">
+              <span style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-style:italic; font-size:clamp(23px,2.8vw,32px); line-height:1.35; color:var(--ink); text-wrap:balance;">{{ b.text }}</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ b.isFrame }}" hint-placeholder-val="{{ false }}">
+            <figure data-reveal="" style="margin:44px 0;">
+              <div style="aspect-ratio:3/2; border:1px solid var(--line-soft); background-image:repeating-linear-gradient(104deg,var(--stripe-a) 0 2px,var(--surface) 2px 10px); display:flex; align-items:flex-end; padding:16px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.09em; text-transform:uppercase; color:var(--muted-2);">{{ b.slot }}</div>
+              <figcaption style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.09em; text-transform:uppercase; color:var(--muted-2); margin-top:12px;">{{ b.text }}</figcaption>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ b.isHead }}" hint-placeholder-val="{{ false }}">
+            <h2 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(26px,3vw,36px); line-height:1.2; margin:50px 0 6px; text-wrap:balance;">{{ b.text }}</h2>
+          </sc-if>
+          <sc-if value="{{ b.isPara }}" hint-placeholder-val="{{ true }}">
+            <p style="font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.7; color:var(--body); margin:0; text-wrap:pretty;"><sc-for list="{{ b.runs }}" as="r" hint-placeholder-count="1"><span style="font-style:{{ r.fs }}; font-weight:{{ r.fw }}; color:{{ r.c }}; white-space:pre-wrap;">{{ r.t }}</span></sc-for></p>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <div style="margin-top:56px; padding-top:26px; border-top:1px solid var(--line-soft); display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted-2);">
+        <span>Jonathan Ryan Richard · {{ current.date }}</span>
+        <sc-if value="{{ current.hasSource }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ current.sourceHref }}" target="_blank" rel="noopener" style="color:var(--muted-2);">{{ current.sourceLabel }} ↗</a>
+        </sc-if>
+        <a href="mailto:jonathanryanrichard07@gmail.com" style="color:var(--accent);">Reply by email</a>
+      </div>
+    </div>
+  </article>
+
+  <sc-if value="{{ hasMany }}" hint-placeholder-val="{{ false }}">
+  <section id="index" style="padding:clamp(50px,8vw,110px) clamp(18px,4vw,48px); border-top:1px solid var(--line-soft); background:var(--bg-alt);">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted-2);">All writing</div>
+      <h2 style="font-family:'EB Garamond',Georgia,serif; font-style:italic; font-weight:400; font-size:clamp(30px,4.6vw,54px); letter-spacing:-0.01em; line-height:1.12; padding-bottom:4px; margin:16px 0 40px; text-wrap:balance;">Keep reading.</h2>
+      <div style="display:flex; flex-direction:column;">
+        <sc-for list="{{ list }}" as="e" hint-placeholder-count="4">
+          <div onClick="{{ e.select }}" onKeyDown="{{ e.selectKey }}" role="button" tabindex="0" aria-label="{{ e.title }}" style="cursor:pointer; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:clamp(12px,3vw,48px); align-items:baseline; padding:26px 0; border-top:1px solid var(--line-soft); background:{{ e.bg }}; transition:background 300ms ease;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent);">{{ e.kind }} · {{ e.date }}</div>
+              <h3 style="font-family:'EB Garamond',Georgia,serif; font-weight:400; font-size:clamp(23px,2.8vw,32px); line-height:1.16; margin:10px 0 0; text-wrap:balance;">{{ e.title }}</h3>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <p style="font-size:16px; line-height:1.68; color:var(--muted); margin:0; text-wrap:pretty;">{{ e.standfirst }}</p>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted-2);">{{ e.read }} min read →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  </main>
+<footer style="display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; padding:30px clamp(18px,4vw,48px); border-top:1px solid var(--line-soft); font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted-2);">
+    <a href="index.html" style="color:var(--muted-2);">← One person. Two worlds.</a>
+    <a href="how-i-see.html" style="color:var(--muted-2);">Photography →</a>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  progressRef = React.createRef();
+
+  state = { narrow: window.innerWidth <= 960, menuOpen: false, dark: true, slug: 'when-the-world-broke', articleFade: '1', leaving: null };
+
+  essays = [
+    {
+      slug: 'when-the-world-broke', kind: 'Essay', date: 'Sep 2026',
+      title: 'When the World Broke',
+      standfirst: 'Lament is crying out while holding on.',
+      sourceLabel: 'First published at graceklang.com',
+      sourceHref: 'https://graceklang.com/article/When_the_World_Broke',
+      body: [
+        {"isPull":true,"text":"Where were you when the world broke?"},
+        {"text":"Not a metaphorical world. Your world. The one you’d built, the one you’d trusted, the one you went to sleep inside every night assuming it would still be there in the morning.","runs":[{"t":"Not a metaphorical world. Your world. The one you’d built, the one you’d trusted, the one you went to sleep inside every night assuming it would still be there in the morning.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Maybe you were in a car, driving home, when the phone rang and everything changed. Maybe you were in a crowded place, surrounded by people, when a single text made you feel completely alone. Maybe you were just scrolling, mindlessly, when a headline or a post stopped you cold and you knew, in your gut, that nothing would be the same after this.","runs":[{"t":"Maybe you were in a car, driving home, when the phone rang and everything changed. Maybe you were in a crowded place, surrounded by people, when a single text made you feel completely alone. Maybe you were just scrolling, mindlessly, when a headline or a post stopped you cold and you knew, in your gut, that nothing would be the same after this.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"You remember exactly where you were. That’s the thing about those moments: they burn themselves into you. Because in an instant, your life quietly split into before and after.","runs":[{"t":"You remember exactly where you were. That’s the thing about those moments: they burn themselves into you. Because in an instant, your life quietly split into ","fs":"normal","fw":400,"c":"inherit"},{"t":"before","fs":"italic","fw":400,"c":"inherit"},{"t":" and ","fs":"normal","fw":400,"c":"inherit"},{"t":"after","fs":"italic","fw":400,"c":"inherit"},{"t":".","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And the worst part isn’t even the pain itself. The worst part is not knowing what to do with it.","runs":[{"t":"And the worst part isn’t even the pain itself. The worst part is not knowing what to do with it.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"A False Choice"},
+        {"text":"Here’s what we’re often handed when suffering shows up: two options.","runs":[{"t":"Here’s what we’re often handed when suffering shows up: two options.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Option one: fall apart. Cry. Scream. Let the grief show. Question God. Become a mess. And the unspoken message quietly attached to it: that means you don’t really trust Him.","runs":[{"t":"Option one:","fs":"normal","fw":500,"c":"var(--ink)"},{"t":" fall apart. Cry. Scream. Let the grief show. Question God. Become a mess. And the unspoken message quietly attached to it: that means you don’t really trust Him.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Option two: hold it together. Praise Him anyway. Say the right things. “I’m too blessed to be stressed.” “This is just a test for my testimony.” Push through, because that’s what faith looks like.","runs":[{"t":"Option two:","fs":"normal","fw":500,"c":"var(--ink)"},{"t":" hold it together. Praise Him anyway. Say the right things. “I’m too blessed to be stressed.” “This is just a test for my testimony.” Push through, because that’s what faith looks like.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And if you’re honest, you’ve probably tried both. Maybe you’ve swung between them in the same afternoon.","runs":[{"t":"And if you’re honest, you’ve probably tried both. Maybe you’ve swung between them in the same afternoon.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"But here’s what nobody told you: that is a false choice. And it has left a lot of people either spiritually hollow or quietly drowning, because neither option is actually what God invites us into.","runs":[{"t":"But here’s what nobody told you: that is a false choice. And it has left a lot of people either spiritually hollow or quietly drowning, because neither option is actually what God invites us into.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"The Most Honest Book in Scripture"},
+        {"text":"The book of Job is one of those books that the church doesn’t talk about enough. And I think that’s a shame, because it might be one of the most honest books in all of Scripture.","runs":[{"t":"The book of Job is one of those books that the church doesn’t talk about enough. And I think that’s a shame, because it might be one of the most honest books in all of Scripture.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"We meet a man who has everything. Wealth, family, land, reputation, faith. By every measure, a man whose life is working. And then in the span of a few brutal verses, it all disappears. His livestock. His servants. His land. And then his children, all seven of them, gone when a house collapses on them.","runs":[{"t":"We meet a man who has everything. Wealth, family, land, reputation, faith. By every measure, a man whose life is working. And then in the span of a few brutal verses, it all disappears. His livestock. His servants. His land. And then his children, all seven of them, gone when a house collapses on them.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Four verses. That’s all it takes for Job’s entire world to end.","runs":[{"t":"Four verses. That’s all it takes for Job’s entire world to end.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"What comes next is what I want you to sit with.","runs":[{"t":"What comes next is what I want you to sit with.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"After absorbing news that would shatter most of us beyond recognition, Job tears his robe and shaves his head. In the ancient world these weren’t dramatic gestures. They were a language. Tearing your robe said: my once-ordered life has been ripped open. Shaving your head said: this tragedy has taken everything from me, even my dignity. Before Job speaks a single word, his body is already saying what words cannot.","runs":[{"t":"After absorbing news that would shatter most of us beyond recognition, Job tears his robe and shaves his head. In the ancient world these weren’t dramatic gestures. They were a language. Tearing your robe said: ","fs":"normal","fw":400,"c":"inherit"},{"t":"my once-ordered life has been ripped open.","fs":"italic","fw":400,"c":"inherit"},{"t":" Shaving your head said: ","fs":"normal","fw":400,"c":"inherit"},{"t":"this tragedy has taken everything from me, even my dignity.","fs":"italic","fw":400,"c":"inherit"},{"t":" Before Job speaks a single word, his body is already saying what words cannot.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And then he falls to the ground. And he worships.","runs":[{"t":"And then he falls to the ground. And he worships.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isPull":true,"text":"“The Lord gave and the Lord has taken away. May the name of the Lord be praised.” (Job 1:21)"},
+        {"text":"Read that again. This is not a man who has numbed himself into peace. This is not a man performing for an audience. This is a man holding two violently opposing things in the same hands at the same time (the full weight of his sorrow and the full grip of his faith) and refusing to let go of either one.","runs":[{"t":"Read that again. This is not a man who has numbed himself into peace. This is not a man performing for an audience. This is a man holding two violently opposing things in the same hands at the same time (the full weight of his sorrow and the full grip of his faith) and refusing to let go of either one.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And then Job 1:22 drops quietly, almost like a footnote:","runs":[{"t":"And then Job 1:22 drops quietly, almost like a footnote:","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isPull":true,"text":"“In all this, Job did not sin.”"},
+        {"text":"Not in the grief. Not in the worship. Not in the impossible tension between them.","runs":[{"t":"Not in the grief. Not in the worship. Not in the impossible tension between them.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"The Forgotten Language: Lament"},
+        {"text":"What Job was doing has a name. The church has largely forgotten it, but it’s woven into almost every corner of the Bible.","runs":[{"t":"What Job was doing has a name. The church has largely forgotten it, but it’s woven into almost every corner of the Bible.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"It’s called lament.","runs":[{"t":"It’s called ","fs":"normal","fw":400,"c":"inherit"},{"t":"lament","fs":"normal","fw":500,"c":"var(--ink)"},{"t":".","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Not complaining. Not weakness dressed up in religious language. Not the opposite of faith.","runs":[{"t":"Not complaining. Not weakness dressed up in religious language. Not the opposite of faith.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Lament is crying out while holding on.","runs":[{"t":"Lament is ","fs":"normal","fw":400,"c":"inherit"},{"t":"crying out while holding on.","fs":"italic","fw":400,"c":"inherit"}]},
+        {"text":"Think about water. Hydrogen is one of the lightest elements in the universe. Oxygen is volatile: it’s what makes things burn, and it’s sixteen times heavier than hydrogen. By every surface-level reading, they should compete. They look like opposites. But when they come together, they don’t destroy each other. They form something entirely new. Something life-giving.","runs":[{"t":"Think about water. Hydrogen is one of the lightest elements in the universe. Oxygen is volatile: it’s what makes things burn, and it’s sixteen times heavier than hydrogen. By every surface-level reading, they should compete. They look like opposites. But when they come together, they don’t destroy each other. They form something entirely new. Something life-giving.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"That’s lament. Sorrow and praise. Anguish and adoration. Two things we’ve been told can’t coexist, forming something that actually sustains us when nothing else can.","runs":[{"t":"That’s lament. Sorrow and praise. Anguish and adoration. Two things we’ve been told can’t coexist, forming something that actually sustains us when nothing else can.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"Why Bypassing the Pain Doesn’t Work"},
+        {"text":"We’ve quietly been taught that these two things cancel each other out. That real faith means bypassing the pain. That if you’re really trusting God, you won’t let the grief show.","runs":[{"t":"We’ve quietly been taught that these two things cancel each other out. That real faith means bypassing the pain. That if you’re really trusting God, you won’t let the grief show.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"It’s a lie. And it’s a costly one.","runs":[{"t":"It’s a lie. And it’s a costly one.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Because when you spiritually bypass the pain (when you paste a scripture over a wound before it’s been properly exposed), the best you can get is a shallow, temporary relief. The grief doesn’t disappear. It goes underground. And underground, it festers.","runs":[{"t":"Because when you spiritually bypass the pain (when you paste a scripture over a wound before it’s been properly exposed), the best you can get is a shallow, temporary relief. The grief doesn’t disappear. It goes underground. And underground, it festers.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And when you let the suffering swallow you whole, when you stop holding on to anything beyond the pain itself, you drift. Slowly. Further and further from the healing you actually need.","runs":[{"t":"And when you let the suffering swallow you whole, when you stop holding on to anything beyond the pain itself, you drift. Slowly. Further and further from the healing you actually need.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Lament refuses both exits. It names the wound and brings God into it at the same time.","runs":[{"t":"Lament refuses both exits. It names the wound and brings God into it at the same time.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"This is not a new idea. Around one third of the Psalms, roughly fifty chapters, are prayers of lament. Raw, honest, sometimes furious prayers directed straight at God. The prophets wrote lament. There is an entire book of the Bible called Lamentations. God didn’t quietly tuck these away in some obscure corner of Scripture. He put them front and center because He knew we would need them.","runs":[{"t":"This is not a new idea. Around one third of the Psalms, roughly fifty chapters, are prayers of lament. Raw, honest, sometimes furious prayers directed straight at God. The prophets wrote lament. There is an entire book of the Bible called Lamentations. God didn’t quietly tuck these away in some obscure corner of Scripture. He put them front and center because He knew we would need them.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"He gave us this language on purpose.","runs":[{"t":"He gave us this language on purpose.","fs":"normal","fw":500,"c":"var(--ink)"}]},
+        {"isHead":true,"text":"What Lament Actually Looks Like"},
+        {"text":"It starts by crying out: not a polished, presentable prayer, but an honest one. You name what is true about the pain. Not what you wish were true. Not what sounds right. What is actually true, right now, about how you feel and what you’re carrying.","runs":[{"t":"It starts by crying out: not a polished, presentable prayer, but an honest one. You name what is true about the pain. Not what you wish were true. Not what sounds right. What is ","fs":"normal","fw":400,"c":"inherit"},{"t":"actually","fs":"italic","fw":400,"c":"inherit"},{"t":" true, right now, about how you feel and what you’re carrying.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And then you hold on. You name what is true about God. Not because the pain is gone. Not because it makes sense yet. But because lament is not a declaration that God has failed you. It’s a prayer that trusts He can handle your honesty.","runs":[{"t":"And then you hold on. You name what is true about God. Not because the pain is gone. Not because it makes sense yet. But because lament is not a declaration that God has failed you. It’s a prayer that trusts He can handle your honesty.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"That’s the whole thing. Cry out. Hold on. Both at once.","runs":[{"t":"That’s the whole thing. ","fs":"normal","fw":400,"c":"inherit"},{"t":"Cry out. Hold on. Both at once.","fs":"normal","fw":500,"c":"var(--ink)"}]},
+        {"text":"If you’re walking through grief, you cry out about the emptiness and you hold on to the God of all comfort (2 Corinthians 1:3-4). If you’re carrying the pain of a broken relationship, you cry out about the abandonment and you hold on to the God who reconciles. If you’re suffering physically, you cry out in that pain and you hold on to the God who heals. If you look at the headlines and feel the weight of injustice and violence in the world, you cry out about what you see and you hold on to a God who is just (Isaiah 30:18).","runs":[{"t":"If you’re walking through grief, you cry out about the emptiness and you hold on to the God of all comfort (2 Corinthians 1:3-4). If you’re carrying the pain of a broken relationship, you cry out about the abandonment and you hold on to the God who reconciles. If you’re suffering physically, you cry out in that pain and you hold on to the God who heals. If you look at the headlines and feel the weight of injustice and violence in the world, you cry out about what you see and you hold on to a God who is just (Isaiah 30:18).","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"You don’t have to have it resolved. You don’t have to have it cleaned up. You just have to bring it.","runs":[{"t":"You don’t have to have it resolved. You don’t have to have it cleaned up. You just have to bring it.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"What Lament Does and Doesn’t Do"},
+        {"text":"Lament is not a magic cure. Let’s be clear about that. It doesn’t make the suffering disappear. It doesn’t tie the pain up in a neat bow.","runs":[{"t":"Lament is not a magic cure. Let’s be clear about that. It doesn’t make the suffering disappear. It doesn’t tie the pain up in a neat bow.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"What lament does is give language to the suffering, so the suffering can’t quietly consume you from the inside out. It is how we begin to move (slowly, limping) toward the kind of real healing that only God can give.","runs":[{"t":"What lament does is give language to the suffering, so the suffering can’t quietly consume you from the inside out. It is how we begin to move (slowly, limping) toward the kind of real healing that only God can give.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And here’s what makes that possible. We don’t bring our lament to a God who watches from a safe distance. We bring it to a God who, before He ever asked us to suffer faithfully, entered into suffering Himself. The cross is not a symbol of God tolerating pain from afar. It is God going all the way in, absorbing the full darkness, the full weight of everything broken in this world, and walking through it so we would never have to walk through ours alone.","runs":[{"t":"And here’s what makes that possible. We don’t bring our lament to a God who watches from a safe distance. We bring it to a God who, before He ever asked us to suffer faithfully, entered into suffering Himself. The cross is not a symbol of God tolerating pain from afar. It is God going all the way in, absorbing the full darkness, the full weight of everything broken in this world, and walking through it so we would never have to walk through ours alone.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isHead":true,"text":"The Question Worth Sitting With"},
+        {"text":"What are you doing with your pain right now? Are you bypassing it, hoping it quietly resolves on its own? Are you carrying it in isolation, letting it slowly pull you under?","runs":[{"t":"What are you doing with your pain right now? Are you bypassing it, hoping it quietly resolves on its own? Are you carrying it in isolation, letting it slowly pull you under?","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"Or will you bring it, all of it, exactly as it is, to God?","runs":[{"t":"Or will you bring it, all of it, exactly as it is, to God?","fs":"normal","fw":400,"c":"inherit"}]},
+        {"isPull":true,"text":"“The Lord gave and the Lord has taken away. May the name of the Lord be praised.”"},
+        {"text":"Both sentences. At the same time. That is what honest, courageous faith looks like when the world breaks.","runs":[{"t":"Both sentences. At the same time. That is what honest, courageous faith looks like when the world breaks.","fs":"normal","fw":400,"c":"inherit"}]},
+        {"text":"And it is available to you. Right now. Exactly as you are.","runs":[{"t":"And it is available to you. Right now. Exactly as you are.","fs":"normal","fw":400,"c":"inherit"}]}
+      ]
+    }
+  ];
+
+  mountedPage() {
+    this.restoreTheme();
+   
+    const h = (location.hash || '').replace('#', '');
+    if (this.essays.some(e => e.slug === h)) this.setState({ slug: h });
+    this._onHash = () => {
+      const s = (location.hash || '').replace('#', '');
+      if (this.essays.some(e => e.slug === s) && s !== this.state.slug) this.goEssay(s);
+    };
+    window.addEventListener('hashchange', this._onHash);
+    this._parallax = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+    const rm = this.reduceMotion();
+    this._tick = () => {
+      this._raf = 0;
+      const y = window.scrollY;
+      if (!rm) this._parallax.forEach(el => {
+        el.style.transform = 'translate3d(0,' + (-y * parseFloat(el.getAttribute('data-parallax'))).toFixed(1) + 'px,0)';
+      });
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, (y / max) * 100) : 0;
+      if (this.progressRef.current) this.progressRef.current.style.width = pct.toFixed(1) + '%';
+    };
+    this._onScroll = () => { if (!this._raf) this._raf = requestAnimationFrame(this._tick); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this.observe();
+  }
+  componentDidUpdate() { this.observe(); }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this._onHash);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._swapT) clearTimeout(this._swapT);
+   
+    if (this._io) this._io.disconnect();
+  }
+
+  goEssay(slug) {
+    const top = () => window.scrollTo({ top: 0, behavior: this.reduceMotion() ? 'auto' : 'smooth' });
+    if (slug === this.state.slug) { top(); return; }
+    try { history.replaceState(null, '', '#' + slug); } catch (e) {}
+    top();
+    if (this.reduceMotion()) { this.setState({ slug: slug }); return; }
+    this.setState({ articleFade: '0' });
+    clearTimeout(this._swapT);
+    this._swapT = setTimeout(() => {
+      this.setState({ slug: slug, articleFade: '1' }, () => this.resetReveals());
+    }, 240);
+  }
+
+  observe() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          e.target.style.filter = 'none';
+          this._io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.dataset.revealInit) return;
+      el.dataset.revealInit = '1';
+      if (this.reduceMotion()) { el.style.opacity = '1'; return; }
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px) scale(0.995)';
+      el.style.filter = 'blur(4px)';
+      el.style.transition = 'opacity 1400ms cubic-bezier(.22,.61,.36,1), transform 1400ms cubic-bezier(.22,.61,.36,1), filter 1400ms ease';
+      this._io.observe(el);
+    });
+  }
+
+  readTimes = { 'when-the-world-broke': 6 };
+
+  readTime(e) { return this.readTimes[e.slug] || 4; }
+
+  decorate(e) {
+    return Object.assign({}, e, {
+      read: this.readTime(e),
+      body: e.body.map(b => ({
+        text: b.text,
+        runs: b.runs || [{ t: b.text, fs: 'normal', fw: 400, c: 'inherit' }],
+        slot: b.slot || '',
+        isPull: !!b.isPull,
+        isFrame: !!b.isFrame,
+        isHead: !!b.isHead,
+        isPara: !b.isPull && !b.isFrame && !b.isHead
+      }))
+    });
+  }
+
+  themes = {
+    light: { '--bg':'#F3F1EC','--bg-alt':'#EAE7E0','--ink':'#14151A','--body':'#2A2C33','--soft':'#3B3D46','--muted':'#575963','--muted-2':'#5F616B','--accent':'#7A5C1E','--accent-soft':'rgba(122,92,30,0.08)','--glow':'rgba(122,92,30,0.10)','--line':'rgba(20,21,26,0.16)','--line-soft':'rgba(20,21,26,0.10)','--line-strong':'rgba(20,21,26,0.34)','--surface':'#E4E1DA','--tile':'#EFECE6','--stripe-a':'#EBE8E1','--nav-bg':'rgba(243,241,236,0.80)','--btn-bg':'#14151A','--btn-fg':'#F3F1EC' },
+    dark: { '--bg':'#0C0D10','--bg-alt':'#0A0B0E','--ink':'#F2F0EC','--body':'#CFD0D8','--soft':'#C9CAD1','--muted':'#A9AAB3','--muted-2':'#8A8C95','--accent':'#C9B892','--accent-soft':'rgba(201,184,146,0.07)','--glow':'rgba(201,184,146,0.14)','--line':'rgba(255,255,255,0.14)','--line-soft':'rgba(255,255,255,0.08)','--line-strong':'rgba(255,255,255,0.28)','--surface':'#101116','--tile':'#0E0F13','--stripe-a':'#17181E','--nav-bg':'rgba(12,13,16,0.74)','--btn-bg':'#C9B892','--btn-fg':'#0C0D10' }
+  };
+
+  applyTheme(dark, animate) {
+    window.JRRTheme.apply(this.themes, dark, animate !== false);
+  }
+
+  /* See side defaults to dark; a saved choice (shared with the Work pages) wins. */
+  restoreTheme() {
+    const dark = window.JRRTheme.resolve(true);
+    this.setState({ dark: dark });
+    this.applyTheme(dark, false);
+  }
+
+  reduceMotion() { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+
+  resetReveals() {
+    if (typeof this.observe !== 'function' || this.reduceMotion()) return;
+    document.querySelectorAll('[data-reveal]').forEach(el => { delete el.dataset.revealInit; });
+    if (this._io) { this._io.disconnect(); this._io = null; }
+    this.observe();
+  }
+
+  componentDidMount() { this.watchViewport(); if (this.mountedPage) this.mountedPage(); }
+
+  NARROW_AT = 960;
+
+  isNarrow() { return window.innerWidth <= this.NARROW_AT; }
+
+  syncViewport() {
+    const n = this.isNarrow();
+    if (n === this.state.narrow) return;
+    this.setState({ narrow: n, menuOpen: false });
+  }
+
+  watchViewport() {
+    this._onResize = () => this.syncViewport();
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('orientationchange', this._onResize);
+    if (window.ResizeObserver) {
+      this._ro = new ResizeObserver(this._onResize);
+      this._ro.observe(document.documentElement);
+    }
+    this.syncViewport();
+  }
+
+  navVals() {
+    const n = this.state.narrow, o = this.state.menuOpen;
+    return {
+      menuBtn: n ? 'inline-flex' : 'none',
+      menuLabel: o ? 'Close' : 'Menu',
+      menuOpenAttr: o ? 'true' : 'false',
+      navLinks: n ? (o ? 'flex' : 'none') : 'flex',
+      navDir: n ? 'column' : 'row',
+      navAlign: n ? 'stretch' : 'center',
+      navTag: n ? 'none' : 'inline',
+      navWidth: n ? '100%' : 'auto',
+      navLine: n ? '4' : 'normal',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+    };
+  }
+
+  renderVals() { return Object.assign(this.navVals(), this.pageVals()); }
+
+  pageVals() {
+    const cur = this.essays.find(e => e.slug === this.state.slug) || this.essays[0];
+    return {
+      themeLabel: this.state.dark ? 'Light' : 'Dark',
+      toggleTheme: () => { const dark = !this.state.dark; this.setState({ dark: dark }); this.applyTheme(dark); window.JRRTheme.choose(dark); },
+      progressRef: this.progressRef,
+      articleFade: this.state.articleFade,
+      current: Object.assign(this.decorate(cur), { hasSource: !!cur.sourceHref }),
+      hasMany: this.essays.length > 1,
+      list: this.essays.map(e => ({
+        kind: e.kind, date: e.date, title: e.title, standfirst: e.standfirst,
+        read: this.readTime(e),
+        bg: e.slug === this.state.slug ? 'var(--accent-soft)' : 'transparent',
+        select: () => this.goEssay(e.slug),
+        selectKey: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); this.goEssay(e.slug); } }
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

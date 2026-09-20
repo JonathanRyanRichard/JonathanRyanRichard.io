@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-head-fonts href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..500&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400..500;1,400&display=swap" rel="stylesheet">
+<script src="./theme.js"></script>
+<script src="./page-transition.js"></script>
+<title>PMO case studies · Jonathan Ryan Richard</title>
+<meta name="description" content="Three PMO case studies with live models: an excess-cost algorithm, a defect escape rate diagnostic and a production defect KPI redesign.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jonathanryanrichard.github.io/case-studies.html">
+<meta property="og:url" content="https://jonathanryanrichard.github.io/case-studies.html">
+<meta property="og:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jonathan Ryan Richard: How I Work and How I See">
+<meta name="twitter:image" content="https://jonathanryanrichard.github.io/og-image.png">
+<meta name="author" content="Jonathan Ryan Richard">
+<meta name="theme-color" content="#FAF9F7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jonathan Ryan Richard">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="PMO case studies · Jonathan Ryan Richard">
+<meta property="og:description" content="Three PMO case studies with live models: an excess-cost algorithm, a defect escape rate diagnostic and a production defect KPI redesign.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PMO case studies · Jonathan Ryan Richard">
+<meta name="twitter:description" content="Three PMO case studies with live models: an excess-cost algorithm, a defect escape rate diagnostic and a production defect KPI redesign.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"PMO case studies","author":{"@type":"Person","name":"Jonathan Ryan Richard"}}</script>
+<script>window.JRR_THEMES={"light":{"--bg":"#FAF9F7","--panel":"#FFFFFF","--ink":"#14151A","--muted":"#61636C","--line":"#E3E1DC","--accent":"#2F4B8C","--accent-soft":"#EAEEF7","--series":"#C3CAD9","--critical":"#B4472A","--warn":"#7D5C0C"},"dark":{"--bg":"#0F1114","--panel":"#15181D","--ink":"#F1F0EC","--muted":"#9A9CA5","--line":"#272A31","--accent":"#8FA8E0","--accent-soft":"#1B2130","--series":"#3E465A","--critical":"#E5684A","--warn":"#D9A441"}};(function(){try{window.JRRTheme.apply(window.JRR_THEMES,window.JRRTheme.resolve(),false);}catch(e){}})();</script>
+<style>
+  :root {
+    --bg:#FAF9F7; --panel:#FFFFFF; --ink:#14151A; --muted:#61636C; --line:#E3E1DC;
+    --accent:#2F4B8C; --accent-soft:#EAEEF7; --series:#C3CAD9; --critical:#B4472A; --warn:#7D5C0C;
+    color-scheme: light;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { margin:0; padding:0; background:var(--bg); }
+  body { color:var(--ink); font-family:'Schibsted Grotesk',system-ui,sans-serif; font-size:16px; line-height:1.6; transition:background 400ms ease, color 400ms ease; }
+  h1,h2,p { margin:0; }
+  a { color:var(--accent); text-decoration:none; }
+  a:not(.btn):hover { color:var(--ink); }
+  button { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  ::selection { background:var(--accent); color:var(--bg); }
+  .mono { font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  .skip { position:absolute; left:-999px; top:8px; background:var(--accent); color:var(--bg); padding:10px 16px; border-radius:999px; z-index:50; }
+  .skip:focus { left:16px; }
+  .skip:hover { color:var(--bg); }
+
+  nav.top { position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px clamp(20px,4vw,56px); background:var(--bg); border-bottom:1px solid var(--line); }
+  nav.top .brand { display:flex; align-items:baseline; gap:14px; min-width:0; }
+  nav.top .brand a { font-weight:500; font-size:20px; color:var(--ink); white-space:nowrap; }
+  nav.top .links { display:flex; align-items:center; gap:clamp(12px,2vw,26px); font-weight:500; font-size:14px; }
+  nav.top .links a, nav.top .links button { color:var(--muted); }
+  nav.top .links button { border:0; background:transparent; cursor:pointer; padding:10px 4px; min-height:44px; }
+  nav.top .links a { display:inline-flex; align-items:center; min-height:44px; }
+  nav.top .links a:hover, nav.top .links button:hover { color:var(--ink); }
+  @media (max-width:1000px) { nav.top .brand .mono { display:none; } }
+  @media (max-width:520px) { nav.top .links .opt { display:none; } nav.top { gap:8px; padding:8px 16px; } nav.top .brand a { font-size:16px; } nav.top .links { gap:8px; } }
+
+  header.intro { padding:clamp(48px,8vw,104px) clamp(20px,4vw,56px) clamp(36px,5vw,64px); }
+  header.intro .in { max-width:1080px; margin:0 auto; animation:rise 1000ms 120ms cubic-bezier(.22,.61,.36,1) both; }
+  header.intro h1 { font-weight:700; font-size:clamp(32px,5vw,64px); letter-spacing:-0.025em; line-height:1.06; max-width:24ch; text-wrap:balance; }
+  header.intro p { font-size:18px; line-height:1.7; color:var(--muted); max-width:56ch; margin-top:22px; text-wrap:pretty; }
+  @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+
+  /* one section per case */
+  .case { padding:clamp(44px,6vw,84px) clamp(20px,4vw,56px); border-top:1px solid var(--line); }
+  .case.alt { background:var(--accent-soft); }
+  .cgrid { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-areas:"a v" "b v"; column-gap:clamp(28px,5vw,72px); row-gap:22px; align-items:center; }
+  .case.flip .cgrid { grid-template-areas:"v a" "v b"; }
+  .ta { grid-area:a; align-self:end; display:flex; flex-direction:column; gap:14px; min-width:0; }
+  .tb { grid-area:b; align-self:start; display:flex; flex-direction:column; gap:18px; min-width:0; }
+  .tv { grid-area:v; min-width:0; }
+  @media (max-width:820px) {
+    .cgrid, .case.flip .cgrid { grid-template-columns:minmax(0,1fr); grid-template-areas:"a" "v" "b"; row-gap:22px; }
+    .ta, .tb { align-self:auto; }
+  }
+  .kick { display:flex; align-items:baseline; gap:6px 14px; flex-wrap:wrap; }
+  .kick .k { color:var(--accent); }
+  .case h2 { font-weight:700; font-size:clamp(28px,3.6vw,44px); letter-spacing:-0.02em; line-height:1.1; max-width:20ch; text-wrap:balance; }
+  .sum { font-size:16px; line-height:1.72; color:var(--muted); max-width:48ch; text-wrap:pretty; }
+  .statrow { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .statrow b { font-weight:700; font-size:clamp(32px,3.6vw,40px); letter-spacing:-0.02em; line-height:1; color:var(--accent); }
+  .statrow span { max-width:26ch; line-height:1.5; }
+  .cta { display:flex; flex-direction:column; gap:4px; padding:14px 0 0; border-top:1px solid var(--line); max-width:48ch; min-height:44px; color:var(--accent); }
+  .cta b { font-weight:600; font-size:16px; line-height:1.4; text-wrap:balance; }
+  .cta:hover b { text-decoration:underline; text-underline-offset:3px; }
+
+  .viz { border:1px solid var(--line); background:var(--panel); padding:clamp(18px,2.6vw,28px); }
+  .viz .lab { margin-bottom:20px; }
+  .take { font-size:14px; line-height:1.65; color:var(--muted); margin-top:20px; padding-top:14px; border-top:1px solid var(--line); text-wrap:pretty; }
+  .take strong { color:var(--ink); font-weight:600; }
+  .bars { display:flex; flex-direction:column; gap:18px; }
+  .bar { display:grid; grid-template-columns:1fr auto; gap:6px 12px; align-items:baseline; }
+  .bar .n { font-size:14px; color:var(--muted); }
+  .bar .v { font-family:'IBM Plex Mono',monospace; font-size:14px; }
+  .bar .track { grid-column:1 / -1; height:12px; background:var(--bg); border:1px solid var(--line); }
+  .bar .fill { height:100%; width:100%; transform:scaleX(0); transform-origin:left center; transition:transform 800ms cubic-bezier(.22,.61,.36,1); }
+  .in-view .bar .fill { transform:scaleX(var(--w)); }
+  .tiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:22px; }
+  .tiles > div { background:var(--panel); padding:14px 16px; min-width:0; }
+  .tiles b { display:block; font-weight:600; font-size:clamp(20px,3vw,28px); letter-spacing:-0.01em; line-height:1.1; white-space:nowrap; color:var(--critical); }
+  .tiles .mono { display:block; margin-top:7px; }
+  .donutrow { display:flex; align-items:center; gap:clamp(16px,3vw,28px); flex-wrap:wrap; }
+  .donut { position:relative; flex:none; width:140px; height:140px; border-radius:50%; background:conic-gradient(var(--critical) 0 62%, var(--series) 62% 100%); }
+  .donut::after { content:""; position:absolute; inset:18px; border-radius:50%; background:var(--panel); }
+  .donut .c { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .donut .c b { font-weight:700; font-size:30px; letter-spacing:-0.02em; line-height:1; color:var(--critical); }
+  .bands { display:flex; flex-direction:column; gap:6px; flex:1; min-width:160px; }
+  .band { display:flex; justify-content:space-between; gap:10px; font-size:14px; padding:8px 12px; border:1px solid var(--line); color:var(--muted); }
+  .band[data-on="true"] { background:var(--accent-soft); color:var(--ink); font-weight:600; border-color:var(--critical); }
+  .band i { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; }
+  .plot { position:relative; height:186px; border-left:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .plot .r2 { position:absolute; top:0; right:0; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; color:var(--critical); }
+  .plot .dot { position:absolute; width:8px; height:8px; margin:0 0 -4px -4px; border-radius:50%; background:var(--accent); opacity:0; transition:opacity 500ms; }
+  .in-view .plot .dot { opacity:1; }
+  .axis { display:flex; justify-content:space-between; gap:12px; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; color:var(--muted); }
+
+  .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:18px clamp(20px,4vw,56px); border-top:1px solid var(--line); font-size:14px; font-weight:500; }
+  .foot a { display:inline-flex; align-items:center; min-height:44px; color:var(--muted); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:1ms !important; transition-duration:1ms !important; } html { scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="top" aria-label="Primary">
+  <div class="brand"><a href="index.html">Jonathan Ryan Richard</a><span class="mono">Case studies</span></div>
+  <div class="links">
+    <a href="how-i-work.html">How I Work</a>
+    <a class="opt" href="resume.html">Resume</a>
+    <button id="themeBtn" type="button">Dark</button>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="intro">
+    <div class="in">
+      <h1>Three numbers everyone quoted. None of them survived being checked.</h1>
+      <p>Each case starts with a figure that circulated confidently and meant less than people thought. Open any one for the full write-up and a live model you can push until it breaks.</p>
+    </div>
+  </header>
+
+  <!-- 1. excess cost -->
+  <section class="case">
+    <div class="cgrid">
+      <div class="ta">
+        <div class="kick mono"><span class="k">Resourcing &amp; analytics</span><span>Six teams · 100+ staff</span></div>
+        <h2>Everyone knew cost was too high. Nobody could say by how much.</h2>
+      </div>
+      <div class="tv">
+        <div class="viz" data-viz>
+          <div class="mono lab">Allowable cost against actual cost · illustrative</div>
+          <div class="bars" role="img" aria-label="Bar chart. Revenue RM 47.40m. Allowable cost at a 30 percent margin RM 33.18m. Actual cost RM 36.07m, which is over the allowable cost.">
+            <div class="bar"><span class="n">Revenue · YTD + forecast</span><span class="v">RM 47.40m</span><div class="track"><div class="fill" style="--w:1; background:var(--accent)"></div></div></div>
+            <div class="bar"><span class="n">Allowable cost at 30% GPM</span><span class="v" style="color:var(--muted)">RM 33.18m</span><div class="track"><div class="fill" style="--w:0.7; background:var(--series)"></div></div></div>
+            <div class="bar"><span class="n">Actual cost · YTD + forecast</span><span class="v" style="color:var(--critical)">RM 36.07m</span><div class="track"><div class="fill" style="--w:0.761; background:var(--critical)"></div></div></div>
+          </div>
+          <div class="tiles"><div><b>RM 2.89m</b><span class="mono">Excess cost</span></div><div><b>29.2 heads</b><span class="mono">Excess headcount</span></div></div>
+          <p class="take"><strong>Ringgit of overrun starts a debate. 29 heads of overrun ends one.</strong></p>
+        </div>
+      </div>
+      <div class="tb">
+        <p class="sum">Overrun was discussed as a feeling. I built an algorithm that turns a target margin into an allowable cost and the gap into excess headcount, then deployed the dashboard it runs on myself.</p>
+        <div class="statrow"><b>−50%</b><span class="mono">Manual analysis effort, 100+ staff live</span></div>
+        <a class="cta" href="case-study.html#costing"><span class="mono">Read the case study</span><b>An excess-cost algorithm, and the dashboard I deployed it on →</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. DER -->
+  <section class="case alt flip">
+    <div class="cgrid">
+      <div class="ta">
+        <div class="kick mono"><span class="k">Quality diagnostics</span><span>40 projects analysed</span></div>
+        <h2>Same defect count. Which team has the real problem?</h2>
+      </div>
+      <div class="tv">
+        <div class="viz" data-viz>
+          <div class="mono lab">Defect escape rate (DER) · worked example</div>
+          <div class="donutrow">
+            <div class="donut" role="img" aria-label="62 percent of defects escaped testing, in the red band above 50 percent."><div class="c"><b>62%</b><span class="mono" style="margin-top:4px;">Escaped</span></div></div>
+            <div class="bands">
+              <div class="band" data-on="false"><span><i style="background:var(--accent)"></i>Green</span><span>DER below 40%</span></div>
+              <div class="band" data-on="false"><span><i style="background:var(--warn)"></i>Amber</span><span>DER 40 to 50%</span></div>
+              <div class="band" data-on="true"><span><i style="background:var(--critical)"></i>Red</span><span>DER above 50%</span></div>
+            </div>
+          </div>
+          <p class="take"><strong>One number, two verdicts.</strong> At 7 or more test cases per man-day, 62% reads as a build problem. Below that, a coverage problem.</p>
+        </div>
+      </div>
+      <div class="tb">
+        <p class="sum">Exco was making delivery calls on a hunch. Escape rate, read against test coverage, splits that hunch into two different diagnoses, with the bands set by forty historical projects, not opinion.</p>
+        <div class="statrow"><b>90%</b><span class="mono">Teams standardised</span></div>
+        <a class="cta" href="case-study.html#der"><span class="mono">Read the case study</span><b>The number that ended “we think it might be testing” →</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DPMR -->
+  <section class="case">
+    <div class="cgrid">
+      <div class="ta">
+        <div class="kick mono"><span class="k">KPI design</span><span>21 projects · 3 financial years</span></div>
+        <h2>A fast fix on a bad system still scored well.</h2>
+      </div>
+      <div class="tv">
+        <div class="viz" data-viz>
+          <div class="mono lab">Defect count vs project value · 21 projects, sanitised</div>
+          <div class="plot" id="plot" role="img" aria-label="Scatter plot of 21 projects, project value against production defects. The points show no correlation, R squared 0.25."><span class="r2">No correlation · R² 0.25</span></div>
+          <div class="axis"><span>RM 0 → RM 20m project value</span><span>0 → 160 defects</span></div>
+          <p class="take">Everyone assumed bigger projects carry more defects. <strong>They do not:</strong> a RM 0.4m project logged 52 while a RM 19m one logged 81.</p>
+        </div>
+      </div>
+      <div class="tb">
+        <p class="sum">SLA scoring is a stopwatch: a late fix often counted as on time, and nothing asked whether the system was any good. Four replacement methods were thrown away before defects per million ringgit survived review.</p>
+        <div class="statrow"><b>1 to 5</b><span class="mono">Quality score adopted org-wide</span></div>
+        <a class="cta" href="case-study.html#dpmr"><span class="mono">Read the case study</span><b>The quality KPI that only measured the clock →</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="how-i-work.html">← How I Work</a>
+  <a href="resume.html">Full resume →</a>
+</footer>
+<script>
+(function () {
+  /* theme: the shared engine (theme.js) resolves, tweens and remembers the choice */
+  var THEMES = window.JRR_THEMES, btn = document.getElementById('themeBtn');
+  function label(dark) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  label(window.JRRTheme.resolve());
+  btn.addEventListener('click', function () {
+    var dark = !window.JRRTheme.resolve();
+    window.JRRTheme.choose(dark); window.JRRTheme.apply(THEMES, dark, true); label(dark);
+  });
+  window.JRRTheme.watch(function (dark) { window.JRRTheme.apply(THEMES, dark, true); label(dark); });
+
+  /* sanitised portfolio scatter, same 21 points as the current page */
+  var points = [[0.11,0],[0.76,0],[0.95,0],[0.26,1],[2.55,2],[2.01,8],[0.95,9],[3.03,11],[0.55,13],[0.75,14],[2.83,16],[3.20,21],[0.59,24],[1.75,38],[6.55,51],[0.40,52],[11.31,57],[19.23,81],[3.98,82],[2.07,107],[6.35,155]];
+  var plot = document.getElementById('plot');
+  points.forEach(function (p, i) {
+    var d = document.createElement('span'); d.className = 'dot';
+    d.style.left = (p[0] / 20 * 96 + 2).toFixed(1) + '%'; d.style.bottom = (p[1] / 160 * 92 + 4).toFixed(1) + '%'; d.style.transitionDelay = (i * 25) + 'ms';
+    plot.appendChild(d);
+  });
+
+  /* charts draw themselves when they scroll into view */
+  var viz = document.querySelectorAll('[data-viz]');
+  function show(el) { el.classList.add('in-view'); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } }); }, { threshold: 0.35 });
+    viz.forEach(function (v) { io.observe(v); });
+  } else { viz.forEach(show); }
+})();
+</script>
+</body>
+</html>
